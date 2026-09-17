@@ -45,7 +45,7 @@ export default function OurStoryPage() {
               muted
               playsInline
               preload="auto"
-              poster="https://images.pexels.com/photos/35274206/pexels-photo-35274206.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              poster="/images/m1.png"
               className="absolute inset-0 h-full w-full object-cover"
               aria-label="Calm editorial video representing reflection and personal growth"
             />

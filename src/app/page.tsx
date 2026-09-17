@@ -61,8 +61,11 @@ export default function HomePage() {
                     muted
                     playsInline
                     preload="auto"
-                    poster="/images/hero-fallback.jpg"
+                    poster="/images/t1.png"
                     className="absolute inset-0 h-full w-full object-cover"
+                    onLoadedData={(e) => {
+                      e.currentTarget.play().catch(() => { });
+                    }}
                   />
 
                   <div className="absolute inset-0 bg-black/30" />
