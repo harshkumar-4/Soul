@@ -59,6 +59,8 @@ export default function HomePage() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
+                    poster="https://images.pexels.com/photos/18209689/pexels-photo-18209689.jpeg?auto=compress&cs=tinysrgb&w=800"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black/30" />
@@ -317,6 +319,8 @@ function OfferingsSection() {
               <img
                 src={item.imageSrc}
                 alt={item.title}
+                loading="lazy"
+                decoding="async"
                 className="
           absolute inset-0 w-full h-full object-cover
           transition-transform duration-700

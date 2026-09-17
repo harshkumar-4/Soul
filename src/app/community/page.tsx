@@ -27,7 +27,7 @@ const communityWays = [
     description:
       'Get a clearer mirror into your own emotional patterns. The EQ Audit is an invitation to look inward, understand yourself, and discover where growth may begin.',
     image:
-      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1600&q=90',
+      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=75',
     cta: 'Take the EQ Audit',
     href: '/eq-audit',
   },
@@ -37,7 +37,7 @@ const communityWays = [
     description:
       'Follow SoulfulI on Instagram and LinkedIn for daily reflections, emotional intelligence insights, and behind-the-scenes moments from what we are building.',
     image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=90',
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=75',
     cta: 'Connect With Us',
     href: '/contact',
   },
@@ -47,7 +47,7 @@ const communityWays = [
     description:
       'Join the waitlist for Quiet Bloom Retreat and future Inner Compass workshops. Be among the first to know when registrations open.',
     image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=90',
+      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=75',
     cta: 'Join the Waitlist',
     href: '/contact?program=community',
   },
@@ -57,7 +57,7 @@ const communityWays = [
     description:
       'If you are part of a school, college, or organisation, reach out to explore our Emotional Intelligence Course or a wellness programme for your community.',
     image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=90',
+      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=75',
     cta: 'Start a Conversation',
     href: '/contact',
   },
@@ -73,7 +73,7 @@ export default function CommunityPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2400&q=85')",
+              "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75')",
           }}
         />
 

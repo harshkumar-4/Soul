@@ -25,7 +25,7 @@ export const offeringsData: OfferingItem[] = [
     badgeText: 'Self-Discovery Mirror',
     badgeVariant: 'sage',
     imageSrc:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCZMCyhgfxFext6Tyjy2JFAeatP6zbPFfHC3drPjYrcbU9SzOrBQQ8Eyk59qsLoLBicWB3N75y9ReNgFCBFrOl5RTBqVhvCoMs5MY7aju5eTbd1iqz2uXBUrUl7u4xbnVnCNY4XJuSiuyEZV699UKHOMJGrqT9Psv4Y_k9VE5evh9iP36UQiqAU5-NnYI-J4fcC3JmXdm9zVqzW6-VjNmIRiqh1EBJzhbPJEr06ZtPM',
+      'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=75',
     audience: 'Individuals & Emerging Leaders',
     outcomes: [
       'Visual 6-dimension Inner Map profile',
@@ -46,7 +46,7 @@ export const offeringsData: OfferingItem[] = [
     badgeText: 'Developmental Program',
     badgeVariant: 'forest',
     imageSrc:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=75',
     audience: 'Professionals & Seekers',
     outcomes: [
       '5 guided modular inquiry frameworks',
@@ -67,7 +67,7 @@ export const offeringsData: OfferingItem[] = [
     badgeText: 'Himalayan Retreat',
     badgeVariant: 'terracotta',
     imageSrc:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA',
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=75',
     audience: 'Leaders & Seekers of Deep Rest',
     outcomes: [
       'Deep nervous system restoration in nature',
@@ -88,7 +88,7 @@ export const offeringsData: OfferingItem[] = [
     badgeText: 'Institutional Offering',
     badgeVariant: 'sand',
     imageSrc:
-      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=75',
     audience: 'Students, Faculty & Educational Leaders',
     outcomes: [
       'Emotional literacy and regulation tools',
@@ -109,7 +109,7 @@ export const offeringsData: OfferingItem[] = [
     badgeText: 'B2B Leadership',
     badgeVariant: 'forest',
     imageSrc:
-      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75',
     audience: 'Executive Teams & Organizations',
     outcomes: [
       'Steady leadership presence under pressure',

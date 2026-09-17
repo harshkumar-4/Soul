@@ -25,7 +25,7 @@ export default function WhatWeOfferPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2400&q=85')",
+              "url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=75')",
           }}
         />
 
@@ -66,7 +66,7 @@ export default function WhatWeOfferPage() {
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2200&q=80')",
+              "url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=75')",
           }}
         />
 
@@ -100,6 +100,8 @@ export default function WhatWeOfferPage() {
                   <img
                     src={offering.imageSrc}
                     alt={offering.title}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
@@ -149,7 +151,7 @@ export default function WhatWeOfferPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85')",
+              "url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=75')",
           }}
         />
 

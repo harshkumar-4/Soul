@@ -18,7 +18,7 @@ const differentiators = [
     description:
       'Most Emotional Intelligence programmes stop at the workplace. Most spiritual offerings stop at the self. Most mindfulness content stops at an app notification. SoulfulI was built in the space between all three, because we do not believe those boundaries reflect how people actually experience their lives.',
     image:
-      'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '02',
@@ -26,7 +26,7 @@ const differentiators = [
     description:
       'We approach spirituality as a journey of self-discovery, meaning, and connection, not a set of rules to follow or a brand aesthetic to adopt. Our spaces for reflection, meditation, and conscious living are intentionally non-dogmatic, so that people from every belief system can engage with purpose and interconnectedness on their own terms.',
     image:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '03',
@@ -34,7 +34,7 @@ const differentiators = [
     description:
       'We do not treat mindfulness as a feature to bolt onto a workshop. It is the discipline of noticing—breath, body, emotion, moment—that runs underneath everything else we teach. Every session, retreat, and course we design carries mindfulness as its foundation, not its garnish.',
     image:
-      'https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '04',
@@ -42,7 +42,7 @@ const differentiators = [
     description:
       'Our facilitators do not teach emotional intelligence from a place of having mastered it. They teach it as people still practising it, using real chapters of real lives to illustrate each competency, so participants encounter self-awareness, empathy, and emotional agility as lived realities rather than definitions on a slide.',
     image:
-      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '05',
@@ -50,7 +50,7 @@ const differentiators = [
     description:
       "Through our collaboration with Window to Bharat, we bring India's long-standing traditions of inner balance, holistic healing, and mindful living into contemporary settings, corporate teams, college classrooms, and personal growth journeys, without diluting either the tradition or the science.",
     image:
-      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '06',
@@ -58,7 +58,7 @@ const differentiators = [
     description:
       'Yoga, meditation, emotional intelligence training, village immersion, nature connection, and reflective community—these are not separate modules bolted together. They are treated as one integrated way of being, because emotional health, spiritual grounding, and everyday living were never meant to be managed in separate compartments.',
     image:
-      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=75',
   },
   {
     number: '07',
@@ -66,7 +66,7 @@ const differentiators = [
     description:
       "We are not building a library of content to be consumed and forgotten. We are building a community that shows up for each other's growth, through the EQ Audit, through courses, through workshops, through retreats, and through the conversations that continue long after each of those ends.",
     image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=85',
+      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=75',
   },
 ];
 
