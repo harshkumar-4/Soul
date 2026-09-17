@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-container": "#5b6857",
+          "on-secondary-fixed-variant": "#3d4a3a",
+          "tertiary": "#2c0600",
+          "secondary-fixed-dim": "#bccbb6",
+          "inverse-surface": "#31302b",
+          "primary-container": "#1f2a24",
+          "surface": "#fdf9f1",
+          "primary": "#0b1510",
+          "tertiary-container": "#4f1200",
+          "surface-container-highest": "#e6e2da",
+          "primary-fixed-dim": "#bdcac1",
+          "on-primary-fixed": "#131e18",
+          "inverse-on-surface": "#f4f0e8",
+          "surface-bright": "#fdf9f1",
+          "background": "#fdf9f1",
+          "tertiary-fixed": "#ffdbd0",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "on-surface": "#1c1c17",
+          "outline-variant": "#c3c8c3",
+          "surface-container-high": "#ece8e0",
+          "secondary-container": "#d8e7d1",
+          "on-background": "#1c1c17",
+          "on-surface-variant": "#434844",
+          "on-tertiary": "#ffffff",
+          "outline": "#737874",
+          "secondary": "#556251",
+          "tertiary-fixed-dim": "#ffb59f",
+          "primary-fixed": "#d9e6dc",
+          "on-primary-fixed-variant": "#3e4943",
+          "surface-dim": "#dddad2",
+          "on-primary-container": "#859289",
+          "on-tertiary-container": "#d37559",
+          "error": "#ba1a1a",
+          "surface-variant": "#e6e2da",
+          "surface-tint": "#55615a",
+          "surface-container": "#f1ede6",
+          "on-tertiary-fixed": "#3a0a00",
+          "surface-container-low": "#f7f3eb",
+          "on-tertiary-fixed-variant": "#793019",
+          "secondary-fixed": "#d8e7d1",
+          "on-secondary-fixed": "#131e11",
+          "inverse-primary": "#bdcac1",
+          "error-container": "#ffdad6",
+          "on-secondary": "#ffffff",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "margin": "4rem",
+          "space-sm": "0.75rem",
+          "gutter": "2rem",
+          "margin-mobile": "1.5rem",
+          "space-xs": "0.375rem",
+          "space-xl": "4rem",
+          "space-lg": "2.25rem",
+          "space-md": "1.25rem"
+        },
+        "fontFamily": {
+          "display-lg-mobile": ["Newsreader"],
+          "headline-lg": ["Newsreader"],
+          "headline-md": ["Newsreader"],
+          "headline-sm": ["Newsreader"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Newsreader"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "display-lg": ["Newsreader"],
+          "body-md": ["Plus Jakarta Sans"],
+          "quote-lg": ["Newsreader"]
+        },
+        "fontSize": {
+          "display-lg-mobile": ["38px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400"}],
+          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+          "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "400"}],
+          "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+          "body-sm": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}],
+          "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+          "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+          "quote-lg": ["24px", {"lineHeight": "38px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(31,42,36,0.04)]"><div class="h-20 max-w-[1240px] mx-auto px-6 lg:px-margin flex items-center justify-between"><a class="flex items-center gap-space-xs" data-path="our-story" href="#"><span class="font-headline-md text-headline-md tracking-tight text-primary font-normal">SoulfulI</span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[1px] after:bg-tertiary-container"><a aria-current="page" class="transition-colors text-primary font-semibold relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[1px] after:bg-tertiary-container" data-path="our-story" href="#">Our Story</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="what-we-offer" href="#">What We Offer</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="what-makes-us-different" href="#">What Makes Us Different</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="join-our-community" href="#">Join Our Community</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs bg-primary-container text-surface-bright font-body-sm text-body-sm rounded-lg hover:bg-primary transition-colors duration-200" data-path="eq-audit" href="#">Take the EQ Audit</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO (DEPARTURE) -->
+<section class="relative w-full min-h-[92vh] flex items-end justify-start overflow-hidden -mt-20 pt-20">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat" data-alt="A breathtaking, cinematic panoramic vista of the Himalayan valley in Dharamshala under soft dawn light. Mountain peaks with gentle snow dusted summits recede into rolling morning mist. Sloping pine and cedar forests frame quiet stone slate houses, bathed in an earthy palette of deep forest green, soft sand, and warm ivory." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA');"></div>
+<!-- Editorial Scrim Layers -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/45 to-transparent mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/30 to-transparent"></div>
+<div class="relative z-10 w-full max-w-[1240px] mx-auto px-6 lg:px-margin pb-16 lg:pb-24 pt-32">
+<div class="max-w-3xl space-y-6">
+<div class="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-surface-bright/10 backdrop-blur-md border border-surface-bright/20">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase text-surface-bright font-medium">
+            Dharamshala, Himachal Pradesh · Seasonal Gathering
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg font-normal text-surface-bright tracking-tight leading-[1.08] max-w-2xl drop-shadow-sm">
+          Slow down without falling behind.
+        </h1>
+<p class="font-quote-lg text-quote-lg text-surface-container-high font-normal max-w-xl leading-relaxed">
+          A retreat for returning to conscious movement, grounded contemplation, and mountain silence.
+        </p>
+<div class="pt-4 flex flex-wrap items-center gap-5">
+<a class="px-8 py-4 rounded-lg bg-surface-bright text-primary font-body-sm text-body-sm font-semibold hover:bg-surface-container-high transition-colors duration-200 flex items-center gap-2 shadow-lg" href="#journey">
+<span>Explore the Experience</span>
+<span class="material-symbols-outlined text-[18px]">south</span>
+</a>
+<a class="px-6 py-4 rounded-lg text-surface-bright/90 font-body-sm text-body-sm hover:text-surface-bright underline underline-offset-8 decoration-outline-variant hover:decoration-surface-bright transition-all" href="#details">
+            Cohort Logistics &amp; Status
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE INVITATION — PROVOCATION -->
+<section class="w-full bg-surface py-24 lg:py-36">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<div class="lg:col-span-4 flex flex-col justify-start space-y-3">
+<span class="font-label-md text-label-md text-secondary tracking-[0.2em] uppercase font-semibold">The Unhurried Inquiry</span>
+<div class="w-12 h-px bg-outline-variant"></div>
+</div>
+<div class="lg:col-span-8 space-y-8">
+<h2 class="font-display-lg text-display-lg lg:text-[50px] lg:leading-[58px] text-primary italic font-normal">
+            What happens when you stop rushing?
+          </h2>
+<div class="space-y-6 max-w-2xl">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+              Most exhaustion is not physical; it is the weariness of habitual velocity. When every hour is filled with negotiation, strategy, and unmeasured intake, the quiet inner compass disappears beneath the noise of survival.
+            </p>
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+              Quiet Bloom in Dharamshala is not an evasion of life or an artificial escape. It is a deliberate interval of spaciousness designed to examine what persists when the urgency of performance is lowered. We assemble not to be entertained, but to witness ourselves with clarity.
+            </p>
+</div>
+<div class="pt-6 border-l-2 border-on-tertiary-container pl-6 space-y-2">
+<p class="font-quote-lg text-quote-lg text-primary italic font-normal">
+              “Silence is not emptiness; it is the presence of everything you have ignored.”
+            </p>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Field Note · SoulfulI Research Group</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: WHY QUIET BLOOM — VALUES -->
+<section class="w-full bg-surface-container-low py-20 lg:py-32">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin space-y-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3 max-w-xl">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.22em] uppercase">Foundational Pillars</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Seven organic themes of inquiry.</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          A living architecture of experience rather than an itinerary of tasks. Each theme grounds the daily rhythm in Himalayan stillness.
+        </p>
+</div>
+<!-- Seven thematic pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- 01 Stillness -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">01</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">self_improvement</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Stillness</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Relearning the physiological comfort of quiet rest without urgency.</p>
+</div>
+</div>
+<!-- 02 Reflection -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">02</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">auto_stories</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Reflection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Guided personal inquiry, candid journal prompts, and unhurried writing.</p>
+</div>
+</div>
+<!-- 03 Mindfulness -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">03</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">nest_eco_leaf</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Mindfulness</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sensory re-anchoring in morning mist, pine resin, and soundscapes.</p>
+</div>
+</div>
+<!-- 04 Nature -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">04</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">terrain</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Nature</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gentle walks along stone terraces under towering deodar cedar crowns.</p>
+</div>
+</div>
+<!-- 05 Connection -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">05</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">diversity_1</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Connection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Small, non-evaluative circles where masks are dropped with dignity.</p>
+</div>
+</div>
+<!-- 06 Conscious Movement -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">06</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">directions_walk</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Conscious Movement</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Unhurried somatic alignment without performance or athletic strain.</p>
+</div>
+</div>
+<!-- 07 Village Immersion -->
+<div class="p-8 rounded-lg bg-surface hover:bg-surface-container transition-colors duration-300 flex flex-col justify-between h-[230px] shadow-sm col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline tracking-wider">07</span>
+<span class="material-symbols-outlined text-secondary text-[22px]">cottage</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Village Immersion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rooted relationship with mountain customs, handmade tea, and quiet local rhythms.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: THE EXPERIENCE — IMMERSIVE VERTICAL JOURNEY -->
+<section class="w-full bg-surface py-24 lg:py-36" id="journey">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin">
+<!-- Section Masthead -->
+<div class="text-center max-w-2xl mx-auto space-y-4 mb-20">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.25em] uppercase font-semibold">The Experiential Arc</span>
+<h2 class="font-display-lg text-display-lg text-primary">From Arrival to Return</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Six intentional phases designed to unwind accumulated tension, deepen discernment, and integrate lasting clarity.
+        </p>
+</div>
+<!-- Vertical Journey Timeline -->
+<div class="relative max-w-4xl mx-auto space-y-16">
+<!-- Vertical guide line -->
+<div class="hidden md:block absolute left-8 top-12 bottom-12 w-px bg-surface-container-highest"></div>
+<!-- Stage 01 -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            01
+          </div>
+<div class="flex-1 bg-surface-container-low p-8 lg:p-10 rounded-xl space-y-4 shadow-sm">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-normal">Arrive</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Mountain Ascent</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Stepping into high-altitude mountain air. Shedding digital momentum, checking bags, and releasing the expectation of instant reaction. You are welcomed into warm tea and unmeasured quiet.
+            </p>
+<div class="pt-2 flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">wb_twilight</span>
+<span>Orientation to silence &amp; evening tea circle</span>
+</div>
+</div>
+</div>
+<!-- Stage 02 -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            02
+          </div>
+<div class="flex-1 bg-surface-container-low p-8 lg:p-10 rounded-xl space-y-4 shadow-sm">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-normal">Pause</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Physiological Downshift</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              The deliberate cessation of input. The nervous system settles as the perpetual urgency of devices gives way to the ambient drone of wind through Himalayan cedar canopies.
+            </p>
+<div class="pt-2 flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">air</span>
+<span>Morning seated breath &amp; prolonged silent intervals</span>
+</div>
+</div>
+</div>
+<!-- Stage 03 Visual Breakout Feature (Intimate Walk) -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            03
+          </div>
+<div class="flex-1 bg-surface-container-low rounded-xl overflow-hidden shadow-sm">
+<div class="p-8 lg:p-10 space-y-4">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-normal">Notice</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Sensory Wakefulness</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Walking without destination. Noticing the tactile resistance of ancient slate stones, the temperature drops within ravine shade, and the natural posture of attentive presence.
+              </p>
+</div>
+<div class="w-full h-72 overflow-hidden">
+<img alt="Intimate quiet editorial moment of an unhurried morning walk along a misty mountain path in Dharamshala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AEtjO1UDSWIxBcrKUKP7uQTtbDulHS8fC4XGqrS-Op_kmQQMzTVLn-rPBGhchDMMqLfN5a6zFTTKkcF_XPG4Qy0JbuDlrNVU-mWJ_g7Vh77axEp-u781ImoyZww9tLbZla9sDJHPQz32OdH4ISmIjf5-_WjBHcAoqqPYr0WBLzC7qEqSYdhmE8vukuhsl1H7Sp2kJsWSkJRCNXEuhESJEWmPwGlCGV5gaYj63bcmewL7fJC9Og"/>
+</div>
+</div>
+</div>
+<!-- Stage 04 -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            04
+          </div>
+<div class="flex-1 bg-surface-container-low p-8 lg:p-10 rounded-xl space-y-4 shadow-sm">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-normal">Reflect</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Candid Self-Inquiry</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Honoring the longings and emotional exhaustion hidden behind professional achievement. Structured inquiry prompts provide permission to write truth without censorship.
+            </p>
+<div class="pt-2 flex items-center gap-2 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Dedicated private inquiry journals &amp; guided self-audit</span>
+</div>
+</div>
+</div>
+<!-- Stage 05 (Contemplative Porch Atmosphere) -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            05
+          </div>
+<div class="flex-1 bg-surface-container-low rounded-xl overflow-hidden shadow-sm">
+<div class="p-8 lg:p-10 space-y-4">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-primary font-normal">Connect</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Sacred Dialogue</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Small, warm circles around hearth and veranda. Speaking without resumes or rehearsed positioning. Listening to others with wholehearted, undivided attention.
+              </p>
+</div>
+<div class="w-full h-80 bg-cover bg-center" data-alt="A tranquil, candid scene on an open mountain lodge wooden veranda overlooking misty Himalayan valleys. A contemplative woman in an earthy woolen shawl holds a hot clay cup of tea with warm steam rising softly, enjoying unscripted morning peace beside an aged wooden table." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEpxgXiFnY__uzkY_midYoadQElRZH0cd4Lh9GcsmhaGODvZ300blp9CElelB54DWBj7Eu9m8C6RTB6ZLvPN3JXzhlZEymgsu6TvdG3xiUs26Wk82dJz7P8YeAxDDHcKb22MBizuBWN0n1k-TJ75fBHCihP0jKSuFTnqZuAOZtjPsheysXgIEqCLKhN_6WHs3m2CWYHIxcWiD4i6lFfdY93txxw-TC7wMmQMy72rmoSGjhT7a3ySqWlA');"></div>
+</div>
+</div>
+<!-- Stage 06 -->
+<div class="relative flex flex-col md:flex-row items-start gap-8 group">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-surface-container-high text-primary font-headline-sm text-headline-sm flex-shrink-0 z-10 group-hover:bg-primary group-hover:text-surface-bright transition-colors duration-300">
+            06
+          </div>
+<div class="flex-1 bg-primary-container text-surface-bright p-8 lg:p-10 rounded-xl space-y-4 shadow-lg">
+<div class="flex items-baseline justify-between flex-wrap gap-2">
+<h3 class="font-headline-md text-headline-md text-surface-bright font-normal">Return</h3>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-fixed">Sovereign Presence</span>
+</div>
+<p class="font-body-md text-body-md text-surface-container-highest">
+              You do not leave the mountain behind; you anchor its spaciousness into your routine. Developing personal vows and micro-practices that safeguard attention against future burnout.
+            </p>
+<div class="pt-2 flex items-center gap-2 text-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Post-cohort integration guides &amp; monthly contemplative check-ins</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: DHARAMSHALA — THE SANCTUARY OF PLACE -->
+<section class="w-full bg-surface-container-high py-24 lg:py-36">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Village Stone Pathway Image -->
+<div class="lg:col-span-7 rounded-2xl overflow-hidden shadow-xl">
+<div class="w-full h-[480px] lg:h-[620px] bg-cover bg-center transform hover:scale-102 transition-transform duration-700" data-alt="An atmospheric rustic Himalayan village path paved with weathered grey slate stones winding through traditional wooden and stone homes. A solitary village elder walks gently in contemplation with snow-capped alpine peaks rising majestically through mist in the background, deodar pines, earthy green and charcoal tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBgvCW47FgYg4xIaHyfFJTS_aweUDtNZqL9HmQgpQcggtcXMnPq3NQOEsb_J9ARmemST-v1dMHsY4kyit923j3S5MpQDavflvceSYAI8fsSRdaz64MjHK8m8yu55iQ8zZ4Q2F6-064uyzk6_YCSV6Ob9tuwG0RWS1aycejcuXYqbfUt18IGrkE2IhEwuscGgNLkporqSj2bpHlGI_JZ2apMdzkNzFu8SfX_dVmvZrtpfvtJYq2bv6JJA');"></div>
+</div>
+<!-- Text Column -->
+<div class="lg:col-span-5 space-y-8">
+<div class="space-y-3">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-[0.2em] font-semibold">The Setting</span>
+<h2 class="font-display-lg text-display-lg text-primary leading-tight">
+              A sanctuary of cedar and stone.
+            </h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Dharamshala is not treated here as a checklist of sights, nor a vacation backdrop for photographs. It is an elevation that naturally quiets the fever of perpetual doing.
+          </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            The ancient slate footpaths have welcomed seekers, monks, and thinkers for generations. When feet step on stone that has weathered centuries of mountain winters, the urgency of temporal anxiety begins to soften.
+          </p>
+<div class="p-6 rounded-lg bg-surface space-y-3 shadow-sm">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-secondary text-[24px]">landscape</span>
+<span class="font-headline-sm text-headline-sm font-normal">Kangra Valley Geography</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Nestled beneath the Dhauladhar range, offering natural acoustic isolation, fresh glacial streams, and clean high-altitude forest air.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: WHAT TO EXPECT — HONEST EXPECTATIONS -->
+<section class="w-full bg-surface py-24 lg:py-36">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin space-y-16">
+<div class="max-w-2xl space-y-4">
+<span class="font-label-sm text-label-sm text-secondary tracking-[0.22em] uppercase font-semibold">Grounded Reality</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">What you will encounter here.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          We believe in complete transparency. Quiet Bloom is quiet, deep, and communal—free from artificial luxury or forced productivity sprints.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Mindfulness</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Daily unhurried contemplative sitting and breath awareness. No dogmatic postures or esoteric performance—simply learning to accompany your own mind in stillness.
+          </p>
+</div>
+<!-- Card 2 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Reflection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Structured silence and guided self-inquiry journaling. Space to articulate the thoughts that you never have time to complete in daily metropolitan environments.
+          </p>
+</div>
+<!-- Card 3 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">hiking</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Nature Immersion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Silent walks through deodar cedar trails and mountain paths. Engaging with flora, stone, and mist as living companions rather than scenery to photograph.
+          </p>
+</div>
+<!-- Card 4 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Fellowship</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Small, safe circles of respectful, non-evaluative dialogue. You will never be called upon to give impromptu speeches or perform emotional vulnerability on demand.
+          </p>
+</div>
+<!-- Card 5 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Inner Work</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Thoughtful explorations of emotional patterns, internal boundaries, and values realignment using the research foundations of the SoulfulI Framework.
+          </p>
+</div>
+<!-- Card 6 -->
+<div class="p-8 rounded-xl bg-surface-container-low space-y-4 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bedtime</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-normal">Rest &amp; Nourishment</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Deep, guilt-free restoration, wholesome mountain meals cooked with seasonal organic ingredients, and completely unscripted afternoons.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: RETREAT DETAILS & LOGISTICS (TRANSPARENT STATUS) -->
+<section class="w-full bg-surface-container py-24 lg:py-36" id="details">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin space-y-12">
+<!-- Integrity Notice Banner -->
+<div class="p-6 lg:p-8 rounded-xl bg-surface shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary text-[32px] flex-shrink-0">verified</span>
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider block">SoulfulI Honesty &amp; Transparency Guarantee</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We never publish speculative pricing, phantom dates, or invented schedules. The specifications below reflect current seasonal planning.</p>
+</div>
+</div>
+<div class="px-4 py-2 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm uppercase tracking-widest font-semibold flex-shrink-0">
+          Awaiting Seasonal Announcement
+        </div>
+</div>
+<!-- Specification Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Item 1 -->
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-between space-y-3 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Cohort Dates</span>
+<p class="font-headline-sm text-headline-sm text-primary font-normal">[ Dates — To be announced for upcoming seasonal cohort ]</p>
+<span class="font-body-sm text-body-sm text-outline">Notification sent to waitlist first</span>
+</div>
+<!-- Item 2 -->
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-between space-y-3 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Duration</span>
+<p class="font-headline-sm text-headline-sm text-primary font-normal">[ Duration — Estimated 5 to 7 days contemplative immersion ]</p>
+<span class="font-body-sm text-body-sm text-outline">Designed for natural biological rest</span>
+</div>
+<!-- Item 3 -->
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-between space-y-3 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Location</span>
+<p class="font-headline-sm text-headline-sm text-primary font-normal">Dharamshala, Himachal Pradesh, India</p>
+<span class="font-body-sm text-body-sm text-outline">Secluded mountain sanctuary setting</span>
+</div>
+<!-- Item 4 -->
+<div class="p-6 rounded-lg bg-surface-container-low flex flex-col justify-between space-y-3 shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Pricing Structure</span>
+<p class="font-headline-sm text-headline-sm text-primary font-normal">[ Pricing — Confirmed upon cohort opening. No undisclosed fees. ]</p>
+<span class="font-body-sm text-body-sm text-outline">All-inclusive transparency</span>
+</div>
+</div>
+<!-- Inclusions & Exclusions Accordion Style -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-6">
+<div class="p-8 rounded-xl bg-surface space-y-4 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px]">check_circle</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-normal">What is Planned to be Included</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            [ Full board with seasonal organic mountain meals, daily retreat facilitation, contemplative workshop materials, private journal folios, and local quiet ground transfers within Dharamshala — Final details will accompany cohort invitation. ]
+          </p>
+</div>
+<div class="p-8 rounded-xl bg-surface space-y-4 shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline text-[22px]">info</span>
+<h4 class="font-headline-sm text-headline-sm text-primary font-normal">What is Not Included</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            [ Long-distance air or rail transit to Gaggal/Kangra Airport or Pathankot, personal travel insurance, and discretionary personal expenditures. Guidance for comfortable travel logistics is provided to all accepted participants. ]
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINAL CTA & CLOSING CONTEMPLATION -->
+<section class="w-full bg-primary-container text-surface-bright py-28 lg:py-40 relative overflow-hidden">
+<!-- Ambient Radial Glow -->
+<div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-secondary/20 blur-3xl pointer-events-none"></div>
+<div class="max-w-[1240px] mx-auto px-6 lg:px-margin relative z-10">
+<div class="max-w-3xl mx-auto text-center space-y-8">
+<span class="font-label-md text-label-md text-secondary-fixed uppercase tracking-[0.25em] font-semibold">
+          An Invitation to Stillness
+        </span>
+<h2 class="font-display-lg text-display-lg font-normal text-surface-bright tracking-tight">
+          Step away to see clearly.
+        </h2>
+<p class="font-quote-lg text-quote-lg text-surface-container-high font-normal max-w-xl mx-auto leading-relaxed">
+          An unhurried invitation to pause the urgency of habit and rediscover what is enduring within your work and relationships.
+        </p>
+<!-- Interactive Inquiry Form Trigger -->
+<div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-10 py-5 rounded-lg bg-surface-bright text-primary font-body-sm text-body-sm font-semibold hover:bg-surface-container transition-colors duration-200 shadow-xl flex items-center justify-center gap-3" id="enquire-btn">
+<span>Enquire About Quiet Bloom</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<a class="w-full sm:w-auto px-8 py-5 rounded-lg text-surface-container-highest hover:text-surface-bright font-body-sm text-body-sm transition-colors text-center" data-path="what-we-offer" href="#">
+            Explore Our Other Offerings
+          </a>
+</div>
+<!-- Inline Form (Revealed on Enquire click) -->
+<div class="hidden text-left bg-surface text-on-surface p-8 lg:p-10 rounded-2xl max-w-xl mx-auto mt-8 shadow-2xl space-y-6" id="enquiry-card">
+<div class="space-y-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Expression of Interest</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Leave your details below to receive the formal cohort curriculum and dates before public release.
+            </p>
+</div>
+<form class="space-y-4" id="interest-form" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.classList.add('hidden');">
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-1.5">Your Full Name</label>
+<input class="w-full px-4 py-3 rounded bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="Elena Rostova" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-1.5">Email Address</label>
+<input class="w-full px-4 py-3 rounded bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest" placeholder="elena@example.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase tracking-wider text-secondary mb-1.5">What is drawing you toward quiet right now?</label>
+<textarea class="w-full px-4 py-3 rounded bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest resize-none" placeholder="A brief note on what you hope to create space for..." rows="3"></textarea>
+</div>
+<button class="w-full py-4 rounded bg-primary text-surface-bright font-body-sm text-body-sm font-semibold hover:bg-primary-container transition-colors" type="submit">
+              Submit Quiet Inquiry
+            </button>
+</form>
+<div class="hidden p-6 rounded-lg bg-surface-container-high text-center space-y-2" id="form-success">
+<span class="material-symbols-outlined text-secondary text-[32px]">favorite</span>
+<p class="font-headline-sm text-headline-sm text-primary">Thank you for pausing with us.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We have received your contemplation. When dates and reservations open for Dharamshala, you will be personally notified.</p>
+</div>
+</div>
+<!-- Closing Quote Block -->
+<div class="pt-16 max-w-lg mx-auto border-t border-surface-bright/15">
+<p class="font-display-lg text-display-lg-mobile text-surface-container-high italic font-normal tracking-wide">
+            “The retreat ends. The blooming continues.”
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Client-side Micro-Interaction Script -->
+<script>
+    (function() {
+      var btn = document.getElementById('enquire-btn');
+      var card = document.getElementById('enquiry-card');
+      if (btn && card) {
+        btn.addEventListener('click', function() {
+          var isHidden = card.classList.contains('hidden');
+          if (isHidden) {
+            card.classList.remove('hidden');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            btn.innerHTML = '<span>Close Inquiry Form</span><span class="material-symbols-outlined text-[18px]">close</span>';
+          } else {
+            card.classList.add('hidden');
+            btn.innerHTML = '<span>Enquire About Quiet Bloom</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-primary-container text-surface-bright pt-space-xl pb-space-lg"><div class="max-w-[1240px] mx-auto px-6 lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg mb-space-xl"><div class="md:col-span-6 flex flex-col justify-between pr-0 md:pr-space-md"><div class="space-y-space-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-surface-bright font-normal block">SoulfulI</span><p class="font-quote-lg text-quote-lg text-surface-container-high italic max-w-md">Understand yourself. Connect more deeply. Live with intention.</p></div><div class="pt-space-md"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container">A publication &amp; inquiry platform</p></div></div><div class="md:col-span-3 space-y-space-sm"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-highest">Inquiry &amp; Practices</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="our-story" href="#">Our Story</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="what-we-offer" href="#">What We Offer</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="what-makes-us-different" href="#">What Makes Us Different</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="eq-audit" href="#">Take the EQ Audit</a></li></ul></div><div class="md:col-span-3 space-y-space-sm"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-highest">Fellowship</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="join-our-community" href="#">Join Our Community</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Reflective Dispatches</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Terms of Presence</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Quiet Privacy</a></li></ul></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-primary-container font-body-sm text-body-sm"><span>© SoulfulI. All quiet rights reserved.</span><span>Printed and bound digitally in contemplation.</span></div></div></footer></body></html>

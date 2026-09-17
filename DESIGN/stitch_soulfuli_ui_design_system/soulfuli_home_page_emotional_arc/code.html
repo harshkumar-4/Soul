@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+<html class="h-full scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,300..500,0,0" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "ivory": "#FDFBF7",
+            "sand": "#F5EFE6",
+            "sand-light": "#F9F6F0",
+            "forest": "#1F2A24",
+            "sage": "#7D8B78",
+            "terracotta": "#C86D51",
+            "charcoal": "#222423",
+            "primary": "#1F2A24",
+            "surface-container": "#F1EDE6",
+            "surface-container-high": "#ECE8E0",
+            "on-surface": "#222423",
+            "on-surface-variant": "#585D58",
+            "outline-variant": "#D5CEBF",
+          },
+          fontFamily: {
+            serif: ["Newsreader", "serif"],
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+          },
+          spacing: {
+            "space-xs": "0.375rem",
+            "space-sm": "0.75rem",
+            "space-md": "1.25rem",
+            "space-lg": "2.25rem",
+            "space-xl": "4.5rem",
+            "gutter": "2rem",
+            "margin": "4rem",
+            "margin-mobile": "1.5rem",
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-[#FDFBF7] font-sans text-charcoal antialiased selection:bg-[#7D8B78]/20 selection:text-forest">
+<!-- ========================================== -->
+<!-- NAVIGATION                                 -->
+<!-- ========================================== -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#EBE4D8] transition-all duration-300">
+<div class="h-20 max-w-[1240px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-8">
+<div class="flex items-center gap-12">
+<a class="group inline-flex items-baseline focus:outline-none" data-path="our-story" href="#">
+<span class="font-serif text-[28px] tracking-tight text-forest font-normal group-hover:text-sage transition-colors">SoulfulI</span>
+</a>
+<nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium tracking-normal text-charcoal/70">
+<a class="hover:text-forest transition-colors" data-path="our-story" href="#">Our Story</a>
+<a class="hover:text-forest transition-colors" data-path="what-we-offer" href="#">What We Offer</a>
+<a class="hover:text-forest transition-colors" data-path="what-makes-us-different" href="#">What Makes Us Different</a>
+<a class="hover:text-forest transition-colors" data-path="join-our-community" href="#">Join Our Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-5">
+<!-- Instance 1 of 3: Navigation CTA -->
+<a class="inline-flex items-center justify-center bg-forest text-[#FDFBF7] px-6 py-2.5 rounded-full text-[13px] font-medium tracking-wide hover:bg-forest/90 transition-all shadow-sm" data-path="take-the-eq-audit" href="#">
+          Take the EQ Audit
+        </a>
+<div class="w-8 h-8 rounded-full border border-forest/20 flex items-center justify-center text-forest hover:border-forest transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[17px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-20">
+<!-- =================================================== -->
+<!-- STAGE 1: NOISE (SECTION 1 · HERO)                   -->
+<!-- Tone: Warm Ivory (#FDFBF7) / Soft paper light       -->
+<!-- =================================================== -->
+<section class="relative w-full overflow-hidden bg-[#FDFBF7] pt-16 lg:pt-24 pb-28">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left: Editorial Content with Vast Negative Space -->
+<div class="lg:col-span-7 flex flex-col items-start z-10">
+<span class="inline-flex items-center gap-2 text-[12px] font-medium tracking-[0.2em] uppercase text-sage bg-[#F5EFE6] px-3.5 py-1.5 rounded-full mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-sage"></span>
+              An Invitation to Return
+            </span>
+<h1 class="font-serif text-[42px] sm:text-[54px] lg:text-[62px] leading-[1.08] tracking-tight text-forest font-normal mb-4 text-balance">
+              We turned self-improvement into a checklist.
+            </h1>
+<p class="font-serif italic font-light text-[26px] sm:text-[32px] text-terracotta leading-snug mb-8">
+              Maybe that’s why it rarely lasts.
+            </p>
+<p class="text-[17px] text-charcoal/80 leading-relaxed max-w-[560px] mb-10 font-normal">
+              SoulfulI brings emotional intelligence, mindfulness and spirituality together — helping you understand yourself, connect more deeply, and live with intention.
+            </p>
+<!-- CTA Group (Primary pill + subtle text link) -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7 w-full sm:w-auto">
+<a class="inline-flex items-center justify-center bg-forest text-[#FDFBF7] px-8 py-3.5 rounded-full text-[14px] font-medium tracking-wide hover:bg-forest/90 transition-all shadow-sm" data-path="what-we-offer" href="#">
+                Explore Your Inner Compass
+              </a>
+<a class="inline-flex items-center gap-2 text-[14px] font-medium text-forest hover:text-terracotta transition-colors group" data-path="take-the-eq-audit" href="#">
+<span>Take the EQ Audit</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Gentle sequence prompt -->
+<div class="mt-16 flex items-center gap-2.5 text-sage/70">
+<span class="text-[11px] font-medium tracking-[0.2em] uppercase">The Sequence</span>
+<span class="w-8 h-px bg-sage/30"></span>
+<span class="material-symbols-outlined text-[18px] animate-pulse">keyboard_arrow_down</span>
+</div>
+</div>
+<!-- Right: Tactile Contemplative Human Moment (IMAGE_4) -->
+<div class="lg:col-span-5 relative">
+<div class="relative mx-auto max-w-[460px] lg:max-w-none">
+<div class="relative overflow-hidden rounded-2xl bg-[#F5EFE6] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#EBE4D8]">
+<img alt="Thoughtful candid moment journaling in gentle morning light" class="w-full h-[460px] lg:h-[540px] object-cover filter contrast-[1.02] saturate-[0.95]" src="https://lh3.googleusercontent.com/aida/AEtjO1U1LVJyzf9uQnVKwrKStOauiCUlLsNiHkeur3DqNEIh4wjRlzVdLxmhuWBfoJdMWIbUn_ccz974LPOyhFSRJ381URdgC6e5qkb2W2iqjSIAner4K_YJa8GwVPTeTjV7A6YyrpQHZkJmhrZPZukRl81-9Y8Ch8T-mnAlaEWjD_fistU9IKjUEuDhISySn6FE8k_01lBK8OvZ73iXGgGFf5SHHLokYe9YJ_VDIwVm3j9utyWzhnBaqpm0A-eb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-forest/20 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Floating subtle tactile citation -->
+<div class="absolute -bottom-5 right-6 bg-[#FDFBF7]/95 backdrop-blur-md px-4 py-2.5 rounded-xl border border-[#EBE4D8] shadow-sm flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-terracotta"></span>
+<span class="font-serif italic text-[13px] text-forest">A quiet pause before the noise.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 2: NOISE → PAUSE (SECTION 2 · THE PROBLEM)    -->
+<!-- Transitioning from checklist fatigue to 5-node flow -->
+<!-- =================================================== -->
+<section class="w-full py-24 bg-[#F9F6F0] border-y border-[#EBE4D8]/70">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-[760px] mx-auto text-center mb-16">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-3">Noise to Pause</span>
+<h2 class="font-serif text-[34px] sm:text-[44px] text-forest font-normal tracking-tight text-balance">
+            What if growth isn’t another thing to do?
+          </h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch max-w-[1100px] mx-auto">
+<!-- Left: Checklist Fatigue -->
+<div class="lg:col-span-5 bg-[#FDFBF7] p-8 sm:p-10 rounded-2xl border border-[#EBE4D8] flex flex-col justify-between shadow-sm">
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-charcoal/50">The Transaction</span>
+<span class="text-[12px] font-serif italic text-terracotta">Exhaustion</span>
+</div>
+<p class="text-[14px] text-charcoal/70 mt-6 mb-6 leading-relaxed">
+                When inner life becomes an administrative quota, clarity dissolves into performance fatigue.
+              </p>
+<ul class="space-y-3.5">
+<li class="flex items-center justify-between p-3 rounded-lg bg-[#F5EFE6]/60 text-[14px] text-charcoal/50 line-through">
+<span>Meditate 20 mins</span>
+<span class="material-symbols-outlined text-[16px] text-sage">check</span>
+</li>
+<li class="flex items-center justify-between p-3 rounded-lg bg-[#F5EFE6]/60 text-[14px] text-charcoal/50 line-through">
+<span>Journal thoughts</span>
+<span class="material-symbols-outlined text-[16px] text-sage">check</span>
+</li>
+<li class="flex items-center justify-between p-3 rounded-lg bg-[#F5EFE6]/60 text-[14px] text-charcoal/50 line-through">
+<span>Read 10 pages</span>
+<span class="material-symbols-outlined text-[16px] text-sage">check</span>
+</li>
+<li class="flex items-center justify-between p-3 rounded-lg bg-[#F5EFE6]/60 text-[14px] text-charcoal/50 line-through">
+<span>Attend workshop</span>
+<span class="material-symbols-outlined text-[16px] text-sage">check</span>
+</li>
+</ul>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[12px] font-medium tracking-wide uppercase text-terracotta">Outcome: Checked boxes, depleted spirit</span>
+</div>
+</div>
+<!-- Right: Dissolving Into 5-Node Journey Step -->
+<div class="lg:col-span-7 bg-[#F5EFE6] p-8 sm:p-10 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between relative overflow-hidden shadow-sm">
+<div>
+<div class="flex items-center justify-between pb-6 border-b border-[#DFD7C7]">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage">The Shift</span>
+<span class="text-[12px] font-serif italic text-forest">Organic Cadence</span>
+</div>
+<p class="font-serif italic text-[20px] sm:text-[23px] text-forest font-light leading-relaxed mt-6 mb-10">
+                “The unhurried cadence of returning home to yourself.”
+              </p>
+<!-- Connected 5-Node Journey Step Component -->
+<div class="relative pt-4 pb-2">
+<!-- Connecting continuous track line -->
+<div class="hidden sm:block absolute top-[22px] left-6 right-6 h-[1.5px] bg-[#DFD7C7]"></div>
+<div class="grid grid-cols-1 sm:grid-cols-5 gap-4 relative z-10">
+<div class="flex flex-col sm:items-center text-left sm:text-center group">
+<div class="w-11 h-11 rounded-full bg-[#FDFBF7] border border-sage/40 flex items-center justify-center text-sage font-medium text-[13px] shadow-sm mb-2.5">01</div>
+<span class="font-serif text-[17px] text-forest font-medium">Pause</span>
+<span class="text-[12px] text-charcoal/60 mt-0.5">Still the breath</span>
+</div>
+<div class="flex flex-col sm:items-center text-left sm:text-center group">
+<div class="w-11 h-11 rounded-full bg-[#FDFBF7] border border-sage/40 flex items-center justify-center text-sage font-medium text-[13px] shadow-sm mb-2.5">02</div>
+<span class="font-serif text-[17px] text-forest font-medium">Notice</span>
+<span class="text-[12px] text-charcoal/60 mt-0.5">Observe sensation</span>
+</div>
+<div class="flex flex-col sm:items-center text-left sm:text-center group">
+<div class="w-11 h-11 rounded-full bg-[#FDFBF7] border border-terracotta/40 flex items-center justify-center text-terracotta font-medium text-[13px] shadow-sm mb-2.5">03</div>
+<span class="font-serif text-[17px] text-forest font-medium">Understand</span>
+<span class="text-[12px] text-charcoal/60 mt-0.5">Decode origin</span>
+</div>
+<div class="flex flex-col sm:items-center text-left sm:text-center group">
+<div class="w-11 h-11 rounded-full bg-[#FDFBF7] border border-sage/40 flex items-center justify-center text-sage font-medium text-[13px] shadow-sm mb-2.5">04</div>
+<span class="font-serif text-[17px] text-forest font-medium">Choose</span>
+<span class="text-[12px] text-charcoal/60 mt-0.5">Align response</span>
+</div>
+<div class="flex flex-col sm:items-center text-left sm:text-center group">
+<div class="w-11 h-11 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center font-medium text-[13px] shadow-sm mb-2.5">05</div>
+<span class="font-serif text-[17px] text-forest font-medium">Connect</span>
+<span class="text-[12px] text-charcoal/60 mt-0.5">Extend warmth</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-4 border-t border-[#DFD7C7] flex items-center justify-between">
+<span class="text-[12px] font-medium tracking-wide uppercase text-sage">Outcome: Enduring self-sovereignty</span>
+<span class="text-[12px] font-serif italic text-forest/80">Living vs. performing</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 3: AWARENESS (SECTION 3 · PHILOSOPHY)         -->
+<!-- Tone: Soft Sand (#F5EFE6) / Generous Whitespace     -->
+<!-- Three Organic Overlapping Blobs (Not corporate)     -->
+<!-- =================================================== -->
+<section class="w-full py-28 lg:py-36 bg-[#F5EFE6] relative overflow-hidden">
+<!-- Organic soft ambient background fluid blobs -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-[#7D8B78]/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#C86D51]/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-[760px] mx-auto text-center mb-20">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-3">The Triad of Being</span>
+<h2 class="font-serif text-[42px] sm:text-[52px] text-forest font-normal tracking-tight mb-5">
+            Mind. Heart. Spirit.
+          </h2>
+<p class="text-[17px] text-charcoal/75 leading-relaxed font-normal max-w-[620px] mx-auto">
+            Intellect without emotional warmth creates cold calculation. Mindfulness without grounded purpose creates passive comfort. Meaning without self-awareness drifts into abstraction.
+          </p>
+</div>
+<!-- 3 Organic Overlapping Fluid Cards -->
+<div class="relative max-w-[1040px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+<!-- MIND -->
+<div class="group relative bg-[#FDFBF7]/90 backdrop-blur-sm p-8 sm:p-10 rounded-[32px] border border-[#EBE4D8] shadow-sm hover:shadow-md transition-all duration-300">
+<div class="w-14 h-14 rounded-[20px] bg-[#7D8B78]/15 text-forest flex items-center justify-center mb-8 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">psychology</span>
+</div>
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage block mb-2">Pillar One</span>
+<h3 class="font-serif text-[28px] text-forest mb-2">MIND</h3>
+<p class="text-[14px] font-medium text-terracotta mb-4">Emotional Intelligence</p>
+<p class="text-[14px] text-charcoal/75 leading-relaxed">
+                Self-awareness, emotional regulation, cognitive agility, and lucid discernment in moments of tension and ambiguity.
+              </p>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]/80">
+<span class="text-[11px] font-medium uppercase tracking-widest text-charcoal/50">Discernment &amp; Clarity</span>
+</div>
+</div>
+<!-- HEART (Raised slightly for organic rhythm) -->
+<div class="group relative bg-[#FAF6EE] backdrop-blur-sm p-8 sm:p-10 rounded-[36px] border border-[#DFD7C7] shadow-md hover:shadow-lg transition-all duration-300 md:-translate-y-4">
+<div class="w-14 h-14 rounded-[20px] bg-[#C86D51]/15 text-terracotta flex items-center justify-center mb-8 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">favorite</span>
+</div>
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-terracotta block mb-2">Pillar Two</span>
+<h3 class="font-serif text-[28px] text-forest mb-2">HEART</h3>
+<p class="text-[14px] font-medium text-sage mb-4">Mindfulness</p>
+<p class="text-[14px] text-charcoal/75 leading-relaxed">
+                Radical somatic presence, non-judgmental empathy, compassionate boundaries, and unconditional spacious acceptance.
+              </p>
+<div class="mt-8 pt-4 border-t border-[#DFD7C7]">
+<span class="text-[11px] font-medium uppercase tracking-widest text-charcoal/50">Compassion &amp; Stillness</span>
+</div>
+</div>
+<!-- SPIRIT -->
+<div class="group relative bg-[#FDFBF7]/90 backdrop-blur-sm p-8 sm:p-10 rounded-[32px] border border-[#EBE4D8] shadow-sm hover:shadow-md transition-all duration-300">
+<div class="w-14 h-14 rounded-[20px] bg-forest/10 text-forest flex items-center justify-center mb-8 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">spa</span>
+</div>
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage block mb-2">Pillar Three</span>
+<h3 class="font-serif text-[28px] text-forest mb-2">SPIRIT</h3>
+<p class="text-[14px] font-medium text-terracotta mb-4">Meaning</p>
+<p class="text-[14px] text-charcoal/75 leading-relaxed">
+                Transcendent purpose, deep relational connection, ecological reverence, and grounded alignment with the wider cosmos.
+              </p>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]/80">
+<span class="text-[11px] font-medium uppercase tracking-widest text-charcoal/50">Reverence &amp; Telos</span>
+</div>
+</div>
+</div>
+<!-- Center Convergence Anchor -->
+<div class="mt-14 text-center">
+<div class="inline-flex items-center gap-3 bg-forest text-[#FDFBF7] px-8 py-3.5 rounded-full shadow-md">
+<span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+<span class="font-serif italic text-[18px] tracking-normal">A more whole you.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 4: UNDERSTANDING → DIRECTION                  -->
+<!-- SECTION 4 · JOURNEY PATHWAYS                        -->
+<!-- Asymmetric grid with 4 Cards (Card 01 dominant)     -->
+<!-- =================================================== -->
+<section class="w-full py-24 bg-[#F9F6F0]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="max-w-xl">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-3">Intentional Gateways</span>
+<h2 class="font-serif text-[36px] sm:text-[46px] text-forest font-normal tracking-tight">
+              Where are you on your journey?
+            </h2>
+</div>
+<p class="text-[15px] text-charcoal/70 max-w-sm leading-relaxed">
+            Four intentional pathways crafted to meet you where you stand — from quiet personal inquiry to communal evolution.
+          </p>
+</div>
+<!-- Asymmetric 4-Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+<!-- Card 01 (Anchor dominant: 4 cols, richer treatment) -->
+<!-- Instance 2 of 3: "Take the EQ Audit" -->
+<div class="md:col-span-6 lg:col-span-4 bg-[#FDFBF7] p-8 sm:p-9 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:border-sage transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage">01 — Know Yourself</span>
+<span class="w-2 h-2 rounded-full bg-terracotta"></span>
+</div>
+<h3 class="font-serif text-[28px] text-forest mb-3">EQ Audit</h3>
+<p class="text-[15px] text-charcoal/80 leading-relaxed mb-6">
+                48 questions. 6 dimensions. One clearer picture of yourself.
+              </p>
+</div>
+<div class="pt-6 border-t border-[#EBE4D8]">
+<a class="inline-flex items-center gap-2 text-[14px] font-semibold text-forest group-hover:text-terracotta transition-colors" data-path="take-the-eq-audit" href="#">
+<span>Take the EQ Audit</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 02 (Grow Yourself - Inner Compass) -->
+<div class="md:col-span-6 lg:col-span-4 bg-[#FDFBF7] p-8 sm:p-9 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:border-sage transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage">02 — Grow Yourself</span>
+</div>
+<h3 class="font-serif text-[28px] text-forest mb-3">Inner Compass</h3>
+<p class="text-[14px] text-charcoal/75 leading-relaxed mb-6">
+                Know Yourself · Choose Yourself · See Others · Read the Room · Speak with Intention.
+              </p>
+</div>
+<div class="pt-6 border-t border-[#EBE4D8]">
+<a class="inline-flex items-center gap-2 text-[14px] font-semibold text-forest group-hover:text-sage transition-colors" data-path="what-we-offer" href="#">
+<span>Explore Inner Compass</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 03 (Grow Together - Schools / Organisations) -->
+<div class="md:col-span-6 lg:col-span-4 bg-[#FDFBF7] p-8 sm:p-9 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:border-sage transition-all group">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage">03 — Grow Together</span>
+</div>
+<h3 class="font-serif text-[28px] text-forest mb-3">Organizations</h3>
+<p class="text-[14px] text-charcoal/75 leading-relaxed mb-6">
+                Bring emotional intelligence and human development into communities, campuses, and workplaces.
+              </p>
+</div>
+<div class="pt-6 border-t border-[#EBE4D8]">
+<a class="inline-flex items-center gap-2 text-[14px] font-semibold text-forest group-hover:text-sage transition-colors" data-path="what-we-offer" href="#">
+<span>Explore Programs</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 04 (Step Away to See Clearly - Quiet Bloom: Spans full width on tablet/desktop bottom or 12-col) -->
+<div class="md:col-span-12 lg:col-span-12 bg-gradient-to-r from-[#F5EFE6] to-[#FDFBF7] p-8 sm:p-9 rounded-2xl border border-[#DFD7C7] flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-sm hover:border-terracotta transition-all group">
+<div class="max-w-2xl">
+<span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-terracotta block mb-2">04 — Step Away to See Clearly</span>
+<h3 class="font-serif text-[28px] text-forest mb-2">Quiet Bloom Retreat</h3>
+<p class="text-[14px] text-charcoal/75 leading-relaxed">
+                A retreat experience in Dharamshala centered around reflection, mindfulness and conscious living. Slow down without falling behind.
+              </p>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center gap-2 text-[14px] font-semibold text-forest group-hover:text-terracotta transition-colors" data-path="what-we-offer" href="#">
+<span>Explore Quiet Bloom</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 4: UNDERSTANDING                              -->
+<!-- SECTION 5 · EQ AUDIT (DEEP DIVE)                    -->
+<!-- Constellation Inner Map SVG (Sacred Astrolabe)      -->
+<!-- Instance 3 of 3: "Take the EQ Audit"                -->
+<!-- =================================================== -->
+<section class="w-full py-28 bg-[#FDFBF7] border-t border-[#EBE4D8]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Left Text & 6 Dimensions -->
+<div class="lg:col-span-6 space-y-6">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block">The Inner Map</span>
+<h2 class="font-serif text-[38px] sm:text-[48px] text-forest font-normal tracking-tight">
+              A mirror, not a verdict.
+            </h2>
+<p class="font-serif italic text-[20px] text-terracotta leading-snug">
+              48 questions. 6 dimensions. One clearer picture of yourself.
+            </p>
+<p class="text-[15px] text-charcoal/75 leading-relaxed">
+              Unlike clinical assessments that categorize you into static boxes, the Inner Map reveals where emotional energy currently pools, where reflexive tension originates, and where quiet resilience is already flourishing.
+            </p>
+<!-- 6 Dimensions Grid -->
+<div class="grid grid-cols-2 gap-3.5 pt-3">
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">1</span>
+<span class="text-[13px] font-medium text-forest">Emotional Awareness</span>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">2</span>
+<span class="text-[13px] font-medium text-forest">Emotional Regulation</span>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">3</span>
+<span class="text-[13px] font-medium text-forest">Pattern Recognition</span>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">4</span>
+<span class="text-[13px] font-medium text-forest">Empathy</span>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">5</span>
+<span class="text-[13px] font-medium text-forest">Social Intelligence</span>
+</div>
+<div class="p-3.5 rounded-xl bg-[#F5EFE6] border border-[#EBE4D8]/60 flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-forest text-[#FDFBF7] flex items-center justify-center text-[11px] font-medium">6</span>
+<span class="text-[13px] font-medium text-forest">Intentional Communication</span>
+</div>
+</div>
+<!-- Instance 3 of 3 (Final instance across the page) -->
+<div class="pt-4">
+<a class="inline-flex items-center justify-center bg-forest text-[#FDFBF7] px-8 py-3.5 rounded-full text-[14px] font-medium tracking-wide hover:bg-forest/90 transition-all shadow-sm" data-path="take-the-eq-audit" href="#">
+                Take the EQ Audit
+              </a>
+</div>
+</div>
+<!-- Right: Abstract Constellation Astrolabe Visualization -->
+<div class="lg:col-span-6 flex items-center justify-center">
+<div class="w-full max-w-[480px] aspect-square bg-[#FAF6EE] p-8 rounded-[36px] border border-[#DFD7C7] shadow-sm relative flex items-center justify-center">
+<!-- Subtle decorative rotating background astrolabe dial -->
+<svg class="w-full h-full max-w-[400px] max-h-[400px]" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Concentric Sacred Rings -->
+<circle cx="200" cy="200" r="170" stroke="#DFD7C7" stroke-dasharray="2 4" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="135" stroke="#DFD7C7" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="95" stroke="#DFD7C7" stroke-dasharray="3 3" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="50" stroke="#DFD7C7" stroke-width="1"></circle>
+<!-- 6 Major Radiating Harmonic Axes -->
+<line stroke="#DFD7C7" stroke-width="1" x1="200" x2="200" y1="30" y2="370"></line>
+<line stroke="#DFD7C7" stroke-width="1" x1="52.8" x2="347.2" y1="115" y2="285"></line>
+<line stroke="#DFD7C7" stroke-width="1" x1="52.8" x2="347.2" y1="285" y2="115"></line>
+<!-- Golden/Terracotta Harmonic Star Polygon -->
+<polygon fill="#C86D51" fill-opacity="0.12" points="200,60 320,135 285,275 200,325 85,255 105,125" stroke="#C86D51" stroke-linejoin="round" stroke-width="1.8"></polygon>
+<!-- Delicate Constellation Inter-links -->
+<line stroke="#7D8B78" stroke-dasharray="2 2" stroke-opacity="0.7" stroke-width="1" x1="200" x2="285" y1="60" y2="275"></line>
+<line stroke="#7D8B78" stroke-dasharray="2 2" stroke-opacity="0.7" stroke-width="1" x1="320" x2="85" y1="135" y2="255"></line>
+<line stroke="#7D8B78" stroke-dasharray="2 2" stroke-opacity="0.7" stroke-width="1" x1="105" x2="200" y1="125" y2="325"></line>
+<!-- Luminous Constellation Nodes -->
+<!-- 01 Awareness -->
+<circle cx="200" cy="60" fill="#1F2A24" r="5"></circle>
+<circle cx="200" cy="60" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- 02 Regulation -->
+<circle cx="320" cy="135" fill="#1F2A24" r="5"></circle>
+<circle cx="320" cy="135" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- 03 Pattern -->
+<circle cx="285" cy="275" fill="#1F2A24" r="5"></circle>
+<circle cx="285" cy="275" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- 04 Empathy -->
+<circle cx="200" cy="325" fill="#1F2A24" r="5"></circle>
+<circle cx="200" cy="325" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- 05 Social EQ -->
+<circle cx="85" cy="255" fill="#1F2A24" r="5"></circle>
+<circle cx="85" cy="255" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- 06 Communication -->
+<circle cx="105" cy="125" fill="#1F2A24" r="5"></circle>
+<circle cx="105" cy="125" r="9" stroke="#C86D51" stroke-opacity="0.7" stroke-width="1"></circle>
+<!-- Central Fulcrum -->
+<circle cx="200" cy="200" fill="#7D8B78" r="3.5"></circle>
+<!-- Node Labels -->
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="middle" x="200" y="22">01 Awareness</text>
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="start" x="335" y="132">02 Regulation</text>
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="start" x="300" y="295">03 Pattern</text>
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="middle" x="200" y="360">04 Empathy</text>
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="end" x="70" y="275">05 Social</text>
+<text class="text-[10px] font-sans font-semibold fill-forest tracking-wider uppercase" text-anchor="end" x="90" y="115">06 Intention</text>
+</svg>
+<!-- Subtle bottom badge -->
+<div class="absolute bottom-5 inset-x-0 flex justify-center pointer-events-none">
+<span class="bg-[#FDFBF7]/90 backdrop-blur-sm px-4 py-1 rounded-full text-[11px] font-medium tracking-[0.15em] uppercase text-forest/70 border border-[#DFD7C7]">
+                  Constellation Mapping
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 5: DIRECTION                                  -->
+<!-- SECTION 6 · INNER COMPASS (DEEP DIVE)               -->
+<!-- Horizontal Flow Across Desktop                      -->
+<!-- =================================================== -->
+<section class="w-full py-28 bg-[#F5EFE6] border-t border-[#DFD7C7]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+<div>
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-3">The Five Practices</span>
+<h2 class="font-serif text-[36px] sm:text-[46px] text-forest font-normal tracking-tight">
+              Know yourself. Choose yourself. Connect better.
+            </h2>
+</div>
+<div class="shrink-0">
+<a class="inline-flex items-center gap-2 bg-forest text-[#FDFBF7] px-7 py-3 rounded-full text-[14px] font-medium tracking-wide hover:bg-forest/90 transition-all shadow-sm" data-path="what-we-offer" href="#">
+<span>Explore Inner Compass</span>
+<span class="material-symbols-outlined text-[17px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Five Horizontal Cards Across Desktop -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<!-- 01 Know Yourself -->
+<div class="bg-[#FDFBF7] p-6 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-300">
+<div>
+<span class="font-serif italic text-[18px] text-sage block mb-4">01</span>
+<h3 class="font-serif text-[20px] text-forest mb-2">Know Yourself</h3>
+<p class="text-[13px] text-charcoal/70 leading-relaxed">
+                Deep inventory of instinct and trigger. Uncovering the subterranean scripts running beneath daily reaction.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-widest text-terracotta">Grounding</span>
+</div>
+</div>
+<!-- 02 Choose Yourself -->
+<div class="bg-[#FDFBF7] p-6 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-300">
+<div>
+<span class="font-serif italic text-[18px] text-sage block mb-4">02</span>
+<h3 class="font-serif text-[20px] text-forest mb-2">Choose Yourself</h3>
+<p class="text-[13px] text-charcoal/70 leading-relaxed">
+                The conscious pause before reflexive conditioning. Claiming agency and deliberate sovereignty over response.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-widest text-sage">Agency</span>
+</div>
+</div>
+<!-- 03 See Others -->
+<div class="bg-[#FDFBF7] p-6 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-300">
+<div>
+<span class="font-serif italic text-[18px] text-sage block mb-4">03</span>
+<h3 class="font-serif text-[20px] text-forest mb-2">See Others</h3>
+<p class="text-[13px] text-charcoal/70 leading-relaxed">
+                Empathy unburdened by anxious projection. Perceiving fellow humans with unobstructed, generous clarity.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-widest text-terracotta">Empathy</span>
+</div>
+</div>
+<!-- 04 Read the Room -->
+<div class="bg-[#FDFBF7] p-6 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-300">
+<div>
+<span class="font-serif italic text-[18px] text-sage block mb-4">04</span>
+<h3 class="font-serif text-[20px] text-forest mb-2">Read the Room</h3>
+<p class="text-[13px] text-charcoal/70 leading-relaxed">
+                Intuitive social attunement. Detecting subtle currents of collective feeling long before words are exchanged.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-widest text-sage">Attunement</span>
+</div>
+</div>
+<!-- 05 Speak with Intention -->
+<div class="bg-[#FDFBF7] p-6 rounded-2xl border border-[#DFD7C7] flex flex-col justify-between shadow-sm hover:-translate-y-1 transition-transform duration-300">
+<div>
+<span class="font-serif italic text-[18px] text-sage block mb-4">05</span>
+<h3 class="font-serif text-[20px] text-forest mb-2">Speak Intention</h3>
+<p class="text-[13px] text-charcoal/70 leading-relaxed">
+                Words crafted to illuminate rather than defend. Clean, resonant, and compassionate conversational presence.
+              </p>
+</div>
+<div class="mt-8 pt-4 border-t border-[#EBE4D8]">
+<span class="text-[11px] font-semibold uppercase tracking-widest text-terracotta">Alignment</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 5 → 6: DIRECTION → CONNECTION                 -->
+<!-- SECTION 7 · QUIET BLOOM (DEEP DIVE)                 -->
+<!-- Immersive Himalayan Landscape (IMAGE_5)             -->
+<!-- =================================================== -->
+<section class="w-full py-20 bg-[#FDFBF7]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="relative rounded-3xl overflow-hidden shadow-xl bg-forest">
+<!-- Full-bleed Image Container (IMAGE_5) -->
+<div class="relative min-h-[560px] lg:min-h-[640px] w-full flex items-end">
+<img alt="Serene Himalayan mountain landscape in Dharamshala with morning mist and pines" class="absolute inset-0 w-full h-full object-cover filter contrast-[1.05]" src="https://lh3.googleusercontent.com/aida/AEtjO1Xw2HUFcf6BVrCFkFx9RYw-orsCfP-ASEFDZ_59xMEmhMdT-Quy4jSYVcuEAXoMXtLX857YTDmnxG9OxjUz1A28bocTFiJ3RDlobiRAUboxuLhm4kXMJeHZHOTKq47jBrWcQGj6eiD0rU_Iwhpjrr125a_YxvySw-gPX2EoAu8dng_gRxfBO0Zg1VmeXleF4gXl3iiNh3KpLjfzQ_D5UUp2-nAQmz1ztIpByXGmmgA7DY9DCHK835UTRWBm"/>
+<!-- Cinematic Dark & Warm Vignette Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/40 to-transparent"></div>
+<div class="relative z-10 p-8 sm:p-12 lg:p-16 max-w-2xl text-[#FDFBF7]">
+<!-- Location pill -->
+<div class="inline-flex items-center gap-2 bg-[#FDFBF7]/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[#FDFBF7] text-[12px] font-medium tracking-wider uppercase mb-6">
+<span class="material-symbols-outlined text-[16px] text-terracotta">location_on</span>
+<span>Dharamshala, Himachal Pradesh</span>
+</div>
+<!-- Headline -->
+<h2 class="font-serif text-[38px] sm:text-[50px] font-normal leading-[1.1] mb-4 text-[#FDFBF7]">
+                Slow down without falling behind.
+              </h2>
+<!-- Copy -->
+<p class="text-[16px] sm:text-[18px] text-[#FDFBF7]/85 font-normal leading-relaxed mb-8">
+                A retreat for returning to conscious movement. Immersed in cedar pine air and ancient mountain silence, unlearn hurry and rediscover what is essential.
+              </p>
+<!-- CTA -->
+<div>
+<a class="inline-flex items-center justify-center bg-[#FDFBF7] text-forest px-8 py-3.5 rounded-full text-[14px] font-semibold hover:bg-[#F5EFE6] transition-colors shadow-md" data-path="what-we-offer" href="#">
+                  Explore Quiet Bloom
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 6: CONNECTION                                 -->
+<!-- SECTION 8 · WHY SOULFULI (THE CONVICTIONS)          -->
+<!-- Editorial Print Manifesto Page                      -->
+<!-- =================================================== -->
+<section class="w-full py-28 lg:py-36 bg-[#F5EFE6] border-t border-[#DFD7C7]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-[840px] mx-auto text-center">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-12">Our Convictions</span>
+<!-- Editorial Statements -->
+<div class="space-y-10 my-8">
+<p class="font-serif italic text-[24px] sm:text-[32px] text-charcoal/80 font-light leading-snug">
+              “We don’t treat spirituality as a mood board.”
+            </p>
+<div class="w-12 h-px bg-[#DFD7C7] mx-auto"></div>
+<p class="font-serif italic text-[24px] sm:text-[32px] text-charcoal/80 font-light leading-snug">
+              “We don’t treat mindfulness as an app notification.”
+            </p>
+<div class="w-12 h-px bg-[#DFD7C7] mx-auto"></div>
+<p class="font-serif italic text-[24px] sm:text-[32px] text-charcoal/80 font-light leading-snug">
+              “We don’t treat emotional intelligence as a productivity hack.”
+            </p>
+</div>
+<!-- Climax Serif with Terracotta Accent -->
+<div class="mt-20 pt-10 border-t border-[#DFD7C7]">
+<h2 class="font-serif text-[34px] sm:text-[46px] text-forest font-normal leading-tight text-balance">
+              We believe the mind, heart and <span class="text-terracotta italic font-serif">spirit</span> belong together.
+            </h2>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 6: CONNECTION (SECTION 9 · OUR STORY PREVIEW) -->
+<!-- Authentic Founder Teaser & Quiet Doorway            -->
+<!-- =================================================== -->
+<section class="w-full py-24 bg-[#FDFBF7] border-t border-[#EBE4D8]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-[800px] mx-auto">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-4">Origin &amp; Intent</span>
+<h2 class="font-serif text-[38px] sm:text-[46px] text-forest font-normal tracking-tight mb-8">
+            Where it began.
+          </h2>
+<div class="space-y-6 text-[17px] text-charcoal/80 leading-relaxed">
+<p>
+              SoulfulI was born from a simple realization: the tools meant to bring us peace had become another task on an endless to-do list.
+            </p>
+<p>
+              We set out to build a sanctuary of depth, fusing rigorous emotional intelligence with timeless contemplative wisdom. Not for fleeting motivation or surface affirmations, but for honest inner clarity and sustainable coherence.
+            </p>
+</div>
+<div class="pt-8">
+<a class="inline-flex items-center gap-2.5 text-[15px] font-semibold text-forest hover:text-terracotta transition-colors group" data-path="our-story" href="#">
+<span>Discover Our Story</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 6: CONNECTION (SECTION 10 · COMMUNITY)        -->
+<!-- Shared Exploration                                  -->
+<!-- =================================================== -->
+<section class="w-full py-24 bg-[#F9F6F0] border-t border-[#EBE4D8]">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin text-center">
+<div class="max-w-[760px] mx-auto">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-sage block mb-3">Shared Exploration</span>
+<h2 class="font-serif text-[36px] sm:text-[44px] text-forest font-normal tracking-tight mb-5">
+            The journey doesn't happen alone.
+          </h2>
+<p class="text-[16px] text-charcoal/75 leading-relaxed mb-10 max-w-xl mx-auto">
+            A gathering of thoughtful practitioners, leaders, educators, and seekers cultivating shared depth through fellowship circles, monographs, and regional salons.
+          </p>
+<!-- Community Badges -->
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+<span class="bg-[#FDFBF7] text-forest px-4 py-2 rounded-full text-[13px] font-medium border border-[#DFD7C7] shadow-sm">Fellowship Circles</span>
+<span class="bg-[#FDFBF7] text-forest px-4 py-2 rounded-full text-[13px] font-medium border border-[#DFD7C7] shadow-sm">Monthly Dialogues</span>
+<span class="bg-[#FDFBF7] text-forest px-4 py-2 rounded-full text-[13px] font-medium border border-[#DFD7C7] shadow-sm">Monograph Exchange</span>
+<span class="bg-[#FDFBF7] text-forest px-4 py-2 rounded-full text-[13px] font-medium border border-[#DFD7C7] shadow-sm">Regional Salons</span>
+</div>
+<div>
+<a class="inline-flex items-center justify-center bg-forest text-[#FDFBF7] px-8 py-3.5 rounded-full text-[14px] font-medium tracking-wide hover:bg-forest/90 transition-all shadow-sm" data-path="join-our-community" href="#">
+              Join Our Community
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- =================================================== -->
+<!-- STAGE 7: BLOOM (SECTION 11 · FINAL CTA RESTING POINT) -->
+<!-- Sole Dark Resting Point: DEEP FOREST (#1F2A24)      -->
+<!-- Typography: Glowing Ivory (#FDFBF7) & Sage (#7D8B78)-->
+<!-- =================================================== -->
+<section class="w-full py-32 lg:py-40 bg-forest text-[#FDFBF7] relative overflow-hidden">
+<!-- Atmospheric soft ambient glow inside dark forest -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[340px] bg-[#7D8B78]/15 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-[1240px] mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-[780px] mx-auto text-center flex flex-col items-center">
+<span class="text-[12px] font-medium uppercase tracking-[0.25em] text-[#7D8B78] block mb-4">The Resting Point</span>
+<h2 class="font-serif text-[42px] sm:text-[56px] font-normal leading-tight mb-10 text-[#FDFBF7]">
+            What might change first?
+          </h2>
+<!-- Four Possibility Lines -->
+<div class="space-y-2.5 mb-12 font-serif text-[22px] sm:text-[26px] text-[#FDFBF7]/85 font-light">
+<p>Your awareness.</p>
+<p>Your relationships.</p>
+<p>Your choices.</p>
+<p class="italic text-terracotta">Perhaps the way you experience yourself.</p>
+</div>
+<!-- Primary CTA (Largest single primary button on page) -->
+<div class="mb-16">
+<a class="inline-flex items-center justify-center bg-[#FDFBF7] text-forest px-10 py-4 rounded-full text-[15px] font-semibold hover:bg-[#F5EFE6] transition-all shadow-lg hover:scale-[1.02]" data-path="take-the-eq-audit" href="#">
+              Begin Your Journey
+            </a>
+</div>
+<!-- Closing Statement Quote Block in Serif Italic -->
+<div class="p-8 rounded-2xl bg-[#FDFBF7]/5 border border-[#FDFBF7]/10 max-w-xl backdrop-blur-sm">
+<p class="font-serif italic text-[16px] sm:text-[18px] text-[#FDFBF7]/80 leading-relaxed font-light">
+              “The retreat ends. The workshop ends. The audit gives you a score and closes the tab. But the blooming continues.”
+            </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================== -->
+<!-- FOOTER (Continuation of Deep Forest)       -->
+<!-- ========================================== -->
+<footer class="w-full bg-forest text-[#FDFBF7] border-t border-[#FDFBF7]/15">
+<div class="max-w-[1240px] mx-auto px-margin-mobile lg:px-margin pt-16 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+<!-- Brand & Tagline -->
+<div class="md:col-span-5 flex flex-col justify-between pr-0 md:pr-8">
+<div>
+<span class="font-serif text-[28px] tracking-tight font-normal text-[#FDFBF7] block mb-3">SoulfulI</span>
+<p class="font-serif italic text-[17px] text-[#7D8B78] leading-relaxed max-w-sm">
+              Understand yourself. Connect more deeply. Live with intention.
+            </p>
+</div>
+<div class="mt-8">
+<span class="text-[11px] font-medium uppercase tracking-widest text-[#7D8B78] block mb-3">The Quiet Dispatch</span>
+<div class="flex items-center max-w-sm border-b border-[#FDFBF7]/30 pb-2">
+<input class="w-full bg-transparent text-[14px] text-[#FDFBF7] placeholder:text-[#FDFBF7]/40 focus:outline-none" placeholder="Your contemplation address" type="email"/>
+<button aria-label="Subscribe" class="text-[#7D8B78] hover:text-[#FDFBF7] transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Links Columns -->
+<div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8 pt-4 md:pt-0">
+<div class="space-y-4">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-[#7D8B78] block">Practices</span>
+<ul class="space-y-2.5 text-[14px] text-[#FDFBF7]/75">
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="what-we-offer" href="#">Guided Inquiries</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="take-the-eq-audit" href="#">The EQ Audit</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="what-we-offer" href="#">Contemplative Audio</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="what-we-offer" href="#">Daily Field Notes</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-[#7D8B78] block">Discourse</span>
+<ul class="space-y-2.5 text-[14px] text-[#FDFBF7]/75">
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="our-story" href="#">Our Story</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="what-makes-us-different" href="#">The Manifesto</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="join-our-community" href="#">Fellowship Circles</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="join-our-community" href="#">Monograph Library</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<span class="text-[11px] font-semibold uppercase tracking-wider text-[#7D8B78] block">Connect</span>
+<ul class="space-y-2.5 text-[14px] text-[#FDFBF7]/75">
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="contact" href="#">Contact Bureau</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="join-our-community" href="#">Editorial Archive</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="privacy-policy" href="#">Ethical Protocol</a></li>
+<li><a class="hover:text-[#FDFBF7] transition-colors" data-path="terms-of-service" href="#">Terms of Intention</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Hairline and copyright -->
+<div class="pt-8 border-t border-[#FDFBF7]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] text-[#7D8B78]">
+<div>© 2024 SoulfulI. Preserved with quiet care.</div>
+<div class="flex items-center gap-6">
+<a class="hover:text-[#FDFBF7] transition-colors" data-path="privacy-policy" href="#">Privacy</a>
+<a class="hover:text-[#FDFBF7] transition-colors" data-path="terms-of-service" href="#">Terms</a>
+<a class="hover:text-[#FDFBF7] transition-colors" data-path="contact" href="#">Dialogue</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

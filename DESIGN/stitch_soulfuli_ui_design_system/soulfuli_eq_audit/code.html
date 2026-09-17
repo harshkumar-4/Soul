@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-container": "#5b6857",
+          "on-secondary-fixed-variant": "#3d4a3a",
+          "tertiary": "#2c0600",
+          "secondary-fixed-dim": "#bccbb6",
+          "inverse-surface": "#31302b",
+          "primary-container": "#1f2a24",
+          "surface": "#fdf9f1",
+          "primary": "#0b1510",
+          "tertiary-container": "#4f1200",
+          "surface-container-highest": "#e6e2da",
+          "primary-fixed-dim": "#bdcac1",
+          "on-primary-fixed": "#131e18",
+          "inverse-on-surface": "#f4f0e8",
+          "surface-bright": "#fdf9f1",
+          "background": "#fdf9f1",
+          "tertiary-fixed": "#ffdbd0",
+          "surface-container-lowest": "#ffffff",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "on-surface": "#1c1c17",
+          "outline-variant": "#c3c8c3",
+          "surface-container-high": "#ece8e0",
+          "secondary-container": "#d8e7d1",
+          "on-background": "#1c1c17",
+          "on-surface-variant": "#434844",
+          "on-tertiary": "#ffffff",
+          "outline": "#737874",
+          "secondary": "#556251",
+          "tertiary-fixed-dim": "#ffb59f",
+          "primary-fixed": "#d9e6dc",
+          "on-primary-fixed-variant": "#3e4943",
+          "surface-dim": "#dddad2",
+          "on-primary-container": "#859289",
+          "on-tertiary-container": "#d37559",
+          "error": "#ba1a1a",
+          "surface-variant": "#e6e2da",
+          "surface-tint": "#55615a",
+          "surface-container": "#f1ede6",
+          "on-tertiary-fixed": "#3a0a00",
+          "surface-container-low": "#f7f3eb",
+          "on-tertiary-fixed-variant": "#793019",
+          "secondary-fixed": "#d8e7d1",
+          "on-secondary-fixed": "#131e11",
+          "inverse-primary": "#bdcac1",
+          "error-container": "#ffdad6",
+          "on-secondary": "#ffffff",
+          "on-error": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter-mobile": "1rem",
+          "margin": "4rem",
+          "space-sm": "0.75rem",
+          "gutter": "2rem",
+          "margin-mobile": "1.5rem",
+          "space-xs": "0.375rem",
+          "space-xl": "4rem",
+          "space-lg": "2.25rem",
+          "space-md": "1.25rem"
+        },
+        "fontFamily": {
+          "display-lg-mobile": ["Newsreader"],
+          "headline-lg": ["Newsreader"],
+          "headline-md": ["Newsreader"],
+          "headline-sm": ["Newsreader"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Newsreader"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "display-lg": ["Newsreader"],
+          "body-md": ["Plus Jakarta Sans"],
+          "quote-lg": ["Newsreader"]
+        },
+        "fontSize": {
+          "display-lg-mobile": ["38px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+          "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400"}],
+          "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+          "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "400"}],
+          "body-lg": ["18px", {"lineHeight": "30px", "letterSpacing": "-0.005em", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600"}],
+          "body-sm": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+          "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "600"}],
+          "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+          "body-md": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+          "quote-lg": ["24px", {"lineHeight": "38px", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(31,42,36,0.04)]"><div class="h-20 max-w-[1240px] mx-auto px-6 lg:px-margin flex items-center justify-between"><a class="flex items-center gap-space-xs" data-path="our-story" href="#"><span class="font-headline-md text-headline-md tracking-tight text-primary font-normal">SoulfulI</span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[1px] after:bg-tertiary-container"><a aria-current="page" class="transition-colors text-primary font-semibold relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[1px] after:bg-tertiary-container" data-path="our-story" href="#">Our Story</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="what-we-offer" href="#">What We Offer</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="what-makes-us-different" href="#">What Makes Us Different</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="join-our-community" href="#">Join Our Community</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-xs bg-primary-container text-surface-bright font-body-sm text-body-sm rounded-lg hover:bg-primary transition-colors duration-200" data-path="eq-audit" href="#">Take the EQ Audit</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO (REFRAME) -->
+<section class="w-full py-space-xl lg:py-28 px-6 lg:px-margin bg-surface relative overflow-hidden">
+<!-- Ambient delicate concentric aura -->
+<div class="absolute -top-32 right-1/4 w-96 h-96 rounded-full bg-secondary-container/25 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-surface-container-high/40 blur-2xl pointer-events-none"></div>
+<div class="max-w-[1020px] mx-auto text-center relative z-10 flex flex-col items-center">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container mb-space-md">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Contemplative Self-Discovery</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-primary max-w-4xl tracking-tight mb-space-md">
+        A mirror, not a verdict.
+      </h1>
+<p class="font-headline-md text-headline-sm lg:text-headline-md text-secondary font-normal max-w-2xl mb-space-sm">
+        48 questions. 6 dimensions. One clearer picture of yourself.
+      </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-space-lg leading-relaxed">
+        An unhurried inquiry into where emotional awareness pools effortlessly, where unconscious patterns emerge under friction, and how you relate to the world around you.
+      </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full sm:w-auto">
+<a class="w-full sm:w-auto px-8 py-4 bg-primary-container text-surface-bright font-body-sm text-body-sm font-semibold rounded-lg hover:bg-primary transition-all duration-300 shadow-sm text-center" href="#begin">
+          Take the EQ Audit
+        </a>
+<a class="group inline-flex items-center gap-space-xs text-on-surface hover:text-tertiary-container font-body-sm text-body-sm transition-colors py-2 px-4" href="#how-it-works">
+<span>Learn How It Works</span>
+<span class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:translate-y-0.5">arrow_downward</span>
+</a>
+</div>
+<!-- Trust strip with subtle pill badges -->
+<div class="mt-space-xl pt-space-lg flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">schedule</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">10–12 Minutes</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Entirely Private</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">balance</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Non-Evaluative</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: WHY (RATIONALE) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface-container-low">
+<div class="max-w-[1080px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-5 relative">
+<div class="rounded-xl overflow-hidden aspect-[4/5] bg-surface-container shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Quiet and contemplative still life of an unglazed ceramic vessel beside an open parchment notebook on a warm oak desk, drenched in soft morning sunlight and gentle shadows, fine art editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm6mJ0abwQoqHPdqTfzO4jBw1kTjrDfNynJSLIV91NzXtUJVkVeT5Q4we2jCvpLH3m3LzC5gGy2LXbM4vgbJIbNcybfYtv0zkul7mTfdt1l9YkTC3-JJNYSBn5HNN5e4GNR4INfym-ZT2c4hLtbG4beMGe5gvpMhp_tQR8WSQ6itJBv4fpzBnRIDoN0Hi5Pv2F2FuiQ4RJ4bHCClNYZC3D_RGjMZ84nsQwPk2-oYOZXEEP1CRlAs1Lhg"/>
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 rounded-lg bg-surface/90 backdrop-blur-sm">
+<p class="font-headline-sm text-headline-sm text-primary italic font-normal">
+              “The quiet mirror does not grade; it simply reveals the tide.”
+            </p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 lg:pl-space-md space-y-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block">Philosophical Grounding</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight leading-tight">
+          Before you change a pattern, you have to see it.
+        </h2>
+<div class="space-y-space-sm font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p>
+            Most reactions feel automatic until we pause long enough to observe their contour. The EQ Audit creates an honest, quiet space to surface how you respond under tension, how you hold space for others, and where your inner clarity naturally begins.
+          </p>
+<p class="text-body-md font-body-md text-secondary">
+            Rather than reducing human complexity to diagnostic labels or commercial scores, this inquiry invites you into relational cartography: an open canvas mapping the subtle currents that shape your presence.
+          </p>
+</div>
+<div class="pt-space-xs grid grid-cols-2 gap-4">
+<div class="p-5 rounded-lg bg-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Observation</span>
+<span class="font-body-md text-body-md text-primary font-medium">Without judgment</span>
+</div>
+<div class="p-5 rounded-lg bg-surface">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block mb-1">Clarity</span>
+<span class="font-body-md text-body-md text-primary font-medium">In daily relation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: THE SIX DIMENSIONS (STRUCTURE) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface">
+<div class="max-w-[1240px] mx-auto">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-xs">Dimensions of Inquiry</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight">
+          Six lenses into your relational landscape.
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- 01 Emotional Awareness -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">01</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">water_drop</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Emotional Awareness</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Perceiving internal weather, subtle emotional shifts, and physical signals before they harden into reaction.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Somatic attunement</span>
+</div>
+</div>
+<!-- 02 Emotional Regulation -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">02</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">pause_circle</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Emotional Regulation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              The spacious capacity to pause and choose your response rather than being hijacked by transient impulses.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Response capacity</span>
+</div>
+</div>
+<!-- 03 Pattern Recognition -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">03</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">all_inclusive</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Pattern Recognition</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Identifying recurring loops, habitual defense mechanisms, and unconscious relational scripts.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Script discovery</span>
+</div>
+</div>
+<!-- 04 Empathy & Resonance -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">04</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Empathy &amp; Resonance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Seeing into another person's lived experience with generous clarity while honoring distinct emotional boundaries.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Compassionate clarity</span>
+</div>
+</div>
+<!-- 05 Social Intelligence -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">05</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">groups</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Social Intelligence</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Sensing atmospheric currents, unspoken dynamics, and systemic tone in collective spaces.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Collective sensing</span>
+</div>
+</div>
+<!-- 06 Intentional Communication -->
+<div class="group p-8 rounded-xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-6">
+<span class="font-label-md text-label-md text-tertiary-container tracking-widest">06</span>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[22px]">draw</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">Intentional Communication</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Aligning speech with honesty and care—conveying truth with calm exactitude rather than reactive defensiveness.
+            </p>
+</div>
+<div class="pt-6 mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Mindful utterance</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: HOW IT WORKS (PROCESS) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface-container-low" id="how-it-works">
+<div class="max-w-[1240px] mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-xs">The Cadence of Inquiry</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight">
+          Unhurried, intuitive, and private.
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg relative">
+<!-- Step 01 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between relative shadow-sm">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+              1
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Answer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              48 prompts exploring authentic relational posture, requiring approximately 10 to 12 minutes of peaceful attention.
+            </p>
+</div>
+<div class="mt-8 pt-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">No rush · No timer</p>
+</div>
+</div>
+<!-- Step 02 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between relative shadow-sm">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+              2
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Reflect</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Observe your patterns without grades, evaluation, or external judgment. A contemplative space for seeing what is.
+            </p>
+</div>
+<div class="mt-8 pt-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Zero score · Zero ranking</p>
+</div>
+</div>
+<!-- Step 03 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between relative shadow-sm">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+              3
+            </div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Understand</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Receive your nuanced personal Inner Map and reflective inquiries to accompany your daily interactions.
+            </p>
+</div>
+<div class="mt-8 pt-4">
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Immediate cartography</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: THE INNER MAP (PAYOFF / ARTIFACT) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface">
+<div class="max-w-[1240px] mx-auto">
+<div class="text-center max-w-2xl mx-auto mb-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-xs">Cartography of Being</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight">
+          See the shape of your emotional world.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+          Not a score, a test result, or a grade—an organic cartographic constellation of your awareness.
+        </p>
+</div>
+<!-- Constellation Radar Graphic Card -->
+<div class="max-w-4xl mx-auto p-6 lg:p-12 rounded-2xl bg-surface-container-low shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<!-- Radar Visual (Strictly Non-Clinical / Constellation Style) -->
+<div class="lg:col-span-7 flex justify-center items-center relative py-4">
+<div class="w-full max-w-[420px] aspect-square relative flex items-center justify-center">
+<svg class="w-full h-full text-secondary" fill="none" viewbox="0 0 400 400">
+<!-- Concentric Rings (Muted, organic guides) -->
+<circle cx="200" cy="200" opacity="0.25" r="150" stroke="currentColor" stroke-dasharray="3 4" stroke-width="1"></circle>
+<circle cx="200" cy="200" opacity="0.3" r="105" stroke="currentColor" stroke-dasharray="2 3" stroke-width="1"></circle>
+<circle cx="200" cy="200" opacity="0.25" r="60" stroke="currentColor" stroke-width="1"></circle>
+<circle cx="200" cy="200" fill="currentColor" opacity="0.6" r="3"></circle>
+<!-- Axes Lines -->
+<line opacity="0.2" stroke="currentColor" stroke-width="1" x1="200" x2="200" y1="50" y2="350"></line>
+<line opacity="0.2" stroke="currentColor" stroke-width="1" x1="70" x2="330" y1="125" y2="275"></line>
+<line opacity="0.2" stroke="currentColor" stroke-width="1" x1="70" x2="330" y1="275" y2="125"></line>
+<!-- Fluid Constellation Contour Polygon -->
+<polygon fill="#556251" fill-opacity="0.16" points="200,82 305,145 285,255 200,312 110,248 100,150" stroke="#556251" stroke-linejoin="round" stroke-width="1.75"></polygon>
+<!-- Secondary Accent Path (Warm Terracotta Harmonic) -->
+<polygon fill="#793019" fill-opacity="0.08" points="200,105 280,160 250,235 185,280 120,230 130,165" stroke="#793019" stroke-dasharray="4 3" stroke-linejoin="round" stroke-width="1.25"></polygon>
+<!-- Nodes -->
+<circle cx="200" cy="82" fill="#0b1510" r="4"></circle>
+<circle cx="305" cy="145" fill="#0b1510" r="4"></circle>
+<circle cx="285" cy="255" fill="#0b1510" r="4"></circle>
+<circle cx="200" cy="312" fill="#0b1510" r="4"></circle>
+<circle cx="110" cy="248" fill="#0b1510" r="4"></circle>
+<circle cx="100" cy="150" fill="#0b1510" r="4"></circle>
+<!-- Six Node Labels -->
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="middle" x="200" y="36">Awareness</text>
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="start" x="345" y="145">Regulation</text>
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="start" x="315" y="275">Patterns</text>
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="middle" x="200" y="375">Empathy</text>
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="end" x="80" y="275">Social Flow</text>
+<text class="text-[10px] uppercase font-semibold fill-current tracking-widest opacity-80 font-body-sm" text-anchor="end" x="60" y="145">Communication</text>
+</svg>
+</div>
+</div>
+<!-- Explanatory synthesis & sample prompt -->
+<div class="lg:col-span-5 space-y-space-md lg:pl-space-sm">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary-container uppercase tracking-wider block">Constellation Archetype</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">The Anchored Observer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                A natural gravitation toward internal stillness with spacious empathy, punctuated by moments of hesitation when articulating personal boundaries under tension.
+              </p>
+</div>
+<!-- Contemplative Pull Reflection Prompt -->
+<div class="p-5 rounded-lg bg-surface relative overflow-hidden">
+<div class="w-1 h-full absolute left-0 top-0 bg-tertiary-container"></div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-2">Sample Inquiry</p>
+<p class="font-quote-lg text-quote-lg text-primary italic font-normal leading-snug">
+                “Where do you instinctively explain, and where do you quietly withdraw?”
+              </p>
+</div>
+<div class="pt-2 flex items-center gap-3 text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm">Personalized synthesis provided upon completion</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: WHAT YOU TAKE AWAY (OUTCOME) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface-container-low">
+<div class="max-w-[1240px] mx-auto">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-xs">Fruits of Reflection</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight">
+          What you leave with.
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Outcome 1 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between shadow-sm">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Greater self-awareness</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Clarity on your instinctive responses, relational thresholds, and the subtle cues that precede reactive moments.
+            </p>
+</div>
+</div>
+<!-- Outcome 2 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between shadow-sm">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]">schema</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Better understanding of patterns</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Perspective on the relational loops that repeat under pressure, demystifying habits that previously felt involuntary.
+            </p>
+</div>
+</div>
+<!-- Outcome 3 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between shadow-sm">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]">chat_bubble_outline</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">More intentional communication</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Language for subtle feelings that previously remained unspoken, allowing honest dialogue without friction or retreat.
+            </p>
+</div>
+</div>
+<!-- Outcome 4 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between shadow-sm">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Grounded empathy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Clearer personal boundaries that allow deep compassion for others without quiet emotional depletion or exhaustion.
+            </p>
+</div>
+</div>
+<!-- Outcome 5 -->
+<div class="p-8 rounded-xl bg-surface flex flex-col justify-between shadow-sm md:col-span-2 lg:col-span-2">
+<div class="max-w-xl">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Clearer paths for growth</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Gentle invitations into daily practices tailored to your present season—grounded inquiries, reflective micro-journals, and relational pauses.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: FREQUENTLY ASKED INQUIRIES (FAQ ACCORDION) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface">
+<div class="max-w-[880px] mx-auto">
+<div class="text-center mb-space-xl">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant block mb-space-xs">Clarity &amp; Reassurance</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight">
+          Questions on the inquiry.
+        </h2>
+</div>
+<div class="space-y-4" id="faq-accordion">
+<!-- FAQ 1 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all duration-200">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary font-normal">What is the EQ Audit?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="font-body-md text-body-md text-on-surface-variant pb-6 leading-relaxed">
+              A contemplative self-discovery tool of 48 questions across six dimensions designed to help you observe your relational patterns with compassionate honesty. It functions like a quiet physical journal—offering perspective rather than judgment.
+            </p>
+</div>
+</div>
+<!-- FAQ 2 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all duration-200">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary font-normal">How long does it take?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="font-body-md text-body-md text-on-surface-variant pb-6 leading-relaxed">
+              Approximately 10 to 15 minutes of unhurried, quiet reflection. You can pause anytime; there is no timer, score deadline, or speed requirement.
+            </p>
+</div>
+</div>
+<!-- FAQ 3 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all duration-200">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary font-normal">What are the six dimensions explored?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="font-body-md text-body-md text-on-surface-variant pb-6 leading-relaxed">
+              The inquiry moves gently across Emotional Awareness, Emotional Regulation, Pattern Recognition, Empathy &amp; Resonance, Social Intelligence, and Intentional Communication.
+            </p>
+</div>
+</div>
+<!-- FAQ 4 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all duration-200">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary font-normal">Is it a clinical or psychological diagnosis?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="font-body-md text-body-md text-on-surface-variant pb-6 leading-relaxed">
+              No. The EQ Audit is strictly an educational and contemplative self-reflection mirror. It does not diagnose, treat, or evaluate clinical conditions, and it is never a substitute for qualified mental health care.
+            </p>
+</div>
+</div>
+<!-- FAQ 5 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all duration-200">
+<button class="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-primary font-normal">What happens after I complete the reflection?</span>
+<span class="material-symbols-outlined text-secondary transition-transform duration-300">expand_more</span>
+</button>
+<div class="max-h-0 overflow-hidden transition-all duration-300 px-6 faq-content">
+<p class="font-body-md text-body-md text-on-surface-variant pb-6 leading-relaxed">
+              You immediately receive your visual Inner Map and reflective synthesis, along with an invitation to explore practices within Inner Compass if you wish to deepen the journey in your everyday life.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINAL INVITATION (CTA) -->
+<section class="w-full py-space-xl px-6 lg:px-margin bg-surface-container relative overflow-hidden" id="begin">
+<div class="max-w-[800px] mx-auto text-center relative z-10">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-tertiary-container block mb-space-xs">An Unhurried Invitation</span>
+<h2 class="font-headline-lg text-headline-md lg:text-headline-lg text-primary tracking-tight mb-space-sm">
+        Ready to see yourself a little more clearly?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-space-lg leading-relaxed">
+        A 10-minute mirror for your awareness, relationships, and everyday choices.
+      </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto px-10 py-4 bg-primary-container text-surface-bright font-body-sm text-body-sm font-semibold rounded-lg hover:bg-primary transition-colors shadow-sm" href="#">
+          Take the EQ Audit
+        </a>
+</div>
+<p class="mt-space-md font-label-sm text-label-sm text-on-surface-variant">
+        Safe · Reflective · Non-diagnostic · Free to complete
+      </p>
+</div>
+</section>
+</div>
+<script>
+  function toggleFaq(button) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector('.material-symbols-outlined');
+    const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+    // Reset others in container
+    document.querySelectorAll('#faq-accordion .faq-content').forEach(el => {
+      el.style.maxHeight = '0px';
+    });
+    document.querySelectorAll('#faq-accordion .material-symbols-outlined').forEach(ic => {
+      ic.style.transform = 'rotate(0deg)';
+    });
+
+    if (!isExpanded) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+</script></main><footer class="w-full bg-primary-container text-surface-bright pt-space-xl pb-space-lg"><div class="max-w-[1240px] mx-auto px-6 lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg mb-space-xl"><div class="md:col-span-6 flex flex-col justify-between pr-0 md:pr-space-md"><div class="space-y-space-sm"><span class="font-headline-sm text-headline-sm tracking-tight text-surface-bright font-normal block">SoulfulI</span><p class="font-quote-lg text-quote-lg text-surface-container-high italic max-w-md">Understand yourself. Connect more deeply. Live with intention.</p></div><div class="pt-space-md"><p class="font-label-sm text-label-sm uppercase tracking-widest text-on-primary-container">A publication &amp; inquiry platform</p></div></div><div class="md:col-span-3 space-y-space-sm"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-highest">Inquiry &amp; Practices</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="our-story" href="#">Our Story</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="what-we-offer" href="#">What We Offer</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="what-makes-us-different" href="#">What Makes Us Different</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="eq-audit" href="#">Take the EQ Audit</a></li></ul></div><div class="md:col-span-3 space-y-space-sm"><h4 class="font-label-md text-label-md uppercase tracking-wider text-surface-container-highest">Fellowship</h4><ul class="space-y-space-xs"><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" data-path="join-our-community" href="#">Join Our Community</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Reflective Dispatches</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Terms of Presence</a></li><li class="font-body-sm text-body-sm"><a class="text-on-primary-container hover:text-surface-bright transition-colors" href="#">Quiet Privacy</a></li></ul></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-primary-container font-body-sm text-body-sm"><span>© SoulfulI. All quiet rights reserved.</span><span>Printed and bound digitally in contemplation.</span></div></div></footer></body></html>
