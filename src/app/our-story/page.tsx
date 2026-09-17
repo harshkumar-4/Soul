@@ -39,7 +39,7 @@ export default function OurStoryPage() {
           <div className="w-full relative overflow-hidden rounded-xl bg-surface-container shadow-sm aspect-[16/9] max-h-[580px] border border-outline-variant/60">
 
             <video
-              src="https://www.pexels.com/download/video/35274206/"
+              src="/video/mount.mp4"
               autoPlay
               loop
               muted

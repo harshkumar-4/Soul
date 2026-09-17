@@ -5,7 +5,6 @@ import Badge from '@/components/ui/Badge';
 import { offeringsData } from '@/content/offerings';
 import { Compass, Feather, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-
 export default function HomePage() {
   return (
     <main className="w-full flex flex-col items-center">
@@ -52,28 +51,38 @@ export default function HomePage() {
 
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-outline-variant/60 bg-surface-container">
+
                 <div className="relative h-full min-h-[520px] w-full overflow-hidden">
+
                   <video
-                    src="https://www.pexels.com/download/video/18209689/"
+                    src="/video/tree.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
                     preload="auto"
-                    poster="https://images.pexels.com/photos/18209689/pexels-photo-18209689.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    poster="/images/hero-fallback.jpg"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
+
                   <div className="absolute inset-0 bg-black/30" />
+
                 </div>
+
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+
                 <div className="absolute bottom-6 left-6 right-6 text-surface-bright">
+
                   <span className="font-sans text-xs uppercase tracking-widest block text-surface-container-high/80">
                     Quiet Contemplation
                   </span>
+
                   <p className="font-serif text-lg italic mt-1">
                     &ldquo;When the external noise quiets, your real life begins.&rdquo;
                   </p>
+
                 </div>
+
               </div>
             </div>
           </div>
