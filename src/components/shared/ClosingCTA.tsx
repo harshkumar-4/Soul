@@ -1,6 +1,12 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 export interface ClosingCTAProps {
   eyebrow?: string;
@@ -10,6 +16,8 @@ export interface ClosingCTAProps {
   primaryCtaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
+  bgImage?: string;
+  bgImageAlt?: string;
   className?: string;
 }
 
@@ -21,10 +29,46 @@ export function ClosingCTA({
   primaryCtaHref = '/eq-audit',
   secondaryCtaText = 'Explore Our Story',
   secondaryCtaHref = '/our-story',
+  bgImage,
+  bgImageAlt = '',
   className,
 }: ClosingCTAProps) {
+  if (bgImage) {
+    return (
+      <ImageSection
+        src={bgImage}
+        alt={bgImageAlt}
+        overlayVariant="center"
+        className={cn('border-t border-border-alt', className)}
+        containerClassName="py-20 lg:py-28"
+      >
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-center">
+          <div className="max-w-2xl mx-auto space-y-6 flex flex-col items-center">
+            <ImageEyebrow>{eyebrow}</ImageEyebrow>
+            <ImageHeading as="h2" className="text-headline-lg lg:text-display-lg leading-[1.15]">
+              {title}
+            </ImageHeading>
+            <ImageParagraph className="mx-auto text-center">
+              {description}
+            </ImageParagraph>
+            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+              <Button href={primaryCtaHref} variant="ivory" size="lg" className="rounded-full">
+                {primaryCtaText}
+              </Button>
+              {secondaryCtaText && secondaryCtaHref && (
+                <Button href={secondaryCtaHref} variant="whiteOutline" size="lg" className="rounded-full">
+                  {secondaryCtaText}
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
+      </ImageSection>
+    );
+  }
+
   return (
-    <section className={cn('w-full py-20 lg:py-28 bg-surface-container border-t border-outline-variant/60', className)}>
+    <section className={cn('w-full py-20 lg:py-28 bg-surface-alt-gradient border-t border-border-alt', className)}>
       <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-center">
         <div className="max-w-2xl mx-auto space-y-6">
           <span className="font-sans text-label-sm uppercase tracking-widest text-secondary font-semibold block">

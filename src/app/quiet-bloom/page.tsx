@@ -7,6 +7,12 @@ import RetreatEnquiryForm from '@/components/forms/RetreatEnquiryForm';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import { Mountain, Sunrise, Sparkles, Feather, Clock, MapPin, Users } from 'lucide-react';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
   title: 'Quiet Bloom Retreat — Dharamshala, Himachal Pradesh | SoulfulI',
@@ -18,49 +24,36 @@ export default function QuietBloomPage() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* SECTION 1: CINEMATIC PANORAMIC HERO */}
-      <section className="relative w-full min-h-[85vh] flex items-end justify-start overflow-hidden -mt-20 pt-20">
-        <div className="absolute inset-0 w-full h-full bg-surface-container">
-          <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA"
-            alt="Panoramic dawn vista of the Himalayan valley in Dharamshala with mist rolling across pine forests"
-            fill
-            priority
-            className="object-cover"
-          />
-        </div>
+      <ImageSection
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA"
+        alt="Panoramic dawn vista of the Himalayan valley in Dharamshala with mist rolling across pine forests"
+        priority
+        className="min-h-[85vh] flex items-end justify-start -mt-20 pt-20"
+        containerClassName="w-full max-w-[1240px] mx-auto px-6 lg:px-16 pb-16 lg:pb-24 pt-32"
+      >
+        <div className="max-w-3xl space-y-6">
+          <ImageEyebrow>
+            Dharamshala, Himachal Pradesh · Seasonal Gathering
+          </ImageEyebrow>
 
-        {/* Editorial Scrim Layers */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent" />
+          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-[64px] lg:leading-[72px]">
+            Slow down without falling behind.
+          </ImageHeading>
 
-        <div className="relative z-10 w-full max-w-[1240px] mx-auto px-6 lg:px-16 pb-16 lg:pb-24 pt-32">
-          <div className="max-w-3xl space-y-6 text-surface-bright">
-            <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-surface-bright/10 backdrop-blur-md border border-surface-bright/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse" />
-              <span className="font-sans text-xs tracking-widest uppercase text-surface-bright font-medium">
-                Dharamshala, Himachal Pradesh · Seasonal Gathering
-              </span>
-            </div>
+          <p className="font-serif text-quote-lg text-white/95 font-normal max-w-xl leading-relaxed italic">
+            A retreat for returning to conscious movement, grounded contemplation, and mountain silence.
+          </p>
 
-            <h1 className="font-serif text-display-lg-mobile lg:text-[64px] lg:leading-[72px] font-normal text-surface-bright tracking-tight">
-              Slow down without falling behind.
-            </h1>
-
-            <p className="font-serif text-quote-lg text-surface-container-high font-normal max-w-xl leading-relaxed italic">
-              A retreat for returning to conscious movement, grounded contemplation, and mountain silence.
-            </p>
-
-            <div className="pt-4 flex flex-wrap items-center gap-5">
-              <Button href="#apply" variant="terracotta" size="lg" className="rounded-full shadow-lg">
-                Inquire for Gathering
-              </Button>
-              <Button href="#experience" variant="ghost" className="text-surface-bright hover:text-surface-container-high underline decoration-surface-bright/50">
-                Explore Experience ↓
-              </Button>
-            </div>
+          <div className="pt-4 flex flex-wrap items-center gap-5">
+            <Button href="#apply" variant="ivory" size="lg" className="rounded-full shadow-lg">
+              Inquire for Gathering
+            </Button>
+            <Button href="#experience" variant="whiteOutline" size="lg" className="rounded-full">
+              Explore Experience ↓
+            </Button>
           </div>
         </div>
-      </section>
+      </ImageSection>
 
       {/* SECTION 2: THE INVITATION & PROVOCATION */}
       <section id="experience" className="w-full py-20 lg:py-32 bg-surface border-b border-outline-variant/60 scroll-mt-20">
@@ -80,7 +73,7 @@ export default function QuietBloomPage() {
 
             <div className="lg:col-span-6 space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-6 rounded-xl bg-surface-container-low border border-outline-variant/60 space-y-2">
+                <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <MapPin className="w-5 h-5 text-secondary" />
                   <h4 className="font-serif text-lg text-primary">Dharamshala, HP</h4>
                   <p className="font-sans text-xs text-on-surface-variant">
@@ -88,7 +81,7 @@ export default function QuietBloomPage() {
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-surface-container-low border border-outline-variant/60 space-y-2">
+                <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Users className="w-5 h-5 text-secondary" />
                   <h4 className="font-serif text-lg text-primary">12 Participants Max</h4>
                   <p className="font-sans text-xs text-on-surface-variant">
@@ -96,7 +89,7 @@ export default function QuietBloomPage() {
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-surface-container-low border border-outline-variant/60 space-y-2">
+                <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Clock className="w-5 h-5 text-secondary" />
                   <h4 className="font-serif text-lg text-primary">5 Days & 4 Nights</h4>
                   <p className="font-sans text-xs text-on-surface-variant">
@@ -104,7 +97,7 @@ export default function QuietBloomPage() {
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-surface-container-low border border-outline-variant/60 space-y-2">
+                <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Feather className="w-5 h-5 text-secondary" />
                   <h4 className="font-serif text-lg text-primary">Contemplative Immersion</h4>
                   <p className="font-sans text-xs text-on-surface-variant">
@@ -118,7 +111,7 @@ export default function QuietBloomPage() {
       </section>
 
       {/* SECTION 3: DAILY RHYTHM */}
-      <section className="w-full py-20 lg:py-32 bg-surface-container-low border-b border-outline-variant/60">
+      <section className="w-full py-20 lg:py-32 bg-surface-alt-gradient border-b border-border-alt">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
           <SectionHeading
             align="center"
@@ -128,7 +121,7 @@ export default function QuietBloomPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-surface p-6 rounded-xl border border-outline-variant/60 space-y-3 shadow-sm">
+            <div className="bg-surface p-6 rounded-xl border border-border-alt space-y-3 shadow-sm">
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 06:30 — Morning
               </span>
@@ -138,7 +131,7 @@ export default function QuietBloomPage() {
               </p>
             </div>
 
-            <div className="bg-surface p-6 rounded-xl border border-outline-variant/60 space-y-3 shadow-sm">
+            <div className="bg-surface p-6 rounded-xl border border-border-alt space-y-3 shadow-sm">
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 10:00 — Mid-Morning
               </span>
@@ -148,7 +141,7 @@ export default function QuietBloomPage() {
               </p>
             </div>
 
-            <div className="bg-surface p-6 rounded-xl border border-outline-variant/60 space-y-3 shadow-sm">
+            <div className="bg-surface p-6 rounded-xl border border-border-alt space-y-3 shadow-sm">
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 15:00 — Afternoon
               </span>
@@ -158,7 +151,7 @@ export default function QuietBloomPage() {
               </p>
             </div>
 
-            <div className="bg-surface p-6 rounded-xl border border-outline-variant/60 space-y-3 shadow-sm">
+            <div className="bg-surface p-6 rounded-xl border border-border-alt space-y-3 shadow-sm">
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 18:30 — Evening
               </span>
@@ -187,7 +180,7 @@ export default function QuietBloomPage() {
               </p>
             </div>
 
-            <div className="bg-surface-container-low p-6 lg:p-10 rounded-2xl border border-outline-variant/60 shadow-sm">
+            <div className="bg-surface-alt p-6 lg:p-10 rounded-2xl border border-border-alt shadow-sm">
               <RetreatEnquiryForm />
             </div>
           </div>

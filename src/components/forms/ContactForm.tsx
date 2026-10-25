@@ -55,7 +55,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300">
+      <div className="bg-surface-alt border border-border-alt rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300">
         <div className="w-12 h-12 rounded-full bg-sage/20 text-forest mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-6 h-6 text-forest" />
         </div>
@@ -129,7 +129,6 @@ export function ContactForm() {
           options={[
             { value: 'general', label: 'General Inquiry & Connection' },
             { value: 'eq-audit', label: 'EQ Audit & Results Consultation' },
-            { value: 'inner-compass', label: 'Inner Compass Program Cohort' },
             { value: 'quiet-bloom', label: 'Quiet Bloom Himalayan Retreat' },
             { value: 'schools', label: 'Schools & Colleges Curriculum' },
             { value: 'organisations', label: 'Workplace & Leadership Engagement' },

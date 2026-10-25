@@ -35,48 +35,6 @@ export const offeringsData: OfferingItem[] = [
     ],
   },
   {
-    id: 'inner-compass',
-    title: 'Inner Compass',
-    tagline: 'The guided journey into intentional living.',
-    shortDescription:
-      'A transformative 5-pillar developmental program moving from self-knowledge to clear, non-reactive communication and purposeful presence.',
-    fullDescription:
-      'Inner Compass guides you through five essential human capacities: Know Yourself, Choose Yourself, See Others, Read the Room, and Speak with Intention. Built as a contemplative, cohort-based practice rather than a corporate checklist.',
-    href: '/inner-compass',
-    badgeText: 'Developmental Program',
-    badgeVariant: 'forest',
-    imageSrc:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=75',
-    audience: 'Professionals & Seekers',
-    outcomes: [
-      '5 guided modular inquiry frameworks',
-      'Micro-inquiry practices for daily friction',
-      'Relational and empathetic attunement',
-      'Clarity of personal purpose and alignment',
-    ],
-  },
-  {
-    id: 'quiet-bloom',
-    title: 'Quiet Bloom Retreat',
-    tagline: 'Slow down without falling behind.',
-    shortDescription:
-      'An intimate, premium contemplative gathering in the Himalayan valley of Dharamshala, rooted in mountain silence and village immersion.',
-    fullDescription:
-      'Quiet Bloom is a sanctuary for conscious stillness. Set in Dharamshala, Himachal Pradesh, this unhurried experience brings together mindful movement, guided reflection, and mountain solitude to reset your nervous system.',
-    href: '/quiet-bloom',
-    badgeText: 'Himalayan Retreat',
-    badgeVariant: 'terracotta',
-    imageSrc:
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=75',
-    audience: 'Leaders & Seekers of Deep Rest',
-    outcomes: [
-      'Deep nervous system restoration in nature',
-      'Guided meditation and walking contemplation',
-      'Intimate dialogue circles with fellow seekers',
-      'Unstructured time for journaling and mountain air',
-    ],
-  },
-  {
     id: 'schools-colleges',
     title: 'Schools & Colleges',
     tagline: 'Educating the heart alongside the intellect.',
@@ -99,23 +57,44 @@ export const offeringsData: OfferingItem[] = [
   },
   {
     id: 'organisations',
-    title: 'Organisations & Culture',
-    tagline: 'Non-reactive leadership in complex times.',
+    title: 'Organisations',
+    tagline: 'Leading with the heart, not just the numbers.',
     shortDescription:
-      'Transforming enterprise workplace culture through grounded emotional intelligence, empathetic dialogue, and human-centered leadership.',
+      'SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
     fullDescription:
-      'We work with progressive companies to replace reactive panic and burnout with steady presence, psychological safety, and clear, compassionate decision-making.',
+      'Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
     href: '/organisations',
-    badgeText: 'B2B Leadership',
+    badgeText: 'Corporate Offering',
     badgeVariant: 'forest',
     imageSrc:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75',
-    audience: 'Executive Teams & Organizations',
+    audience: 'Executive Teams & Organisations',
     outcomes: [
-      'Steady leadership presence under pressure',
-      'High-trust cross-functional collaboration',
-      'Direct, respectful feedback without cruelty',
-      'Sustainable organizational energy and retention',
+      'Emotional intelligence to recognize reactive states',
+      'Reflective space for self-aware leadership',
+      'Intentional, non-defensive communication',
+      'Strengthened trust and empathetic team dynamics',
+    ],
+  },
+  {
+    id: 'quiet-bloom',
+    title: 'Quiet Bloom Retreat',
+    tagline: 'Slow down without falling behind.',
+    shortDescription:
+      'An intimate, premium contemplative gathering in the Himalayan valley of Dharamshala, rooted in mountain silence and village immersion.',
+    fullDescription:
+      'Quiet Bloom is a sanctuary for conscious stillness. Set in Dharamshala, Himachal Pradesh, this unhurried experience brings together mindful movement, guided reflection, and mountain solitude to reset your nervous system.',
+    href: '/quiet-bloom',
+    badgeText: 'Himalayan Retreat',
+    badgeVariant: 'terracotta',
+    imageSrc:
+      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=75',
+    audience: 'Leaders & Seekers of Deep Rest',
+    outcomes: [
+      'Deep nervous system restoration in nature',
+      'Guided meditation and walking contemplation',
+      'Intimate dialogue circles with fellow seekers',
+      'Unstructured time for journaling and mountain air',
     ],
   },
 ];

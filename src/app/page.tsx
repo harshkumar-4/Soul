@@ -5,6 +5,12 @@ import Badge from '@/components/ui/Badge';
 import { offeringsData } from '@/content/offerings';
 import { Compass, Feather, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 export default function HomePage() {
   return (
     <main className="w-full flex flex-col items-center">
@@ -50,7 +56,7 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-outline-variant/60 bg-surface-container">
+              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-border-alt bg-surface-alt">
 
                 <div className="relative h-full min-h-[520px] w-full overflow-hidden">
 
@@ -95,45 +101,51 @@ export default function HomePage() {
       {/* =================================================== */}
       {/* SECTION 2: AN OLD IDEA, MADE PRACTICAL AGAIN        */}
       {/* =================================================== */}
-      <section className="w-full bg-surface-container-low border-b border-outline-variant/60">
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 py-20 lg:py-28">
+      <ImageSection
+        src="/image/phili.jpg"
+        alt="Serene person meditating beside calm water"
+        objectPosition="25% center"
+        className="border-b border-border-alt"
+        containerClassName="py-20 lg:py-28"
+      >
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-4 space-y-5">
-              <Badge variant="sage" dot>
+              <ImageEyebrow>
                 Our Philosophy
-              </Badge>
+              </ImageEyebrow>
 
-              <h2 className="font-serif text-headline-lg lg:text-display-md text-primary font-normal leading-tight">
+              <ImageHeading as="h2" className="text-headline-lg lg:text-display-md">
                 An Old Idea, Made Practical Again
-              </h2>
+              </ImageHeading>
             </div>
 
-            <div className="lg:col-span-8 space-y-6 font-sans text-body-lg text-on-surface-variant leading-relaxed">
-              <p>
+            <div className="lg:col-span-8 space-y-6">
+              <ImageParagraph>
                 None of this is new. Traditions far older than the modern wellness
                 industry already understood that the mind, the heart, and the spirit
                 were never separate departments. What has changed is how disconnected
                 our daily lives have become from that understanding.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph>
                 We are not introducing a new philosophy. We are translating an old one
                 into a language that fits a Monday morning, a difficult conversation,
                 a leadership decision, a classroom, a quiet evening alone with your
                 own thoughts.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph>
                 This is what we mean when we say SoulfulI sits at the intersection of
                 Emotional Intelligence, spirituality, and mindfulness. Not three
                 separate offerings stacked side by side, but one continuous practice
                 of paying attention, first to yourself, then to the people around you,
                 then to whatever it is you are here to do.
-              </p>
+              </ImageParagraph>
             </div>
           </div>
         </div>
-      </section>
+      </ImageSection>
 
       {/* =================================================== */}
       {/* SECTION 3: WHAT WE OFFER                            */}
@@ -143,7 +155,7 @@ export default function HomePage() {
       {/* =================================================== */}
       {/* SECTION 4: WHY WE ARE DIFFERENT                     */}
       {/* =================================================== */}
-      <section className="w-full bg-surface-container-low border-b border-outline-variant/60">
+      <section className="w-full bg-surface-alt-gradient border-b border-border-alt">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-5 space-y-6">
@@ -181,56 +193,48 @@ export default function HomePage() {
       {/* =================================================== */}
       {/* SECTION 5: COMMUNITY / CLOSING INVITATION            */}
       {/* =================================================== */}
-      <section
-        className="relative w-full overflow-hidden border-b border-outline-variant/20"
-        style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/13248795/pexels-photo-13248795.jpeg')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+      <ImageSection
+        src="/images/buddha-forest.png"
+        alt="Buddha statue nestled peacefully within lush forest canopy"
+        objectPosition="center"
+        overlayVariant="center"
+        className="border-b border-outline-variant/20"
+        containerClassName="py-20 lg:py-32"
       >
-        {/* Soft Dark Overlay */}
-        <div className="absolute inset-0 bg-black/10" />
-        {/* Content */}
-        <div className="relative z-10 max-w-[1240px] mx-auto px-6 lg:px-16 py-20 lg:py-32">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
+          <div className="max-w-4xl mx-auto text-center space-y-8 flex flex-col items-center">
+            <ImageEyebrow>
+              Join Our Community
+            </ImageEyebrow>
 
-            <Badge variant="sage" dot >
-              <div className='text-white' >
-                Join Our Community
-
-              </div>
-            </Badge>
-
-            <h2 className="font-serif text-headline-lg lg:text-display-md text-white font-normal leading-tight">
+            <ImageHeading as="h2" className="text-headline-lg lg:text-display-md">
               Be Part of What Comes Next
-            </h2>
+            </ImageHeading>
 
-            <div className="space-y-6 font-sans text-body-lg text-white/90 leading-relaxed">
-              <p>
+            <div className="space-y-6 flex flex-col items-center">
+              <ImageParagraph className="text-center">
                 SoulfulI is growing into a community, not just a company. As our tools,
                 courses, workshops, and retreats go live, we want the people who
                 believe in this work to be the first to know, the first to join, and
                 eventually, the first to help shape it.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph className="text-center">
                 The gap between where you are and where you can be is not a flaw.
                 It is an invitation.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph className="text-center">
                 So we will leave you with the question we keep asking ourselves. If
                 your mind, your heart, and your spirit were finally allowed to grow in
                 the same direction at the same time, what might change first?
-              </p>
+              </ImageParagraph>
             </div>
 
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Button
                 href="/eq-audit"
-                variant="primary"
+                variant="ivory"
                 size="lg"
                 className="rounded-full"
               >
@@ -238,8 +242,8 @@ export default function HomePage() {
               </Button>
 
               <Button
-                href="/join-our-community"
-                variant="secondary"
+                href="/community"
+                variant="whiteOutline"
                 size="lg"
                 className="rounded-full"
               >
@@ -247,13 +251,12 @@ export default function HomePage() {
               </Button>
             </div>
 
-            <p className="font-sans text-sm text-white/75">
+            <p className="font-sans text-sm text-white/80 max-w-[62ch]">
               Follow along on Instagram and LinkedIn. Join the community when the doors open.
             </p>
-
           </div>
         </div>
-      </section>
+      </ImageSection>
 
     </main>
   );
@@ -263,8 +266,8 @@ function OfferingsSection() {
 
   const homepageOfferingIds = [
     'eq-audit',
-    'inner-compass',
     'schools-colleges',
+    'organisations',
     'quiet-bloom',
   ];
 

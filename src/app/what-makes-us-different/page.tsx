@@ -4,6 +4,12 @@ import type { Metadata } from 'next';
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
 import Badge from '@/components/ui/Badge';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
   title: 'What Makes Us Different — SoulfulI',
@@ -75,40 +81,29 @@ export default function WhatMakesUsDifferentPage() {
     <main className="w-full flex flex-col items-center">
 
       {/* HERO SECTION */}
-      <section className="relative w-full overflow-hidden border-b border-outline-variant/60">
+      <ImageSection
+        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2400&q=85"
+        alt="Lush green pine misty canopy"
+        priority
+        className="border-b border-outline-variant/60"
+        containerClassName="w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36"
+      >
+        <div className="max-w-[1240px] mx-auto space-y-7">
+          <ImageEyebrow>
+            Why We Are Different
+          </ImageEyebrow>
 
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2400&q=85')",
-          }}
-        />
+          <ImageHeading as="h1" className="max-w-5xl text-display-lg-mobile lg:text-display-lg">
+            We Do Not Separate the Mind, the Heart, and the Spirit.
+          </ImageHeading>
 
-        <div className="absolute inset-0 bg-[#17231d]/75" />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#17231d]/95 via-[#17231d]/70 to-transparent" />
-
-        <div className="relative z-10 w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36">
-          <div className="max-w-[1240px] mx-auto space-y-7">
-
-            <Badge variant="terracotta" dot>
-              WHY WE ARE DIFFERENT
-            </Badge>
-
-            <h1 className="max-w-5xl font-serif text-display-lg-mobile lg:text-display-lg text-white tracking-tight font-normal leading-tight">
-              We Do Not Separate the Mind, the Heart, and the Spirit.
-            </h1>
-
-            <p className="max-w-3xl font-sans text-body-lg text-white/80 leading-relaxed">
-              We do not treat spirituality as a mood board, mindfulness as a
-              five-minute app notification, or emotional intelligence as a
-              productivity hack for the workplace.
-            </p>
-
-          </div>
+          <ImageParagraph className="max-w-3xl text-body-lg">
+            We do not treat spirituality as a mood board, mindfulness as a
+            five-minute app notification, or emotional intelligence as a
+            productivity hack for the workplace.
+          </ImageParagraph>
         </div>
-      </section>
+      </ImageSection>
 
       {/* INTRODUCTION */}
       <section className="w-full bg-surface py-20 lg:py-28 border-b border-outline-variant/60">
@@ -129,7 +124,7 @@ export default function WhatMakesUsDifferentPage() {
       </section>
 
       {/* DIFFERENTIATORS */}
-      <section className="relative w-full overflow-hidden bg-surface-container-low py-20 lg:py-32 border-b border-outline-variant/60">
+      <section className="relative w-full overflow-hidden bg-surface-alt-gradient py-20 lg:py-32 border-b border-border-alt">
 
         <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
@@ -148,12 +143,12 @@ export default function WhatMakesUsDifferentPage() {
             subtitle="A different way of understanding emotional intelligence, mindfulness, spirituality, and human growth."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             {differentiators.map((item) => (
               <article
                 key={item.number}
-                className="group overflow-hidden rounded-2xl bg-surface border border-outline-variant/60 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                className="group overflow-hidden rounded-2xl bg-surface border border-border-alt shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
               >
 
                 {/* IMAGE */}

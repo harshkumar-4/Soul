@@ -42,10 +42,10 @@ export default function TermsPage() {
 
           <section className="space-y-3">
             <h2 className="font-serif text-headline-sm text-primary font-normal">
-              3. Retreat & Cohort Policies
+              3. Retreat Policies
             </h2>
             <p>
-              Quiet Bloom retreats and Inner Compass cohorts maintain intimate group sizing. Detailed cancellation and transfer logistics are provided during enrollment confirmation.
+              Quiet Bloom retreats maintain intimate group sizing. Detailed cancellation and transfer logistics are provided during enrollment confirmation.
             </p>
           </section>
 

@@ -71,7 +71,7 @@ export default function SchoolsCollegesPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-outline-variant/60 bg-surface-container">
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-border-alt bg-surface-alt">
               <Image
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
                 alt="Students in collaborative, thoughtful dialogue in educational library"
@@ -85,7 +85,7 @@ export default function SchoolsCollegesPage() {
       </section>
 
       {/* SECTION 2: 4 CURRICULAR THREADS */}
-      <section id="threads" className="w-full py-20 lg:py-32 bg-surface-container-low border-b border-outline-variant/60 scroll-mt-20">
+      <section id="threads" className="w-full py-20 lg:py-32 bg-surface-alt-gradient border-b border-border-alt scroll-mt-20">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
           <SectionHeading
             eyebrow="Core Competencies"
@@ -97,7 +97,7 @@ export default function SchoolsCollegesPage() {
             {curricularThreads.map((thread) => (
               <div
                 key={thread.number}
-                className="bg-surface p-8 rounded-xl border border-outline-variant/60 space-y-4 flex flex-col justify-between shadow-sm"
+                className="bg-surface p-8 rounded-xl border border-border-alt space-y-4 flex flex-col justify-between shadow-sm"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -112,7 +112,7 @@ export default function SchoolsCollegesPage() {
                     {thread.description}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-outline-variant/30 text-xs font-sans text-outline uppercase tracking-wider">
+                <div className="pt-3 border-t border-border-alt/60 text-xs font-sans text-outline uppercase tracking-wider">
                   Curricular Practice Module
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function SchoolsCollegesPage() {
               </p>
             </div>
 
-            <div className="bg-surface-container-low p-6 lg:p-10 rounded-2xl border border-outline-variant/60 shadow-sm">
+            <div className="bg-surface-alt p-6 lg:p-10 rounded-2xl border border-border-alt shadow-sm">
               <SchoolEnquiryForm />
             </div>
           </div>

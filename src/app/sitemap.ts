@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/our-story',
     '/what-we-offer',
     '/eq-audit',
-    '/inner-compass',
     '/quiet-bloom',
     '/schools-colleges',
     '/organisations',

@@ -42,4 +42,20 @@ describe('Form Validation Schemas', () => {
     const result = retreatEnquirySchema.safeParse(validRetreat);
     expect(result.success).toBe(true);
   });
+
+  it('should validate valid organisation enquiry input', () => {
+    const validOrg = {
+      name: 'Rohit Verma',
+      email: 'rohit@company.com',
+      phone: '+91 98765 67890',
+      organisation: 'TechCorp India',
+      designation: 'VP People',
+      programInterest: 'Emotional Intelligence',
+      targetAudience: 'Emerging Leaders',
+      groupSize: '10 - 30 People',
+      goals: 'Building emotional intelligence and collaborative presence across cross-functional teams.',
+    };
+    const result = organisationEnquirySchema.safeParse(validOrg);
+    expect(result.success).toBe(true);
+  });
 });

@@ -6,11 +6,17 @@ import OfferingCard from '@/components/shared/OfferingCard';
 import ClosingCTA from '@/components/shared/ClosingCTA';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
   title: 'What We Offer — SoulfulI Ecosystem',
   description:
-    'Explore the SoulfulI ecosystem: EQ Audit self-discovery mirror, Inner Compass guided development, Quiet Bloom Himalayan retreat, Schools & Colleges curriculum, and organisational culture transformation.',
+    'Explore the SoulfulI ecosystem: EQ Audit self-discovery mirror, Quiet Bloom Himalayan retreat, Schools & Colleges curriculum, and organisational culture transformation.',
 };
 
 export default function WhatWeOfferPage() {
@@ -18,48 +24,34 @@ export default function WhatWeOfferPage() {
     <main className="w-full flex flex-col items-center">
 
       {/* SECTION 1: HERO */}
-      <section className="relative w-full overflow-hidden border-b border-outline-variant/60">
+      <ImageSection
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=75"
+        alt="Tranquil landscape overlooking rolling hills at golden hour"
+        priority
+        className="border-b border-outline-variant/60"
+        containerClassName="w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36"
+      >
+        <div className="max-w-[1240px] mx-auto space-y-7">
+          <ImageEyebrow>
+            Ecosystem Overview
+          </ImageEyebrow>
 
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=75')",
-          }}
-        />
+          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-display-lg max-w-4xl">
+            Portals into self-knowledge and intentional living.
+          </ImageHeading>
 
-        {/* Image Overlay */}
-        <div className="absolute inset-0 bg-[#18251f]/65" />
-
-        {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#18251f]/80 via-[#18251f]/50 to-transparent" />
-
-        <div className="relative z-10 w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36">
-          <div className="max-w-[1240px] mx-auto space-y-7">
-
-            <Badge variant="sage" dot>
-              Ecosystem Overview
-            </Badge>
-
-            <h1 className="font-serif text-display-lg-mobile lg:text-display-lg text-white tracking-tight font-normal max-w-4xl">
-              Portals into self-knowledge and intentional living.
-            </h1>
-
-            <p className="font-sans text-body-lg text-white/80 max-w-2xl leading-relaxed">
-              Whether you are beginning with personal self-discovery,
-              stepping into a mountain retreat, or transforming how your
-              organisation communicates, SoulfulI offers grounded human
-              pathways.
-            </p>
-
-          </div>
+          <ImageParagraph className="text-body-lg max-w-2xl">
+            Whether you are beginning with personal self-discovery,
+            stepping into a mountain retreat, or transforming how your
+            organisation communicates, SoulfulI offers grounded human
+            pathways.
+          </ImageParagraph>
         </div>
-      </section>
+      </ImageSection>
 
       {/* SECTION 2: OFFERINGS */}
       {/* SECTION 2: THE SOULFULI ECOSYSTEM */}
-      <section className="relative w-full py-20 lg:py-28 overflow-hidden border-b border-outline-variant/60">
+      <section className="relative w-full py-20 lg:py-28 overflow-hidden border-b border-border-alt">
 
         {/* Background Image */}
         <div
@@ -70,7 +62,7 @@ export default function WhatWeOfferPage() {
           }}
         />
 
-        <div className="absolute inset-0 bg-surface-container-low/90" />
+        <div className="absolute inset-0 bg-surface-alt/90" />
 
         <div className="relative z-10 space-y-12">
 
@@ -93,7 +85,7 @@ export default function WhatWeOfferPage() {
                 <a
                   key={`${offering.id}-${index}`}
                   href={offering.href}
-                  className="group relative flex h-[280px] w-[280px] shrink-0 flex-col justify-end overflow-hidden rounded-2xl border border-white/20 bg-surface-container-low shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                  className="group relative flex h-[280px] w-[280px] shrink-0 flex-col justify-end overflow-hidden rounded-2xl border border-white/20 bg-surface-alt shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                 >
 
                   {/* Card Image */}
@@ -170,7 +162,7 @@ export default function WhatWeOfferPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
             {/* EQ Audit */}
-            <div className="group min-h-[230px] rounded-2xl border border-outline-variant/60 bg-surface-container-low/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="group min-h-[230px] rounded-2xl border border-border-alt bg-surface-alt/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="space-y-3">
                 <span className="text-[10px] uppercase tracking-[0.18em] text-secondary font-semibold">
                   For Individuals
@@ -195,36 +187,34 @@ export default function WhatWeOfferPage() {
                 Start Audit →
               </Button>
             </div>
-
-            {/* Quiet Bloom */}
-            <div className="group min-h-[230px] rounded-2xl border border-outline-variant/60 bg-surface-container-low/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            {/* Education */}
+            <div className="group min-h-[230px] rounded-2xl border border-border-alt bg-surface-alt/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="space-y-3">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-tertiary font-semibold">
-                  For Deep Rest
+                <span className="text-[10px] uppercase tracking-[0.18em] text-outline font-semibold">
+                  For Education
                 </span>
 
                 <h4 className="font-serif text-xl text-primary font-normal">
-                  Quiet Bloom
+                  Schools & Colleges
                 </h4>
 
                 <p className="text-xs leading-relaxed text-on-surface-variant">
-                  A reflective retreat experience rooted in stillness and
-                  restoration.
+                  Develop emotional literacy, mindful communication, and
+                  resilience.
                 </p>
               </div>
 
               <Button
-                href="/quiet-bloom"
+                href="/schools-colleges"
                 variant="ghost"
                 size="sm"
                 className="self-start px-0"
               >
-                View Retreat →
+                View Offerings →
               </Button>
             </div>
-
             {/* Organisations */}
-            <div className="group min-h-[230px] rounded-2xl border border-outline-variant/60 bg-surface-container-low/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="group min-h-[230px] rounded-2xl border border-border-alt bg-surface-alt/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="space-y-3">
                 <span className="text-[10px] uppercase tracking-[0.18em] text-forest font-semibold">
                   For Organisations
@@ -250,32 +240,35 @@ export default function WhatWeOfferPage() {
               </Button>
             </div>
 
-            {/* Education */}
-            <div className="group min-h-[230px] rounded-2xl border border-outline-variant/60 bg-surface-container-low/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+
+
+            {/* Quiet Bloom */}
+            <div className="group min-h-[230px] rounded-2xl border border-border-alt bg-surface-alt/95 backdrop-blur-sm p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="space-y-3">
-                <span className="text-[10px] uppercase tracking-[0.18em] text-outline font-semibold">
-                  For Education
+                <span className="text-[10px] uppercase tracking-[0.18em] text-tertiary font-semibold">
+                  For Deep Rest
                 </span>
 
                 <h4 className="font-serif text-xl text-primary font-normal">
-                  Schools & Colleges
+                  Quiet Bloom
                 </h4>
 
                 <p className="text-xs leading-relaxed text-on-surface-variant">
-                  Develop emotional literacy, mindful communication, and
-                  resilience.
+                  A reflective retreat experience rooted in stillness and
+                  restoration.
                 </p>
               </div>
 
               <Button
-                href="/schools-colleges"
+                href="/quiet-bloom"
                 variant="ghost"
                 size="sm"
                 className="self-start px-0"
               >
-                View Offerings →
+                View Retreat →
               </Button>
             </div>
+
 
           </div>
         </div>

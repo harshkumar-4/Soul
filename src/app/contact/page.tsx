@@ -30,13 +30,13 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left: Contact Form */}
-          <div className="lg:col-span-7 bg-surface-container-low p-6 lg:p-10 rounded-2xl border border-outline-variant/60 shadow-sm">
+          <div className="lg:col-span-7 bg-surface-alt p-6 lg:p-10 rounded-2xl border border-border-alt shadow-sm">
             <ContactForm />
           </div>
 
           {/* Right: Context & Physical Presence */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/60 space-y-6 shadow-sm">
+            <div className="bg-surface-alt p-8 rounded-2xl border border-border-alt space-y-6 shadow-sm">
               <span className="font-sans text-xs uppercase tracking-widest text-secondary font-semibold block">
                 Correspondence Commitments
               </span>
@@ -68,7 +68,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="p-6 bg-surface-container rounded-xl border border-outline-variant/40 space-y-2">
+            <div className="p-6 bg-surface-alt rounded-xl border border-border-alt space-y-2">
               <h4 className="font-serif text-lg text-primary font-normal">
                 Direct Electronic Mail
               </h4>

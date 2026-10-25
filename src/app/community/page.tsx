@@ -5,6 +5,12 @@ import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 import {
   ArrowUpRight,
@@ -45,7 +51,7 @@ const communityWays = [
     number: '03',
     title: 'Join Upcoming Experiences',
     description:
-      'Join the waitlist for Quiet Bloom Retreat and future Inner Compass workshops. Be among the first to know when registrations open.',
+      'Join the waitlist for Quiet Bloom Retreat and upcoming community gatherings. Be among the first to know when registrations open.',
     image:
       'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=75',
     cta: 'Join the Waitlist',
@@ -67,38 +73,29 @@ export default function CommunityPage() {
     <main className="w-full flex flex-col items-center">
 
       {/* HERO SECTION */}
-      <section className="relative w-full overflow-hidden border-b border-outline-variant/60">
+      <ImageSection
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75"
+        alt="Friends laughing and connecting warmly outdoors"
+        priority
+        className="border-b border-outline-variant/60"
+        containerClassName="w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36"
+      >
+        <div className="max-w-[1240px] mx-auto space-y-7">
+          <ImageEyebrow>
+            Join Our Community
+          </ImageEyebrow>
 
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75')",
-          }}
-        />
+          <ImageHeading as="h1" className="max-w-4xl text-display-lg-mobile lg:text-display-lg">
+            This Is Just the Beginning.
+          </ImageHeading>
 
-        <div className="absolute inset-0 bg-[#17231d]/75" />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-[#17231d]/95 via-[#17231d]/65 to-transparent" />
-
-        <div className="relative z-10 w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36">
-          <div className="max-w-[1240px] mx-auto space-y-7">
-            <Badge variant="sage" dot>
-              <span className="!text-white">JOIN OUR COMMUNITY</span>
-            </Badge>
-            <h1 className="max-w-4xl font-serif text-display-lg-mobile lg:text-display-lg text-white tracking-tight font-normal leading-tight">
-              This Is Just the Beginning.
-            </h1>
-
-            <p className="max-w-2xl font-sans text-body-lg text-white/80 leading-relaxed">
-              SoulfulI is growing into a community, not just a company.
-              We are building this space one honest conversation, one
-              workshop, and one retreat at a time.
-            </p>
-
-          </div>
+          <ImageParagraph className="max-w-2xl text-body-lg">
+            SoulfulI is growing into a community, not just a company.
+            We are building this space one honest conversation, one
+            workshop, and one retreat at a time.
+          </ImageParagraph>
         </div>
-      </section>
+      </ImageSection>
 
       {/* INTRODUCTION */}
       <section className="w-full bg-surface py-20 lg:py-28 border-b border-outline-variant/60">
@@ -124,7 +121,7 @@ export default function CommunityPage() {
       </section>
 
       {/* COMMUNITY WAYS */}
-      <section className="relative w-full overflow-hidden bg-surface-container-low py-20 lg:py-32 border-b border-outline-variant/60">
+      <section className="relative w-full overflow-hidden bg-surface-alt-gradient py-20 lg:py-32 border-b border-border-alt">
 
         <div
           className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
@@ -148,7 +145,7 @@ export default function CommunityPage() {
             {communityWays.map((item) => (
               <article
                 key={item.number}
-                className="group overflow-hidden rounded-2xl bg-surface border border-outline-variant/60 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+                className="group overflow-hidden rounded-2xl bg-surface border border-border-alt shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
               >
 
                 {/* IMAGE */}
@@ -226,7 +223,7 @@ export default function CommunityPage() {
       </section>
 
       {/* SOCIAL CONNECTION */}
-      <section className="w-full bg-surface-container-low py-20 lg:py-28 border-b border-outline-variant/60">
+      <section className="w-full bg-surface-alt-gradient py-20 lg:py-28 border-b border-border-alt">
 
         <div className="max-w-[1000px] mx-auto px-6 lg:px-16 text-center space-y-10">
 

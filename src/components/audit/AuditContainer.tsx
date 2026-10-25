@@ -88,7 +88,7 @@ export function AuditContainer() {
         </div>
 
         {/* 6 Dimensions Overview Grid */}
-        <div className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-6 lg:p-8 space-y-6">
+        <div className="bg-surface-alt border border-border-alt rounded-xl p-6 lg:p-8 space-y-6">
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-secondary block">
             The Six Dimensions Mapped
           </span>
@@ -140,7 +140,7 @@ export function AuditContainer() {
         />
 
         {/* Question Card */}
-        <div className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-6 lg:p-10 space-y-8 shadow-sm">
+        <div className="bg-surface-alt border border-border-alt rounded-xl p-6 lg:p-10 space-y-8 shadow-sm">
           <div className="space-y-3">
             <span className="font-sans text-xs uppercase tracking-widest text-secondary font-semibold block">
               Dimension {Math.floor(currentIndex / 8) + 1} of 6 · {currentDimension.name}
@@ -165,7 +165,7 @@ export function AuditContainer() {
                     onClick={() => handleSelectAnswer(rate.value)}
                     className={`p-3.5 rounded-lg border text-center transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isSelected
                       ? 'bg-primary text-surface-bright border-primary shadow-sm scale-[1.02]'
-                      : 'bg-surface-container text-on-surface border-outline-variant/60 hover:bg-surface-container-high'
+                      : 'bg-surface-alt text-on-surface border-border-alt hover:bg-border-alt'
                       }`}
                   >
                     <div className="font-serif text-lg font-normal mb-0.5">{rate.value}</div>
@@ -177,7 +177,7 @@ export function AuditContainer() {
           </div>
 
           {/* Reflection Prompt Inset */}
-          <div className="bg-surface-container p-4 rounded-lg border-l-2 border-tertiary text-xs font-sans text-on-surface-variant leading-relaxed">
+          <div className="bg-surface-alt p-4 rounded-lg border-l-2 border-tertiary text-xs font-sans text-on-surface-variant leading-relaxed">
             <span className="font-semibold text-primary block mb-0.5">Gentle Reflection:</span>
             {currentQuestion.reflectionPrompt}
           </div>
@@ -238,13 +238,13 @@ export function AuditContainer() {
           </p>
         </div>
 
-        <div className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-6 space-y-4 max-w-md mx-auto">
+        <div className="bg-surface-alt border border-border-alt rounded-xl p-6 space-y-4 max-w-md mx-auto">
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your.email@quietplace.org"
-            className="w-full bg-surface-container px-4 py-3 rounded border border-outline-variant/60 text-on-surface font-sans text-sm focus:outline-none focus:border-primary"
+            className="w-full bg-surface-alt px-4 py-3 rounded border border-border-alt text-on-surface font-sans text-sm focus:outline-none focus:border-primary"
           />
           <Button
             size="lg"
@@ -284,13 +284,13 @@ export function AuditContainer() {
         </div>
 
         {/* Inner Map Radar & Overall Score Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-container-low border border-outline-variant/60 rounded-2xl p-6 lg:p-10 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface-alt border border-border-alt rounded-2xl p-6 lg:p-10 shadow-sm">
           <div className="lg:col-span-7 flex justify-center py-4">
             <InnerMapRadar scores={result.dimensionScores} size={360} />
           </div>
 
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-5 bg-surface-container rounded-xl space-y-2 border border-outline-variant/40">
+            <div className="p-5 bg-surface-alt rounded-xl space-y-2 border border-border-alt">
               <span className="font-sans text-xs uppercase tracking-wider text-secondary font-semibold block">
                 Primary Strength
               </span>
@@ -307,7 +307,7 @@ export function AuditContainer() {
               </p>
             </div>
 
-            <div className="p-5 bg-surface-container rounded-xl space-y-2 border border-outline-variant/40">
+            <div className="p-5 bg-surface-alt rounded-xl space-y-2 border border-border-alt">
               <span className="font-sans text-xs uppercase tracking-wider text-tertiary font-semibold block">
                 Primary Growth Pathway
               </span>
@@ -341,7 +341,7 @@ export function AuditContainer() {
             {result.dimensionScores.map((item) => (
               <div
                 key={item.dimensionId}
-                className="bg-surface-container-low border border-outline-variant/60 rounded-xl p-5 space-y-4 flex flex-col justify-between"
+                className="bg-surface-alt border border-border-alt rounded-xl p-5 space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
@@ -360,9 +360,9 @@ export function AuditContainer() {
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-3 border-t border-outline-variant/30">
+                <div className="space-y-2 pt-3 border-t border-border-alt/60">
                   {/* Hairline Bar */}
-                  <div className="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+                  <div className="w-full h-1 bg-border-alt rounded-full overflow-hidden">
                     <div
                       className="h-full bg-primary"
                       style={{ width: `${item.percentage}%` }}

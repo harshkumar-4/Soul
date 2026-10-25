@@ -166,13 +166,13 @@ SoulfulI should eventually have four major revenue/ecosystem layers.
 
 ## B2C
 
+Home
+↓
 EQ Audit
 ↓
-Inner Compass
+Results
 ↓
-Community
-↓
-Retreats
+Community / Retreat
 
 ## B2B
 
@@ -215,7 +215,6 @@ Primary CTA:
 
 Secondary CTAs:
 
-- Explore Inner Compass
 - Explore Quiet Bloom
 - Work With Us
 - Join the Community
@@ -237,8 +236,6 @@ The initial website should contain:
 /what-we-offer → What We Offer
 
 /eq-audit → EQ Audit
-
-/inner-compass → Inner Compass
 
 /quiet-bloom → Quiet Bloom
 
@@ -522,7 +519,6 @@ eq_audit_started
 eq_audit_question_answered
 eq_audit_completed
 eq_results_viewed
-inner_compass_clicked
 quiet_bloom_clicked
 retreat_enquiry_started
 retreat_enquiry_submitted
@@ -769,19 +765,25 @@ Use ARIA only when necessary.
 Primary palette:
 
 Warm Ivory
-Soft Sand
+Blush Lavender
 Muted Sage
 Deep Forest
 Terracotta
 Charcoal
 
-Suggested conceptual values:
+Design Tokens:
+
+Blush Lavender Surface (--surface-alt):
+#FBF5F6
+
+Border Alt (--border-alt):
+#EDE4E8
+
+Surface Alt Gradient (--surface-alt-gradient):
+linear-gradient(160deg, #FBF5F6 0%, #EDE4E8 100%)
 
 Warm Ivory:
 #F7F3EA
-
-Soft Sand:
-#E8DDCC
 
 Muted Sage:
 #A9B5A0
@@ -932,7 +934,6 @@ This should be a major visual storytelling section.
 Show:
 
 EQ Audit
-Inner Compass
 Schools & Colleges
 Organisations
 Quiet Bloom
@@ -992,10 +993,9 @@ Display the ecosystem.
 Primary offerings:
 
 1. EQ Audit
-2. Inner Compass
-3. Schools & Colleges
-4. Organisations
-5. Quiet Bloom
+2. Schools & Colleges
+3. Organisations
+4. Quiet Bloom
 
 Each offering should explain:
 
@@ -1155,38 +1155,7 @@ Then:
 
 Possible recommendation:
 
-Inner Compass
-
----
-
-# 37. INNER COMPASS
-
-Inner Compass is the deeper development program.
-
-Core framework:
-
-Know Yourself
-↓
-Choose Yourself
-↓
-See Others
-↓
-Read the Room
-↓
-Speak with Intention
-
-It should eventually become a deeper guided experience.
-
-MVP should focus on:
-
-- Program explanation
-- Philosophy
-- Modules
-- Outcomes
-- CTA
-- Enquiry / interest form
-
-Do NOT build a huge learning-management system in MVP.
+Quiet Bloom Retreat or Community signup
 
 ---
 
@@ -1270,29 +1239,43 @@ Discuss a Program
 
 Purpose:
 
-B2B human-development programs.
+Corporate and leadership human-development programs. Reuses the Schools & Colleges template structure: Hero → Core Competencies (4 pillars) → Partnership form.
 
-Possible areas:
+## Page Structure
 
-- Emotional intelligence
-- Leadership
-- Communication
-- Team dynamics
-- Human-centred leadership
-- Workplace relationships
+### 1. Hero
+- Eyebrow: "Corporate Offering"
+- Heading: "Leading with the heart, not just the numbers."
+- Body: "Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead."
+- Primary CTA: "Discuss a Corporate Program" → `/organisations#consultation`
+- Secondary CTA: "Explore Our Approach" → `/organisations#threads`
 
-Lead form should collect:
+### 2. Core Competencies Section (`id="threads"`)
+- Eyebrow: "Core Competencies"
+- Heading: "Four Pillars of Human-Centred Leadership"
+- Subtext: "Modular programs tailored for emerging leaders, managers, and whole teams."
+- Four Pillars (with "Program Module" label):
+  1. 01 / RECOGNITION, Emotional Intelligence: "Building the capacity to recognize and name emotional states in oneself and others before they turn into reactive decisions or strained relationships."
+  2. 02 / OBSERVATION, Self-Aware Leadership: "Creating reflective space to examine leadership habits, blind spots, and unspoken pressures without fear of judgment."
+  3. 03 / DISCOURSE, Intentional Communication: "Learning to speak clearly, listen without defensiveness, and handle difficult conversations with care and honesty."
+  4. 04 / CONNECTION, Team Dynamics: "Strengthening trust, empathy, and shared understanding so teams collaborate with less friction and more ease."
 
-- Name
-- Organisation
-- Role
-- Email
-- Phone
-- Program interest
-- Audience size
-- Message
-
-Do not ask unnecessary questions.
+### 3. Partnership Form Section (`id="consultation"`)
+- Eyebrow: "Organisational Partnership"
+- Heading: "Discuss a Program for Your Organisation"
+- Subtext: "Connect with our team to explore workshops, leadership programs, or team development engagements."
+- Form Fields (all required except Phone):
+  - Your Full Name (`name`, required)
+  - Work Email (`email`, required)
+  - Phone (`phone`, optional)
+  - Organisation Name (`organisation`, required)
+  - Designation / Department (`designation`, required)
+  - Program Interest (`programInterest`, required: Emotional Intelligence / Leadership Development / Communication & Team Dynamics / Workplace Wellbeing)
+  - Target Audience (`targetAudience`, required: Emerging Leaders / Managers & Team Leads / Senior Leadership / Whole Teams)
+  - Estimated Group Size (`groupSize`, required: 10 - 30 People / 30 - 100 People / 100+ People)
+  - Goals & Context (`goals`, required)
+- Submit button: "Discuss a Program"
+- Integration: Zod validation, loading/success/error states, duplicate-submit prevention, Supabase save to `organization_enquiries`, Resend notification, and `organization_enquiry_submitted` PostHog event.
 
 ---
 
@@ -1545,7 +1528,6 @@ page.tsx
 our-story/
 what-we-offer/
 eq-audit/
-inner-compass/
 quiet-bloom/
 schools-colleges/
 organisations/
@@ -1715,7 +1697,6 @@ Take the EQ Audit
 Other CTAs:
 
 Begin Your Journey
-Explore Inner Compass
 Explore Quiet Bloom
 Discuss a Program
 Join the Community
@@ -1774,7 +1755,6 @@ These features are required.
 - Our Story
 - What We Offer
 - EQ Audit landing
-- Inner Compass
 - Quiet Bloom
 - Schools & Colleges
 - Organisations
@@ -1827,7 +1807,6 @@ After MVP foundation:
 - Email results
 - Optional user account
 - Save results
-- Inner Compass modules
 - User progress
 
 ---
@@ -2014,12 +1993,11 @@ Recommended order:
 3. What We Offer
 4. What Makes Us Different
 5. EQ Audit
-6. Inner Compass
-7. Quiet Bloom
-8. Schools & Colleges
-9. Organisations
-10. Community
-11. Contact
+6. Quiet Bloom
+7. Schools & Colleges
+8. Organisations
+9. Community
+10. Contact
 
 ---
 
@@ -2185,7 +2163,6 @@ Highest priority:
 
 Home
 EQ Audit
-Inner Compass
 Quiet Bloom
 Organisations
 Schools & Colleges
@@ -2206,7 +2183,6 @@ EQ Audit
 
 Secondary conversions:
 
-Inner Compass enquiry
 Retreat enquiry
 Organisation enquiry
 School enquiry
@@ -2229,8 +2205,6 @@ Understand SoulfulI
 EQ Audit
 ↓
 Results
-↓
-Inner Compass
 ↓
 Community / Retreat
 

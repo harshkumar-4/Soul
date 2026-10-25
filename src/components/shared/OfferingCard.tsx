@@ -35,13 +35,13 @@ export function OfferingCard({
   return (
     <div
       className={cn(
-        'group bg-surface-container-low hover:bg-surface-container border border-outline-variant/60 rounded-lg p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm',
+        'group bg-surface-alt hover:bg-border-alt/50 border border-border-alt rounded-lg p-6 lg:p-8 flex flex-col justify-between transition-all duration-300 shadow-sm',
         className
       )}
     >
       <div className="space-y-6">
         {imageSrc && (
-          <div className="relative w-full aspect-[16/10] overflow-hidden rounded bg-surface-container-high">
+          <div className="relative w-full aspect-[16/10] overflow-hidden rounded bg-surface-alt">
             <Image
               src={imageSrc}
               alt={imageAlt || title}
@@ -66,7 +66,7 @@ export function OfferingCard({
         </div>
 
         {features && features.length > 0 && (
-          <ul className="space-y-2 pt-2 border-t border-outline-variant/40 text-body-sm text-on-surface-variant">
+          <ul className="space-y-2 pt-2 border-t border-border-alt/60 text-body-sm text-on-surface-variant">
             {features.map((item, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <span className="text-secondary select-none font-serif">·</span>
@@ -77,7 +77,7 @@ export function OfferingCard({
         )}
       </div>
 
-      <div className="pt-6 mt-6 border-t border-outline-variant/40 flex items-center justify-between">
+      <div className="pt-6 mt-6 border-t border-border-alt/60 flex items-center justify-between">
         <Link
           href={href}
           className="inline-flex items-center gap-2 font-sans text-body-sm font-semibold text-primary group-hover:text-tertiary transition-colors"

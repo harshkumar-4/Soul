@@ -9,8 +9,15 @@
     --color-primary: #1f2a24;
     --color-secondary: #7d8b78;
     --color-tertiary: #c86d51;
-    --color-outline: #737874;
+    --color-outline: #59605a;
     --color-outline-variant: #ddd6c8;
+    --surface-alt: #FBF5F6;
+    --border-alt: #e6d4dc;
+    --surface-alt-gradient: linear-gradient(160deg, #FBF5F6 0%, #EDE4E8 100%);
+  }
+
+  .bg-surface-alt-gradient {
+    background: linear-gradient(160deg, #FBF5F6 0%, #EDE4E8 100%);
   }
 
   html {

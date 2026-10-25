@@ -7,41 +7,50 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Organisations & Leadership — SoulfulI Enterprise Programs',
+  title: 'Organisations — SoulfulI Human-Centred Leadership',
   description:
-    'Non-reactive leadership in complex times. Transforming enterprise workplace culture through grounded emotional intelligence, empathetic dialogue, and human-centered leadership.',
+    'Leading with the heart, not just the numbers. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+  alternates: {
+    canonical: 'https://soulfuli.com/organisations',
+  },
+  openGraph: {
+    title: 'Organisations — SoulfulI Human-Centred Leadership',
+    description:
+      'Leading with the heart, not just the numbers. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+    url: 'https://soulfuli.com/organisations',
+    siteName: 'SoulfulI',
+    type: 'website',
+  },
 };
 
-const leadershipCompetencies = [
+const corporatePillars = [
   {
     number: '01',
-    title: 'Self-Awareness Under Pressure',
-    description: 'Recognizing immediate internal defense patterns before they drive executive reactivity.',
+    category: 'RECOGNITION',
+    title: 'Emotional Intelligence',
+    description:
+      'Building the capacity to recognize and name emotional states in oneself and others before they turn into reactive decisions or strained relationships.',
   },
   {
     number: '02',
-    title: 'Emotional Regulation',
-    description: 'The grounded ability to steady the nervous system rather than discharge panic outward into teams.',
+    category: 'OBSERVATION',
+    title: 'Self-Aware Leadership',
+    description:
+      'Creating reflective space to examine leadership habits, blind spots, and unspoken pressures without fear of judgment.',
   },
   {
     number: '03',
-    title: 'Non-Reactive Leadership',
-    description: 'Guiding others with clear discernment, patience, and stillness rather than defensive assertion.',
+    category: 'DISCOURSE',
+    title: 'Intentional Communication',
+    description:
+      'Learning to speak clearly, listen without defensiveness, and handle difficult conversations with care and honesty.',
   },
   {
     number: '04',
-    title: 'Honest, Clean Feedback',
-    description: 'Articulating friction, doubt, and intention directly without cruelty, sarcasm, or ambiguity.',
-  },
-  {
-    number: '05',
-    title: 'Empathy & Resonance',
-    description: 'Listening beyond spoken positions to hear the emotional truth under another’s perspective.',
-  },
-  {
-    number: '06',
-    title: 'Intentional Choices',
-    description: 'Aligning high-stakes organizational decisions with enduring human values over short-term panic.',
+    category: 'CONNECTION',
+    title: 'Team Dynamics',
+    description:
+      'Strengthening trust, empathy, and shared understanding so teams collaborate with less friction and more ease.',
   },
 ];
 
@@ -52,30 +61,30 @@ export default function OrganisationsPage() {
       <section className="w-full px-6 lg:px-16 pt-12 lg:pt-20 pb-16 lg:pb-24 bg-surface border-b border-outline-variant/60">
         <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <Badge variant="forest" dot>
-              B2B Leadership & Culture
+            <Badge variant="sand" dot>
+              Corporate Offering
             </Badge>
             <h1 className="font-serif text-display-lg-mobile lg:text-display-lg text-primary tracking-tight font-normal">
-              Non-reactive leadership in complex times.
+              Leading with the heart, not just the numbers.
             </h1>
             <p className="font-sans text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              When organizational pressure accelerates, unexamined emotional reactivity becomes toxic culture. SoulfulI partners with leadership teams to cultivate deep presence, psychological safety, and clear communication.
+              Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.
             </p>
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Button href="#consultation" variant="primary" size="lg" className="rounded-full">
-                Request a Consultation
+                Discuss a Corporate Program
               </Button>
-              <Button href="#competencies" variant="secondary" size="lg" className="rounded-full">
-                View Competencies
+              <Button href="#threads" variant="secondary" size="lg" className="rounded-full">
+                Explore Our Approach
               </Button>
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-outline-variant/60 bg-surface-container">
+            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-border-alt bg-surface-alt">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-                alt="Executive leadership team engaged in calm, focused strategic reflection"
+                alt="Leaders and team members engaged in calm, thoughtful dialogue"
                 fill
                 priority
                 className="object-cover"
@@ -85,34 +94,36 @@ export default function OrganisationsPage() {
         </div>
       </section>
 
-      {/* SECTION 2: 6 LEADERSHIP COMPETENCIES */}
-      <section id="competencies" className="w-full py-20 lg:py-32 bg-surface-container-low border-b border-outline-variant/60 scroll-mt-20">
+      {/* SECTION 2: 4 CORE COMPETENCIES */}
+      <section id="threads" className="w-full py-20 lg:py-32 bg-surface-alt-gradient border-b border-border-alt scroll-mt-20">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
           <SectionHeading
-            eyebrow="The Capabilities"
-            title="Six Pillars of Organizational Steadiness"
-            subtitle="The core relational competencies required to lead high-performing teams without burnout."
+            eyebrow="Core Competencies"
+            title="Four Pillars of Human-Centred Leadership"
+            subtitle="Modular programs tailored for emerging leaders, managers, and whole teams."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {leadershipCompetencies.map((item) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {corporatePillars.map((pillar) => (
               <div
-                key={item.number}
-                className="bg-surface p-7 rounded-xl border border-outline-variant/60 space-y-3 flex flex-col justify-between shadow-sm"
+                key={pillar.number}
+                className="bg-surface p-8 rounded-xl border border-border-alt space-y-4 flex flex-col justify-between shadow-sm"
               >
-                <div className="space-y-2">
-                  <span className="font-serif text-2xl text-secondary select-none font-light">
-                    {item.number}
-                  </span>
-                  <h4 className="font-serif text-headline-sm text-primary font-normal">
-                    {item.title}
-                  </h4>
-                  <p className="font-sans text-body-sm text-on-surface-variant leading-relaxed">
-                    {item.description}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-sans text-xs uppercase tracking-widest text-secondary font-semibold">
+                      {pillar.number} / {pillar.category}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-headline-md text-primary font-normal">
+                    {pillar.title}
+                  </h3>
+                  <p className="font-sans text-body-md text-on-surface-variant leading-relaxed">
+                    {pillar.description}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-outline-variant/30 text-[11px] font-sans text-outline uppercase tracking-wider">
-                  Executive Competency
+                <div className="pt-3 border-t border-border-alt/60 text-xs font-sans text-outline uppercase tracking-wider">
+                  Program Module
                 </div>
               </div>
             ))}
@@ -120,23 +131,23 @@ export default function OrganisationsPage() {
         </div>
       </section>
 
-      {/* SECTION 3: PROPOSAL REQUEST FORM */}
+      {/* SECTION 3: PARTNERSHIP FORM */}
       <section id="consultation" className="w-full py-20 lg:py-32 bg-surface scroll-mt-20">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
           <div className="max-w-2xl mx-auto space-y-10">
             <div className="text-center space-y-3">
-              <Badge variant="forest" dot>
-                Enterprise Partnership
+              <Badge variant="sand" dot>
+                Organisational Partnership
               </Badge>
               <h2 className="font-serif text-headline-lg lg:text-display-lg text-primary tracking-tight font-normal">
-                Start an Executive Engagement
+                Discuss a Program for Your Organisation
               </h2>
               <p className="font-sans text-body-md text-on-surface-variant leading-relaxed">
-                Connect with our leadership practice lead to design a tailored executive intensive, department cohort, or cultural reset.
+                Connect with our team to explore workshops, leadership programs, or team development engagements.
               </p>
             </div>
 
-            <div className="bg-surface-container-low p-6 lg:p-10 rounded-2xl border border-outline-variant/60 shadow-sm">
+            <div className="bg-surface-alt p-6 lg:p-10 rounded-2xl border border-border-alt shadow-sm">
               <OrganisationEnquiryForm />
             </div>
           </div>

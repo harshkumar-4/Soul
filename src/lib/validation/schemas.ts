@@ -4,7 +4,7 @@ export const contactFormSchema = z.object({
   name: z.string().min(2, 'Please provide your full name'),
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().optional(),
-  pathway: z.enum(['general', 'eq-audit', 'inner-compass', 'quiet-bloom', 'schools', 'organisations']),
+  pathway: z.enum(['general', 'eq-audit', 'quiet-bloom', 'schools', 'organisations']),
   message: z.string().min(10, 'Please include a brief message (at least 10 characters)'),
 });
 
@@ -12,13 +12,14 @@ export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const organisationEnquirySchema = z.object({
   name: z.string().min(2, 'Please provide your full name'),
-  organisation: z.string().min(2, 'Please provide your organisation name'),
-  role: z.string().min(2, 'Please provide your role or title'),
   email: z.string().email('Please enter a valid work email address'),
   phone: z.string().optional(),
-  programInterest: z.string().min(2, 'Please specify your program interest'),
-  audienceSize: z.string().min(1, 'Please specify estimated group size'),
-  message: z.string().min(10, 'Please tell us about your context and objectives'),
+  organisation: z.string().min(2, 'Please provide your organisation name'),
+  designation: z.string().min(2, 'Please provide your designation / department'),
+  programInterest: z.string().min(2, 'Please select a program interest'),
+  targetAudience: z.string().min(2, 'Please select a target audience'),
+  groupSize: z.string().min(1, 'Please select estimated group size'),
+  goals: z.string().min(10, 'Please tell us about your goals and context (at least 10 characters)'),
 });
 
 export type OrganisationEnquiryData = z.infer<typeof organisationEnquirySchema>;

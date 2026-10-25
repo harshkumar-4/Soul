@@ -74,16 +74,6 @@ export function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/inner-compass" className="hover:text-surface-bright transition-colors">
-                    Inner Compass
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/quiet-bloom" className="hover:text-surface-bright transition-colors">
-                    Quiet Bloom Retreat
-                  </Link>
-                </li>
-                <li>
                   <Link href="/schools-colleges" className="hover:text-surface-bright transition-colors">
                     Schools & Colleges
                   </Link>
@@ -91,6 +81,11 @@ export function Footer() {
                 <li>
                   <Link href="/organisations" className="hover:text-surface-bright transition-colors">
                     Organisations
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/quiet-bloom" className="hover:text-surface-bright transition-colors">
+                    Quiet Bloom Retreat
                   </Link>
                 </li>
               </ul>

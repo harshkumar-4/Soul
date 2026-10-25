@@ -2,7 +2,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'sage' | 'sand' | 'terracotta' | 'forest' | 'outline';
+  variant?: 'sage' | 'sand' | 'terracotta' | 'forest' | 'outline' | 'translucentWhite';
   dot?: boolean;
 }
 
@@ -15,10 +15,11 @@ export function Badge({
 }: BadgeProps) {
   const variants = {
     sage: 'bg-sage/15 text-forest border border-sage/30',
-    sand: 'bg-surface-container text-on-surface-variant border border-outline-variant/60',
+    sand: 'bg-surface-alt text-on-surface-variant border border-border-alt',
     terracotta: 'bg-tertiary/15 text-tertiary border border-tertiary/30',
     forest: 'bg-primary text-surface-bright',
     outline: 'bg-transparent text-on-surface-variant border border-outline-variant',
+    translucentWhite: 'bg-white/[0.14] text-white border border-white/35 backdrop-blur-[8px]',
   };
 
   const dotColors = {
@@ -27,6 +28,7 @@ export function Badge({
     terracotta: 'bg-tertiary',
     forest: 'bg-surface-bright',
     outline: 'bg-outline',
+    translucentWhite: 'bg-white/80',
   };
 
   return (

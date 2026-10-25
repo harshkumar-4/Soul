@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'terracotta';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'terracotta' | 'ivory' | 'whiteOutline';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   isExternal?: boolean;
@@ -18,13 +18,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         'bg-primary text-surface-bright hover:bg-primary/90 shadow-sm rounded-lg active:scale-[0.99]',
       secondary:
-        'bg-surface-container text-on-surface border border-outline-variant/60 hover:bg-surface-container-high rounded-lg active:scale-[0.99]',
+        'bg-surface-alt text-on-surface border border-border-alt hover:bg-border-alt rounded-lg active:scale-[0.99]',
       outline:
         'bg-transparent text-primary border border-outline-variant hover:border-primary rounded-lg active:scale-[0.99]',
       ghost:
         'bg-transparent text-on-surface hover:text-tertiary underline underline-offset-4 decoration-outline-variant hover:decoration-tertiary p-0',
       terracotta:
         'bg-tertiary text-white hover:bg-tertiary/90 shadow-sm rounded-lg active:scale-[0.99]',
+      ivory:
+        'bg-[#F7F3EA] text-[#24382D] hover:bg-white hover:text-[#17231d] shadow-sm rounded-lg active:scale-[0.99]',
+      whiteOutline:
+        'bg-transparent text-white border border-white/60 hover:bg-white/10 hover:border-white rounded-lg active:scale-[0.99]',
     };
 
     const sizes = {

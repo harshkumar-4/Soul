@@ -104,11 +104,11 @@ export function calculateAuditResult(submission: AuditSubmission): AuditResult {
           badgeText: 'Contemplative Retreat',
         }
       : {
-          title: 'Inner Compass Program',
+          title: 'SoulfulI Community',
           description:
-            'A guided 5-pillar journey focused on mastering intentional communication, non-reactive leadership, and relational resonance.',
-          href: '/inner-compass',
-          badgeText: 'Guided Program',
+            'An intentional community for reflective practitioners. Connect with fellow seekers, attend thoughtful gatherings, and receive contemplative insights.',
+          href: '/community',
+          badgeText: 'Community Gathering',
         };
 
   return {

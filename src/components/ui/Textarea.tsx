@@ -24,7 +24,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           required={required}
           rows={rows}
           className={cn(
-            'w-full bg-surface-container px-4 py-3 rounded border border-outline-variant/60 text-on-surface font-sans text-body-md placeholder:text-outline/70 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-colors resize-y',
+            'w-full bg-surface-alt px-4 py-3 rounded border border-border-alt text-on-surface font-sans text-body-md placeholder:text-outline/70 focus:outline-none focus:border-primary focus:bg-surface transition-colors resize-y',
             error && 'border-error focus:border-error',
             className
           )}

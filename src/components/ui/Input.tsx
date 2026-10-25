@@ -23,7 +23,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           required={required}
           className={cn(
-            'w-full bg-surface-container px-4 py-3 rounded border border-outline-variant/60 text-on-surface font-sans text-body-md placeholder:text-outline/70 focus:outline-none focus:border-primary focus:bg-surface-container-high transition-colors',
+            'w-full bg-surface-alt px-4 py-3 rounded border border-border-alt text-on-surface font-sans text-body-md placeholder:text-outline/70 focus:outline-none focus:border-primary focus:bg-surface transition-colors',
             error && 'border-error focus:border-error',
             className
           )}

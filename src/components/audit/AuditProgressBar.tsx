@@ -29,7 +29,7 @@ export function AuditProgressBar({
       </div>
 
       {/* Hairline Progress Track */}
-      <div className="w-full h-1.5 bg-surface-container rounded-full overflow-hidden border border-outline-variant/40">
+      <div className="w-full h-1.5 bg-surface-alt rounded-full overflow-hidden border border-border-alt">
         <div
           className="h-full bg-primary transition-all duration-300 ease-out"
           style={{ width: `${percentage}%` }}

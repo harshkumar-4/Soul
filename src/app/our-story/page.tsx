@@ -3,6 +3,12 @@ import { ourStoryContent } from '@/content/ourStory';
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
 import Badge from '@/components/ui/Badge';
+import {
+  ImageSection,
+  ImageEyebrow,
+  ImageHeading,
+  ImageParagraph,
+} from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
   title: 'Our Story — SoulfulI',
@@ -36,7 +42,7 @@ export default function OurStoryPage() {
           </div>
 
           {/* Hero Video */}
-          <div className="w-full relative overflow-hidden rounded-xl bg-surface-container shadow-sm aspect-[16/9] max-h-[580px] border border-outline-variant/60">
+          <div className="w-full relative overflow-hidden rounded-xl bg-surface-alt shadow-sm aspect-[16/9] max-h-[580px] border border-border-alt">
 
             <video
               src="/video/mount.mp4"
@@ -65,7 +71,7 @@ export default function OurStoryPage() {
       </section>
 
       {/* SECTION 2: THE MANIFESTO */}
-      <section className="w-full py-20 lg:py-28 bg-surface-container-low border-b border-outline-variant/60">
+      <section className="w-full py-20 lg:py-28 bg-surface-alt-gradient border-b border-border-alt">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
           <div className="max-w-3xl mx-auto text-center space-y-8">
 
@@ -87,58 +93,60 @@ export default function OurStoryPage() {
       </section>
 
       {/* SECTION 3: A DEEPER STORY */}
-      <section className="w-full py-20 lg:py-32 bg-surface border-b border-outline-variant/60">
+      <ImageSection
+        src="/image/33.jpg"
+        alt="Person meditating peacefully on wooden dock at sunset"
+        objectPosition="20% 65%"
+        className="border-b border-outline-variant/60"
+        containerClassName="py-20 lg:py-32"
+      >
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-
             <div className="lg:col-span-5">
-              <Badge variant="sand" dot>
+              <ImageEyebrow>
                 A Deeper Story
-              </Badge>
+              </ImageEyebrow>
 
-              <h2 className="mt-5 font-serif text-headline-lg lg:text-display-sm text-primary font-normal leading-tight">
+              <ImageHeading as="h2" className="mt-5 text-headline-lg lg:text-display-sm">
                 Not a Grand Revelation.
                 <br />
                 Just a Quiet Awakening.
-              </h2>
+              </ImageHeading>
             </div>
 
-            <div className="lg:col-span-7 space-y-6 font-sans text-body-lg text-on-surface-variant leading-relaxed">
-
-              <p>
+            <div className="lg:col-span-7 space-y-6">
+              <ImageParagraph>
                 SoulfulI began with a simple question: what happens when we
                 stop treating personal growth as something to complete and
                 start experiencing it as something to live?
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph>
                 Our journey is rooted in the understanding that difficult
                 chapters can become teachers. Self-worth, vulnerability,
                 wellbeing, and personal growth are not separate parts of life.
                 They are connected experiences that shape how we understand
                 ourselves and the world around us.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph>
                 This understanding became the foundation for SoulfulI and the
                 work we are developing through emotional intelligence,
                 mindfulness, and practical spirituality.
-              </p>
+              </ImageParagraph>
 
-              <p>
+              <ImageParagraph>
                 We believe growth is not about becoming someone entirely
                 different. It is about becoming more yourself, with greater
                 awareness, empathy, resilience, and intention.
-              </p>
-
+              </ImageParagraph>
             </div>
           </div>
         </div>
-      </section>
+      </ImageSection>
 
       {/* SECTION 4: THE THREE INQUIRIES */}
-      <section className="w-full py-20 lg:py-32 bg-surface-container-low border-b border-outline-variant/60">
+      <section className="w-full py-20 lg:py-32 bg-surface-alt-gradient border-b border-border-alt">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
 
           <SectionHeading
@@ -151,7 +159,7 @@ export default function OurStoryPage() {
             {theThreeInquiries.map((inq, idx) => (
               <div
                 key={idx}
-                className="bg-surface p-8 rounded-xl border border-outline-variant/60 space-y-4 shadow-sm"
+                className="bg-surface p-8 rounded-xl border border-border-alt space-y-4 shadow-sm"
               >
                 <span className="font-serif text-3xl text-secondary select-none font-light">
                   {String(idx + 1).padStart(2, '0')}
@@ -185,7 +193,7 @@ export default function OurStoryPage() {
             {coreTenets.map((tenet) => (
               <div
                 key={tenet.number}
-                className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/60 space-y-3 shadow-sm"
+                className="bg-surface-alt p-8 rounded-xl border border-border-alt space-y-3 shadow-sm"
               >
                 <div className="flex items-center gap-3">
                   <span className="font-serif text-lg text-tertiary font-normal">
