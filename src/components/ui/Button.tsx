@@ -7,10 +7,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   isExternal?: boolean;
+  prefetch?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', href, isExternal, children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', href, isExternal, prefetch, children, ...props }, ref) => {
     const baseStyles =
       'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none';
 
@@ -52,13 +53,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             target="_blank"
             rel="noopener noreferrer"
             className={combinedClassName}
+            {...(props as any)}
           >
             {children}
           </a>
         );
       }
       return (
-        <Link href={href} className={combinedClassName}>
+        <Link
+          href={href}
+          prefetch={prefetch ?? true}
+          className={combinedClassName}
+          {...(props as any)}
+        >
           {children}
         </Link>
       );

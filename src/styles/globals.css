@@ -21,9 +21,16 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     background-color: #fdf9f1;
     color: #1c1c17;
+  }
+
+  /* Smooth scrolling scoped to in-page anchor targets, preventing page-transition scroll delay */
+  @media (prefers-reduced-motion: no-preference) {
+    :root:has(:target) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {

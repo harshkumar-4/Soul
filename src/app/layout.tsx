@@ -41,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${plusJakartaSans.variable} scroll-smooth`}>
+    <html lang="en" className={`${newsreader.variable} ${plusJakartaSans.variable}`}>
       <body className="bg-background text-on-surface font-sans antialiased min-h-screen flex flex-col selection:bg-sage/20 selection:text-forest">
         <Header />
         <main className="flex-1 w-full pt-20">{children}</main>

@@ -1,17 +1,22 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
-import { offeringsData } from '@/content/offerings';
-import { Compass, Feather, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { Compass, Feather } from 'lucide-react';
+import OfferingsSection from '@/components/home/OfferingsSection';
 import {
   ImageSection,
   ImageEyebrow,
   ImageHeading,
   ImageParagraph,
-  ImageFrostedPanel,
 } from '@/components/shared/ImageSection';
+
+export const metadata: Metadata = {
+  title: 'SoulfulI — Understand yourself deeply enough to live differently',
+  description:
+    'SoulfulI connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
+};
+
 export default function HomePage() {
   return (
     <main className="w-full flex flex-col items-center">
@@ -65,12 +70,9 @@ export default function HomePage() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     poster="/images/t1.png"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                    onLoadedData={(e) => {
-                      e.currentTarget.play().catch(() => { });
-                    }}
                   />
                   <div className="absolute inset-0 bg-black/15 pointer-events-none" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/25 to-transparent pointer-events-none" />
@@ -196,245 +198,105 @@ export default function HomePage() {
       <ImageSection
         src="/images/buddha-forest.png"
         alt="Buddha statue nestled peacefully within lush forest canopy with sunbeams and misty waterfall"
-        objectPosition="center 28%"
-        overlayVariant="center"
+        objectPosition="center 30%"
+        overlayVariant="forest-sanctuary"
         enableSubtleZoom={true}
         blendEdges={true}
-        className="border-b border-outline-variant/20"
+        className="border-b border-outline-variant/30 text-white"
         containerClassName="py-24 lg:py-36"
       >
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 flex flex-col items-center text-white">
-          <ImageFrostedPanel className="max-w-3xl w-full text-center space-y-8 flex flex-col items-center text-white">
-            <ImageEyebrow className="text-white">
-              Join Our Community
-            </ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            {/* Left Column: Heading, Eyebrow & Pull Quote */}
+            <div className="lg:col-span-5 space-y-7 lg:sticky lg:top-28">
+              <ImageEyebrow dot className="text-[#F6F0E5] border-white/25 bg-white/[0.12] backdrop-blur-md">
+                Join Our Community
+              </ImageEyebrow>
 
-            <ImageHeading as="h2" className="text-[32px] sm:text-[40px] lg:text-[46px] leading-[1.15] text-white">
-              Be Part of What Comes Next
-            </ImageHeading>
+              <ImageHeading as="h2" className="text-[36px] sm:text-[44px] lg:text-[50px] leading-[1.12] text-[#F6F0E5] font-normal tracking-tight">
+                Be Part of
+                <br />
+                <span className="italic font-normal">What Comes Next</span>
+              </ImageHeading>
 
-            <div className="space-y-6 flex flex-col items-center text-white">
-              <ImageParagraph className="text-center text-base sm:text-lg text-white/95">
-                SoulfulI is growing into a community, not just a company. As our tools,
-                courses, workshops, and retreats go live, we want the people who
-                believe in this work to be the first to know, the first to join, and
-                eventually, the first to help shape it.
-              </ImageParagraph>
+              <div className="w-16 h-0.5 bg-[#B8C7B9]/70 rounded-full" aria-hidden="true" />
 
-              <p className="font-serif text-lg sm:text-xl text-white italic text-center editorial-shadow-subtle max-w-[54ch]">
-                The gap between where you are and where you can be is not a flaw.
-                It is an invitation.
+              {/* Italic Quotation Callout */}
+              <div className="pt-2 pl-4 border-l-2 border-[#B8C7B9]/50">
+                <p className="font-serif text-lg sm:text-xl lg:text-[21px] text-[#F6F0E5] italic leading-[1.45] editorial-shadow max-w-[34ch]">
+                  &ldquo;The gap between where you are and where you can be is not a flaw.
+                  It is an invitation.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Narrative Copy, Reflection & Actions */}
+            <div className="lg:col-span-7 space-y-8 pt-1 lg:pt-3">
+              <div className="space-y-6">
+                <ImageParagraph className="text-base sm:text-lg text-[#F6F0E5]/95 leading-[1.8] max-w-[56ch]">
+                  SoulfulI is growing into a community, not just a company. As our tools,
+                  courses, workshops, and retreats go live, we want the people who
+                  believe in this work to be the first to know, the first to join, and
+                  eventually, the first to help shape it.
+                </ImageParagraph>
+
+                <ImageParagraph className="text-base sm:text-lg text-[#F6F0E5]/85 leading-[1.8] max-w-[56ch]">
+                  So we will leave you with the question we keep asking ourselves. If
+                  your mind, your heart, and your spirit were finally allowed to grow in
+                  the same direction at the same time, what might change first?
+                </ImageParagraph>
+              </div>
+
+              {/* Calls to Action */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <Button
+                  href="/eq-audit"
+                  variant="ivory"
+                  size="lg"
+                  className="rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 font-medium"
+                >
+                  Take the EQ Audit
+                </Button>
+
+                <Button
+                  href="/community"
+                  variant="whiteOutline"
+                  size="lg"
+                  className="rounded-full backdrop-blur-sm hover:bg-white/15 transition-all duration-300 font-medium"
+                >
+                  Join the Community
+                </Button>
+              </div>
+
+              {/* Follow Along / Social Links */}
+              <p className="font-sans text-xs sm:text-sm text-[#F6F0E5]/75 max-w-[54ch] pt-1">
+                Follow along on{' '}
+                <a
+                  href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"
+                  aria-label="Follow SoulfullI on Instagram"
+                >
+                  Instagram
+                </a>{' '}
+                and{' '}
+                <a
+                  href="https://www.linkedin.com/company/soulfuli/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"
+                  aria-label="Connect with SoulfullI on LinkedIn"
+                >
+                  LinkedIn
+                </a>
+                . Join the community when the doors open.
               </p>
-
-              <ImageParagraph className="text-center text-sm sm:text-base text-white/90">
-                So we will leave you with the question we keep asking ourselves. If
-                your mind, your heart, and your spirit were finally allowed to grow in
-                the same direction at the same time, what might change first?
-              </ImageParagraph>
             </div>
-
-            <div className="flex flex-wrap justify-center gap-4 pt-2">
-              <Button
-                href="/eq-audit"
-                variant="ivory"
-                size="lg"
-                className="rounded-full shadow-lg hover:shadow-xl transition-all"
-              >
-                Take the EQ Audit
-              </Button>
-
-              <Button
-                href="/community"
-                variant="whiteOutline"
-                size="lg"
-                className="rounded-full backdrop-blur-sm"
-              >
-                Join the Community
-              </Button>
-            </div>
-
-            <p className="font-sans text-xs sm:text-sm text-white/80 max-w-[58ch]">
-              Follow along on Instagram and LinkedIn. Join the community when the doors open.
-            </p>
-          </ImageFrostedPanel>
+          </div>
         </div>
       </ImageSection>
 
     </main>
-  );
-}
-function OfferingsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const homepageOfferingIds = [
-    'eq-audit',
-    'schools-colleges',
-    'organisations',
-    'quiet-bloom',
-  ];
-
-  const homepageOfferings = homepageOfferingIds
-    .map((id) => offeringsData.find((item) => item.id === id))
-    .filter((item): item is (typeof offeringsData)[number] => Boolean(item));
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % homepageOfferings.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [homepageOfferings.length]);
-
-  const offering = homepageOfferings[activeIndex];
-
-  if (!offering) return null;
-
-  return (
-    <section className="w-full bg-surface border-b border-outline-variant/60">
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-16 py-16 lg:py-24">
-
-        {/* SECTION HEADER */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-          <div className="max-w-3xl space-y-4">
-            <Badge variant="sage" dot>
-              What We Offer
-            </Badge>
-
-            <h2 className="font-serif text-headline-lg lg:text-display-md text-primary font-normal leading-tight">
-              Four ways in, depending on where you are and who you are showing up for.
-            </h2>
-
-            <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
-              Explore the practices, workshops, courses, and retreats that make
-              up the SoulfulI ecosystem.
-            </p>
-          </div>
-
-          <span className="text-xs tracking-[0.2em] uppercase text-on-surface-variant">
-            Explore • Reflect • Grow
-          </span>
-        </div>
-
-        {/* OFFERING SELECTOR CARDS */}
-        {/* OFFERING SELECTOR CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {homepageOfferings.map((item, index) => (
-            <Link
-              key={item.id}
-              href={item.href}
-              className="
-        group relative overflow-hidden text-left
-        min-h-[245px] rounded-3xl border
-        border-outline-variant/60
-        transition-all duration-500 ease-out
-        hover:border-primary/60
-        hover:shadow-xl
-        hover:scale-[1.02]
-      "
-            >
-              {/* Card Image */}
-              <img
-                src={item.imageSrc}
-                alt={item.title}
-                loading="lazy"
-                decoding="async"
-                className="
-          absolute inset-0 w-full h-full object-cover
-          transition-transform duration-700
-          group-hover:scale-110
-        "
-              />
-
-              {/* Overlay */}
-              <div className="
-        absolute inset-0
-        bg-gradient-to-t from-[#1F2A24]/95 via-[#1F2A24]/65 to-[#1F2A24]/30
-        group-hover:from-[#1F2A24]/95 group-hover:via-[#1F2A24]/50 group-hover:to-[#1F2A24]/20
-        transition-all duration-500
-      " />
-
-              {/* Card Content */}
-              <div className="
-        relative z-10 flex flex-col justify-between
-        min-h-[245px] p-5 text-white
-      ">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs tracking-widest font-mono text-[#FDFBF7]/70">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-
-                  <span className="
-            text-[11px] font-sans tracking-wider uppercase border border-white/20 bg-white/10 backdrop-blur-sm
-            rounded-full px-3 py-1 text-[#FDFBF7]
-          ">
-                    Explore
-                  </span>
-                </div>
-
-                <div className="mt-12">
-                  <h3 className="font-serif text-2xl leading-tight text-[#FDFBF7] editorial-shadow-subtle">
-                    {item.title}
-                  </h3>
-
-                  <p className="
-            mt-3 text-sm text-[#FDFBF7]/85
-            leading-relaxed
-          ">
-                    {item.tagline}
-                  </p>
-
-                  {/* Direct Page Navigation */}
-                  <div className="
-            mt-6 text-xs tracking-wide font-medium text-tertiary
-            transition-transform duration-300
-            group-hover:translate-x-1 flex items-center gap-1
-          ">
-                    <span>View pathway</span>
-                    <span>→</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-        {/* ACTIVE OFFERING DETAIL */}
-
-        {/* TRAINING & DEVELOPMENT */}
-        <div className="mt-10 max-w-4xl space-y-5">
-          <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
-            Alongside these, we design Training &amp; Development programmes,
-            corporate wellness journeys, and leadership labs for organisations
-            that want emotional intelligence to become part of how their people
-            actually work together.
-          </p>
-
-          <Button
-            href="/what-we-offer"
-            variant="secondary"
-            size="lg"
-            className="rounded-full"
-          >
-            Explore What We Offer
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </div>
-
-      </div>
-
-      {/* Inline Animation CSS */}
-      <style jsx>{`
-        @keyframes offeringFade {
-          from {
-            opacity: 0;
-            transform: translateY(16px);
-          }
-
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-    </section>
   );
 }

@@ -8,7 +8,8 @@ export type OverlayVariant =
   | 'uniform'
   | 'warm-sunset'
   | 'mountain-dawn'
-  | 'intimate-human';
+  | 'intimate-human'
+  | 'forest-sanctuary';
 
 export interface ImageSectionProps extends React.HTMLAttributes<HTMLElement> {
   src: string;
@@ -76,6 +77,8 @@ export function ImageSection({
               ? 'linear-gradient(180deg, rgba(19, 29, 23, 0.45) 0%, rgba(19, 29, 23, 0.72) 40%, rgba(19, 29, 23, 0.92) 100%)'
               : overlayVariant === 'intimate-human'
               ? 'linear-gradient(180deg, rgba(26, 26, 24, 0.78) 0%, rgba(26, 26, 24, 0.64) 55%, rgba(26, 26, 24, 0.84) 100%)'
+              : overlayVariant === 'forest-sanctuary'
+              ? 'linear-gradient(180deg, rgba(23, 41, 35, 0.86) 0%, rgba(23, 41, 35, 0.72) 48%, rgba(23, 41, 35, 0.90) 100%)'
               : overlayVariant === 'center'
               ? 'radial-gradient(ellipse at center, rgba(24, 35, 28, 0.45) 0%, rgba(24, 35, 28, 0.84) 100%)'
               : 'linear-gradient(180deg, rgba(24, 35, 28, 0.78) 0%, rgba(24, 35, 28, 0.65) 50%, rgba(24, 35, 28, 0.82) 100%)',
@@ -95,6 +98,8 @@ export function ImageSection({
               ? 'rgba(28, 28, 25, 0.24)'
               : overlayVariant === 'mountain-dawn'
               ? 'rgba(19, 29, 23, 0.18)'
+              : overlayVariant === 'forest-sanctuary'
+              ? 'rgba(23, 41, 35, 0.28)'
               : overlayVariant === 'center'
               ? 'rgba(24, 35, 28, 0.28)'
               : 'rgba(24, 35, 28, 0.30)',
@@ -115,6 +120,8 @@ export function ImageSection({
               ? 'linear-gradient(to top, rgba(17, 27, 21, 0.94) 0%, rgba(17, 27, 21, 0.65) 45%, rgba(17, 27, 21, 0.15) 75%, transparent 100%), linear-gradient(90deg, rgba(17, 27, 21, 0.55) 0%, transparent 60%)'
               : overlayVariant === 'intimate-human'
               ? 'linear-gradient(90deg, rgba(26, 26, 24, 0.86) 0%, rgba(26, 26, 24, 0.60) 46%, rgba(26, 26, 24, 0.18) 82%, transparent 100%)'
+              : overlayVariant === 'forest-sanctuary'
+              ? 'linear-gradient(105deg, rgba(23, 41, 35, 0.88) 0%, rgba(23, 41, 35, 0.68) 45%, rgba(23, 41, 35, 0.35) 80%, rgba(23, 41, 35, 0.15) 100%)'
               : overlayVariant === 'center'
               ? 'radial-gradient(ellipse at 50% 36%, rgba(20, 31, 24, 0.15) 0%, rgba(20, 31, 24, 0.55) 60%, rgba(20, 31, 24, 0.88) 100%)'
               : 'rgba(20, 31, 24, 0.55)',

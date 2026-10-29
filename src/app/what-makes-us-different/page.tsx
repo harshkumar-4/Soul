@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
@@ -159,10 +160,11 @@ export default function WhatMakesUsDifferentPage() {
                 {/* IMAGE */}
                 <div className="relative h-[280px] overflow-hidden">
 
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 

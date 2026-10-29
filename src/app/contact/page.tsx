@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import SectionHeading from '@/components/shared/SectionHeading';
 import ContactForm from '@/components/forms/ContactForm';
 import Badge from '@/components/ui/Badge';
-import { Mail, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, MapPin, Clock, ShieldCheck, Instagram, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Contact & Direct Dispatch — SoulfulI',
@@ -81,6 +81,37 @@ export default function ContactPage() {
               >
                 inquiry@soulfuli.com
               </a>
+            </div>
+
+            <div className="p-6 bg-surface-alt rounded-xl border border-border-alt space-y-3">
+              <h4 className="font-serif text-lg text-primary font-normal">
+                Digital Presence &amp; Social
+              </h4>
+              <p className="font-sans text-xs text-on-surface-variant">
+                Follow our ongoing reflections, contemplative dispatches, and community updates:
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <a
+                  href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"
+                  aria-label="Follow SoulfullI on Instagram"
+                >
+                  <Instagram className="w-4 h-4 text-secondary transition-transform duration-200 group-hover:scale-110" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/soulfuli/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"
+                  aria-label="Connect with SoulfullI on LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4 text-secondary transition-transform duration-200 group-hover:scale-110" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

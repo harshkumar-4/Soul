@@ -49,7 +49,7 @@ export default function OurStoryPage() {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               poster="/images/m1.png"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               aria-label="Calm editorial video representing reflection and personal growth"

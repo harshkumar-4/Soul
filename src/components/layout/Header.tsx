@@ -24,7 +24,7 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -42,6 +42,7 @@ export function Header() {
           <div className="flex items-center gap-12">
             <Link
               href="/"
+              prefetch={true}
               className="group inline-flex items-baseline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
             >
               <span className="font-serif text-[28px] tracking-tight text-primary font-normal group-hover:text-secondary transition-colors">
@@ -56,6 +57,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    prefetch={true}
                     className={cn(
                       'transition-colors relative py-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-primary',
                       isActive
@@ -81,6 +83,7 @@ export function Header() {
 
             <Link
               href="/contact"
+              prefetch={true}
               className="w-8 h-8 rounded-full border border-primary/20 flex items-center justify-center text-primary hover:border-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label="Contact & Support"
             >

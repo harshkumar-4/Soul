@@ -40,6 +40,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className="flex items-center justify-between pb-6 border-b border-outline-variant/60">
             <Link
               href="/"
+              prefetch={true}
               onClick={onClose}
               className="font-serif text-2xl text-primary tracking-tight"
             >
@@ -61,6 +62,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 <Link
                   key={link.href}
                   href={link.href}
+                  prefetch={true}
                   onClick={onClose}
                   className={cn(
                     'text-lg font-sans transition-colors py-1',

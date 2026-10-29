@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
@@ -156,10 +157,11 @@ export default function CommunityPage() {
                 {/* IMAGE */}
                 <div className="relative h-[280px] overflow-hidden">
 
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    loading="lazy"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
@@ -242,18 +244,22 @@ export default function CommunityPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
 
             <Button
-              href="/contact?platform=instagram"
+              href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+              isExternal
               variant="secondary"
               size="lg"
+              aria-label="Follow SoulfullI on Instagram"
             >
               <Instagram className="mr-2 h-4 w-4" />
               Instagram
             </Button>
 
             <Button
-              href="/contact?platform=linkedin"
+              href="https://www.linkedin.com/company/soulfuli/"
+              isExternal
               variant="secondary"
               size="lg"
+              aria-label="Connect with SoulfullI on LinkedIn"
             >
               <Linkedin className="mr-2 h-4 w-4" />
               LinkedIn

@@ -1,5 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 import { offeringsData } from '@/content/offerings';
 import SectionHeading from '@/components/shared/SectionHeading';
 import OfferingCard from '@/components/shared/OfferingCard';
@@ -86,19 +88,20 @@ export default function WhatWeOfferPage() {
             <div className="flex w-max gap-6 animate-[marquee_35s_linear_infinite] hover:[animation-play-state:paused]">
 
               {[...offeringsData, ...offeringsData].map((offering, index) => (
-                <a
+                <Link
                   key={`${offering.id}-${index}`}
                   href={offering.href}
                   className="group relative flex h-[280px] w-[280px] shrink-0 flex-col justify-end overflow-hidden rounded-2xl border border-white/20 bg-surface-alt shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
                 >
 
                   {/* Card Image */}
-                  <img
+                  <Image
                     src={offering.imageSrc}
                     alt={offering.title}
+                    fill
                     loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="280px"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 
                   {/* Overlay */}
@@ -125,7 +128,7 @@ export default function WhatWeOfferPage() {
                     </div>
 
                   </div>
-                </a>
+                </Link>
               ))}
 
             </div>
