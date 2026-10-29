@@ -10,6 +10,7 @@ import {
   ImageEyebrow,
   ImageHeading,
   ImageParagraph,
+  ImageFrostedPanel,
 } from '@/components/shared/ImageSection';
 export default function HomePage() {
   return (
@@ -56,10 +57,8 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-border-alt bg-surface-alt">
-
+              <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.22)] border border-border-alt/80 bg-surface-alt group">
                 <div className="relative h-full min-h-[520px] w-full overflow-hidden">
-
                   <video
                     src="/video/tree.mp4"
                     autoPlay
@@ -68,30 +67,27 @@ export default function HomePage() {
                     playsInline
                     preload="auto"
                     poster="/images/t1.png"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                     onLoadedData={(e) => {
                       e.currentTarget.play().catch(() => { });
                     }}
                   />
-
-                  <div className="absolute inset-0 bg-black/30" />
-
+                  <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/25 to-transparent pointer-events-none" />
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-
-                <div className="absolute bottom-6 left-6 right-6 text-surface-bright">
-
-                  <span className="font-sans text-xs uppercase tracking-widest block text-surface-container-high/80">
-                    Quiet Contemplation
-                  </span>
-
-                  <p className="font-serif text-lg italic mt-1">
+                {/* Editorial Glass Caption Badge */}
+                <div className="absolute bottom-5 left-5 right-5 z-10 bg-[#1F2A24]/50 backdrop-blur-md rounded-xl p-4 border border-white/15 text-white shadow-lg">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-tertiary" />
+                    <span className="font-sans text-[11px] uppercase tracking-[0.16em] text-white/80 font-medium">
+                      Quiet Contemplation
+                    </span>
+                  </div>
+                  <p className="font-serif text-[17px] text-[#FDFBF7] italic leading-snug">
                     &ldquo;When the external noise quiets, your real life begins.&rdquo;
                   </p>
-
                 </div>
-
               </div>
             </div>
           </div>
@@ -103,39 +99,43 @@ export default function HomePage() {
       {/* =================================================== */}
       <ImageSection
         src="/image/phili.jpg"
-        alt="Serene person meditating beside calm water"
-        objectPosition="25% center"
-        className="border-b border-border-alt"
-        containerClassName="py-20 lg:py-28"
+        alt="Serene person meditating beside calm water at dusk"
+        objectPosition="center 62%"
+        overlayVariant="warm-sunset"
+        enableSubtleZoom={true}
+        className="border-b border-border-alt text-white"
+        containerClassName="py-24 lg:py-36"
       >
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-4 space-y-5">
-              <ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start text-white">
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32 text-white">
+              <ImageEyebrow className="text-white">
                 Our Philosophy
               </ImageEyebrow>
 
-              <ImageHeading as="h2" className="text-headline-lg lg:text-display-md">
+              <ImageHeading as="h2" className="text-[34px] sm:text-[40px] lg:text-[48px] lg:leading-[1.12] text-white">
                 An Old Idea, Made Practical Again
               </ImageHeading>
+
+              <div className="w-16 h-0.5 bg-white/80 rounded-full" aria-hidden="true" />
             </div>
 
-            <div className="lg:col-span-8 space-y-6">
-              <ImageParagraph>
+            <div className="lg:col-span-7 space-y-7 pt-2 lg:pt-3 text-white">
+              <p className="font-serif text-lg sm:text-xl lg:text-[21px] leading-[1.65] text-white font-normal italic editorial-shadow max-w-[58ch]">
                 None of this is new. Traditions far older than the modern wellness
                 industry already understood that the mind, the heart, and the spirit
                 were never separate departments. What has changed is how disconnected
                 our daily lives have become from that understanding.
-              </ImageParagraph>
+              </p>
 
-              <ImageParagraph>
+              <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
                 We are not introducing a new philosophy. We are translating an old one
                 into a language that fits a Monday morning, a difficult conversation,
                 a leadership decision, a classroom, a quiet evening alone with your
                 own thoughts.
               </ImageParagraph>
 
-              <ImageParagraph>
+              <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
                 This is what we mean when we say SoulfulI sits at the intersection of
                 Emotional Intelligence, spirituality, and mindfulness. Not three
                 separate offerings stacked side by side, but one continuous practice
@@ -195,48 +195,50 @@ export default function HomePage() {
       {/* =================================================== */}
       <ImageSection
         src="/images/buddha-forest.png"
-        alt="Buddha statue nestled peacefully within lush forest canopy"
-        objectPosition="center"
+        alt="Buddha statue nestled peacefully within lush forest canopy with sunbeams and misty waterfall"
+        objectPosition="center 28%"
         overlayVariant="center"
+        enableSubtleZoom={true}
+        blendEdges={true}
         className="border-b border-outline-variant/20"
-        containerClassName="py-20 lg:py-32"
+        containerClassName="py-24 lg:py-36"
       >
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
-          <div className="max-w-4xl mx-auto text-center space-y-8 flex flex-col items-center">
-            <ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 flex flex-col items-center text-white">
+          <ImageFrostedPanel className="max-w-3xl w-full text-center space-y-8 flex flex-col items-center text-white">
+            <ImageEyebrow className="text-white">
               Join Our Community
             </ImageEyebrow>
 
-            <ImageHeading as="h2" className="text-headline-lg lg:text-display-md">
+            <ImageHeading as="h2" className="text-[32px] sm:text-[40px] lg:text-[46px] leading-[1.15] text-white">
               Be Part of What Comes Next
             </ImageHeading>
 
-            <div className="space-y-6 flex flex-col items-center">
-              <ImageParagraph className="text-center">
+            <div className="space-y-6 flex flex-col items-center text-white">
+              <ImageParagraph className="text-center text-base sm:text-lg text-white/95">
                 SoulfulI is growing into a community, not just a company. As our tools,
                 courses, workshops, and retreats go live, we want the people who
                 believe in this work to be the first to know, the first to join, and
                 eventually, the first to help shape it.
               </ImageParagraph>
 
-              <ImageParagraph className="text-center">
+              <p className="font-serif text-lg sm:text-xl text-white italic text-center editorial-shadow-subtle max-w-[54ch]">
                 The gap between where you are and where you can be is not a flaw.
                 It is an invitation.
-              </ImageParagraph>
+              </p>
 
-              <ImageParagraph className="text-center">
+              <ImageParagraph className="text-center text-sm sm:text-base text-white/90">
                 So we will leave you with the question we keep asking ourselves. If
                 your mind, your heart, and your spirit were finally allowed to grow in
                 the same direction at the same time, what might change first?
               </ImageParagraph>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
+            <div className="flex flex-wrap justify-center gap-4 pt-2">
               <Button
                 href="/eq-audit"
                 variant="ivory"
                 size="lg"
-                className="rounded-full"
+                className="rounded-full shadow-lg hover:shadow-xl transition-all"
               >
                 Take the EQ Audit
               </Button>
@@ -245,16 +247,16 @@ export default function HomePage() {
                 href="/community"
                 variant="whiteOutline"
                 size="lg"
-                className="rounded-full"
+                className="rounded-full backdrop-blur-sm"
               >
                 Join the Community
               </Button>
             </div>
 
-            <p className="font-sans text-sm text-white/80 max-w-[62ch]">
+            <p className="font-sans text-xs sm:text-sm text-white/80 max-w-[58ch]">
               Follow along on Instagram and LinkedIn. Join the community when the doors open.
             </p>
-          </div>
+          </ImageFrostedPanel>
         </div>
       </ImageSection>
 
@@ -346,8 +348,8 @@ function OfferingsSection() {
               {/* Overlay */}
               <div className="
         absolute inset-0
-        bg-primary/65
-        group-hover:bg-primary/75
+        bg-gradient-to-t from-[#1F2A24]/95 via-[#1F2A24]/65 to-[#1F2A24]/30
+        group-hover:from-[#1F2A24]/95 group-hover:via-[#1F2A24]/50 group-hover:to-[#1F2A24]/20
         transition-all duration-500
       " />
 
@@ -357,25 +359,25 @@ function OfferingsSection() {
         min-h-[245px] p-5 text-white
       ">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs tracking-widest">
+                  <span className="text-xs tracking-widest font-mono text-[#FDFBF7]/70">
                     {String(index + 1).padStart(2, '0')}
                   </span>
 
                   <span className="
-            text-xs border border-white/40
-            rounded-full px-3 py-1
+            text-[11px] font-sans tracking-wider uppercase border border-white/20 bg-white/10 backdrop-blur-sm
+            rounded-full px-3 py-1 text-[#FDFBF7]
           ">
                     Explore
                   </span>
                 </div>
 
                 <div className="mt-12">
-                  <h3 className="font-serif text-2xl leading-tight">
+                  <h3 className="font-serif text-2xl leading-tight text-[#FDFBF7] editorial-shadow-subtle">
                     {item.title}
                   </h3>
 
                   <p className="
-            mt-3 text-sm text-white/80
+            mt-3 text-sm text-[#FDFBF7]/85
             leading-relaxed
           ">
                     {item.tagline}
@@ -383,11 +385,12 @@ function OfferingsSection() {
 
                   {/* Direct Page Navigation */}
                   <div className="
-            mt-6 text-xs tracking-wide
+            mt-6 text-xs tracking-wide font-medium text-tertiary
             transition-transform duration-300
-            group-hover:translate-x-1
+            group-hover:translate-x-1 flex items-center gap-1
           ">
-                    View pathway →
+                    <span>View pathway</span>
+                    <span>→</span>
                   </div>
                 </div>
               </div>

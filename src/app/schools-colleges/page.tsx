@@ -70,15 +70,29 @@ export default function SchoolsCollegesPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-sm border border-border-alt bg-surface-alt">
+          <div className="lg:col-span-5 relative">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.20)] border border-border-alt/80 bg-surface-alt group">
               <Image
                 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
                 alt="Students in collaborative, thoughtful dialogue in educational library"
                 fill
                 priority
-                className="object-cover"
+                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent pointer-events-none" />
+
+              {/* Floating Editorial Badge */}
+              <div className="absolute bottom-5 left-5 right-5 z-10 bg-[#1F2A24]/60 backdrop-blur-md rounded-xl p-4 border border-white/15 text-white shadow-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                  <span className="font-sans text-[11px] uppercase tracking-[0.16em] text-white/80 font-medium">
+                    Human-Centred Pedagogy
+                  </span>
+                </div>
+                <p className="font-serif text-[16px] text-[#FDFBF7] italic leading-snug">
+                  &ldquo;Cultivating emotional literacy alongside intellectual aptitude.&rdquo;
+                </p>
+              </div>
             </div>
           </div>
         </div>

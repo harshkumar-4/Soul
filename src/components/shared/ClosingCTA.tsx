@@ -42,8 +42,8 @@ export function ClosingCTA({
         className={cn('border-t border-border-alt', className)}
         containerClassName="py-20 lg:py-28"
       >
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-center">
-          <div className="max-w-2xl mx-auto space-y-6 flex flex-col items-center">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-center text-white">
+          <div className="max-w-2xl mx-auto space-y-6 flex flex-col items-center text-white">
             <ImageEyebrow>{eyebrow}</ImageEyebrow>
             <ImageHeading as="h2" className="text-headline-lg lg:text-display-lg leading-[1.15]">
               {title}

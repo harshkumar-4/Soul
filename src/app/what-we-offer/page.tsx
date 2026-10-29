@@ -25,22 +25,27 @@ export default function WhatWeOfferPage() {
 
       {/* SECTION 1: HERO */}
       <ImageSection
-        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=75"
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1800&q=80"
         alt="Tranquil landscape overlooking rolling hills at golden hour"
+        objectPosition="center 45%"
+        overlayVariant="directional"
+        enableSubtleZoom={true}
         priority
         className="border-b border-outline-variant/60"
-        containerClassName="w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36"
+        containerClassName="w-full px-6 lg:px-16 pt-28 lg:pt-40 pb-28 lg:pb-40"
       >
-        <div className="max-w-[1240px] mx-auto space-y-7">
-          <ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto space-y-7 text-white">
+          <ImageEyebrow className="text-white">
             Ecosystem Overview
           </ImageEyebrow>
 
-          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-display-lg max-w-4xl">
+          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-[56px] lg:leading-[64px] max-w-4xl text-white">
             Portals into self-knowledge and intentional living.
           </ImageHeading>
 
-          <ImageParagraph className="text-body-lg max-w-2xl">
+          <div className="w-16 h-0.5 bg-white/80 rounded-full" aria-hidden="true" />
+
+          <ImageParagraph className="text-body-lg max-w-2xl text-white/95 leading-[1.8]">
             Whether you are beginning with personal self-discovery,
             stepping into a mountain retreat, or transforming how your
             organisation communicates, SoulfulI offers grounded human
@@ -49,20 +54,19 @@ export default function WhatWeOfferPage() {
         </div>
       </ImageSection>
 
-      {/* SECTION 2: OFFERINGS */}
       {/* SECTION 2: THE SOULFULI ECOSYSTEM */}
       <section className="relative w-full py-20 lg:py-28 overflow-hidden border-b border-border-alt">
 
-        {/* Background Image */}
+        {/* Background Atmosphere */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.07] pointer-events-none"
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=75')",
           }}
         />
 
-        <div className="absolute inset-0 bg-surface-alt/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface-alt/95 to-surface pointer-events-none" />
 
         <div className="relative z-10 space-y-12">
 
@@ -138,9 +142,9 @@ export default function WhatWeOfferPage() {
       {/* SECTION 3: WHERE TO BEGIN */}
       <section className="relative w-full py-20 lg:py-28 overflow-hidden border-b border-outline-variant/60">
 
-        {/* Background Image */}
+        {/* Background Atmosphere */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.06] pointer-events-none"
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=75')",
@@ -148,7 +152,7 @@ export default function WhatWeOfferPage() {
         />
 
         {/* Background Overlay */}
-        <div className="absolute inset-0 bg-surface/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface/95 to-surface pointer-events-none" />
 
         <div className="relative z-10 max-w-[1120px] mx-auto px-6 lg:px-12 space-y-12">
 

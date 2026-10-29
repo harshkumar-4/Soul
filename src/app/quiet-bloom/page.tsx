@@ -27,28 +27,32 @@ export default function QuietBloomPage() {
       <ImageSection
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA"
         alt="Panoramic dawn vista of the Himalayan valley in Dharamshala with mist rolling across pine forests"
+        objectPosition="center 35%"
+        overlayVariant="mountain-dawn"
+        enableSubtleZoom={true}
+        blendEdges={true}
         priority
-        className="min-h-[85vh] flex items-end justify-start -mt-20 pt-20"
-        containerClassName="w-full max-w-[1240px] mx-auto px-6 lg:px-16 pb-16 lg:pb-24 pt-32"
+        className="min-h-[90vh] flex items-end justify-start -mt-20 pt-24"
+        containerClassName="w-full max-w-[1240px] mx-auto px-6 lg:px-16 pb-20 lg:pb-28 pt-36"
       >
-        <div className="max-w-3xl space-y-6">
-          <ImageEyebrow>
+        <div className="max-w-3xl space-y-6 text-white">
+          <ImageEyebrow className="text-white">
             Dharamshala, Himachal Pradesh · Seasonal Gathering
           </ImageEyebrow>
 
-          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-[64px] lg:leading-[72px]">
+          <ImageHeading as="h1" className="text-display-lg-mobile lg:text-[66px] lg:leading-[74px] text-white">
             Slow down without falling behind.
           </ImageHeading>
 
-          <p className="font-serif text-quote-lg text-white/95 font-normal max-w-xl leading-relaxed italic">
+          <p className="font-serif text-quote-lg text-white font-normal max-w-xl leading-relaxed italic editorial-shadow">
             A retreat for returning to conscious movement, grounded contemplation, and mountain silence.
           </p>
 
           <div className="pt-4 flex flex-wrap items-center gap-5">
-            <Button href="#apply" variant="ivory" size="lg" className="rounded-full shadow-lg">
+            <Button href="#apply" variant="ivory" size="lg" className="rounded-full shadow-xl hover:shadow-2xl transition-all">
               Inquire for Gathering
             </Button>
-            <Button href="#experience" variant="whiteOutline" size="lg" className="rounded-full">
+            <Button href="#experience" variant="whiteOutline" size="lg" className="rounded-full backdrop-blur-sm">
               Explore Experience ↓
             </Button>
           </div>

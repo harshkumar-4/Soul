@@ -74,22 +74,27 @@ export default function CommunityPage() {
 
       {/* HERO SECTION */}
       <ImageSection
-        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=75"
+        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80"
         alt="Friends laughing and connecting warmly outdoors"
+        objectPosition="center 35%"
+        overlayVariant="intimate-human"
+        enableSubtleZoom={true}
         priority
         className="border-b border-outline-variant/60"
-        containerClassName="w-full px-6 lg:px-16 pt-24 lg:pt-36 pb-24 lg:pb-36"
+        containerClassName="w-full px-6 lg:px-16 pt-28 lg:pt-40 pb-28 lg:pb-40"
       >
-        <div className="max-w-[1240px] mx-auto space-y-7">
-          <ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto space-y-7 text-white">
+          <ImageEyebrow className="text-white">
             Join Our Community
           </ImageEyebrow>
 
-          <ImageHeading as="h1" className="max-w-4xl text-display-lg-mobile lg:text-display-lg">
+          <ImageHeading as="h1" className="max-w-4xl text-display-lg-mobile lg:text-[56px] lg:leading-[64px] text-white">
             This Is Just the Beginning.
           </ImageHeading>
 
-          <ImageParagraph className="max-w-2xl text-body-lg">
+          <div className="w-16 h-0.5 bg-white/80 rounded-full" aria-hidden="true" />
+
+          <ImageParagraph className="max-w-2xl text-body-lg text-white/95 leading-[1.8]">
             SoulfulI is growing into a community, not just a company.
             We are building this space one honest conversation, one
             workshop, and one retreat at a time.

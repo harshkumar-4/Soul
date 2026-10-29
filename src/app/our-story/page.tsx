@@ -42,8 +42,7 @@ export default function OurStoryPage() {
           </div>
 
           {/* Hero Video */}
-          <div className="w-full relative overflow-hidden rounded-xl bg-surface-alt shadow-sm aspect-[16/9] max-h-[580px] border border-border-alt">
-
+          <div className="w-full relative overflow-hidden rounded-2xl bg-surface-alt shadow-[0_24px_64px_-16px_rgba(31,42,36,0.22)] aspect-[16/9] max-h-[580px] border border-border-alt/80 group">
             <video
               src="/video/mount.mp4"
               autoPlay
@@ -52,20 +51,20 @@ export default function OurStoryPage() {
               playsInline
               preload="auto"
               poster="/images/m1.png"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
               aria-label="Calm editorial video representing reflection and personal growth"
             />
 
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent pointer-events-none" />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-            <div className="absolute bottom-6 left-6 right-6">
-              <span className="font-sans text-xs uppercase tracking-wider text-white/90">
+            {/* Editorial Glass Caption Badge */}
+            <div className="absolute bottom-5 left-5 right-5 sm:right-auto z-10 bg-[#1F2A24]/60 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/15 flex items-center gap-2.5 shadow-lg">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
+              <span className="font-sans text-[11px] uppercase tracking-[0.16em] text-[#FDFBF7] font-medium">
                 {hero.imageCaption}
               </span>
             </div>
-
           </div>
         </div>
       </section>
@@ -96,32 +95,36 @@ export default function OurStoryPage() {
       <ImageSection
         src="/image/33.jpg"
         alt="Person meditating peacefully on wooden dock at sunset"
-        objectPosition="20% 65%"
-        className="border-b border-outline-variant/60"
-        containerClassName="py-20 lg:py-32"
+        objectPosition="center 48%"
+        overlayVariant="warm-sunset"
+        enableSubtleZoom={true}
+        className="border-b border-outline-variant/60 text-white"
+        containerClassName="py-24 lg:py-36"
       >
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            <div className="lg:col-span-5">
-              <ImageEyebrow>
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-16 text-white">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start text-white">
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-32 text-white">
+              <ImageEyebrow className="text-white">
                 A Deeper Story
               </ImageEyebrow>
 
-              <ImageHeading as="h2" className="mt-5 text-headline-lg lg:text-display-sm">
+              <ImageHeading as="h2" className="text-[34px] sm:text-[40px] lg:text-[46px] lg:leading-[1.12] text-white">
                 Not a Grand Revelation.
                 <br />
-                Just a Quiet Awakening.
+                <span className="italic font-normal">Just a Quiet Awakening.</span>
               </ImageHeading>
+
+              <div className="w-16 h-0.5 bg-white/80 rounded-full" aria-hidden="true" />
             </div>
 
-            <div className="lg:col-span-7 space-y-6">
-              <ImageParagraph>
+            <div className="lg:col-span-7 space-y-7 pt-2 lg:pt-3 text-white">
+              <p className="font-serif text-lg sm:text-xl lg:text-[21px] leading-[1.65] text-white font-normal italic editorial-shadow max-w-[58ch]">
                 SoulfulI began with a simple question: what happens when we
                 stop treating personal growth as something to complete and
                 start experiencing it as something to live?
-              </ImageParagraph>
+              </p>
 
-              <ImageParagraph>
+              <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
                 Our journey is rooted in the understanding that difficult
                 chapters can become teachers. Self-worth, vulnerability,
                 wellbeing, and personal growth are not separate parts of life.
@@ -129,13 +132,13 @@ export default function OurStoryPage() {
                 ourselves and the world around us.
               </ImageParagraph>
 
-              <ImageParagraph>
+              <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
                 This understanding became the foundation for SoulfulI and the
                 work we are developing through emotional intelligence,
                 mindfulness, and practical spirituality.
               </ImageParagraph>
 
-              <ImageParagraph>
+              <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
                 We believe growth is not about becoming someone entirely
                 different. It is about becoming more yourself, with greater
                 awareness, empathy, resilience, and intention.
