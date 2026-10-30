@@ -87,7 +87,7 @@ export default function QuietBloomPage() {
 
                 <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Users className="w-5 h-5 text-secondary" />
-                  <h4 className="font-serif text-lg text-primary">12 Participants Max</h4>
+                  <h4 className="font-serif text-lg text-primary">25 Participants Max</h4>
                   <p className="font-sans text-xs text-on-surface-variant">
                     Intentionally small cohort to ensure privacy, spaciousness, and intimate conversation.
                   </p>
