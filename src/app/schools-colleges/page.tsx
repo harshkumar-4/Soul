@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button';
 import { BookOpen, HeartHandshake, Eye, Sparkles, GraduationCap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Schools & Colleges — SoulfulI Human Development Curriculum',
+  title: 'Schools & Colleges — Soulfuli Human Development Curriculum',
   description:
     'Educating the heart alongside the intellect. Foundational emotional intelligence, self-awareness, and mindful communication programs for students and educators.',
 };
@@ -58,7 +58,7 @@ export default function SchoolsCollegesPage() {
               Educating the heart alongside the intellect.
             </h1>
             <p className="font-sans text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Academic institutions train critical thinking and technical acumen, yet students and faculty frequently navigate acute emotional overwhelm in silence. SoulfulI brings grounded self-awareness and emotional literacy into the classroom.
+              Academic institutions train critical thinking and technical acumen, yet students and faculty frequently navigate acute emotional overwhelm in silence. Soulfuli brings grounded self-awareness and emotional literacy into the classroom.
             </p>
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Button href="#consultation" variant="primary" size="lg" className="rounded-full">

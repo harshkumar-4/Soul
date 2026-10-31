@@ -6,9 +6,9 @@ import Badge from '@/components/ui/Badge';
 import { Mail, MapPin, Clock, ShieldCheck, Instagram, Linkedin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact & Direct Dispatch — SoulfulI',
+  title: 'Contact & Direct Dispatch — Soulfuli',
   description:
-    'Start a thoughtful conversation with SoulfulI. We treat every message with deliberate human attention.',
+    'Start a thoughtful conversation with Soulfuli. We treat every message with deliberate human attention.',
 };
 
 export default function ContactPage() {
@@ -76,10 +76,10 @@ export default function ContactPage() {
                 For direct press, publishing, or institutional correspondence:
               </p>
               <a
-                href="mailto:inquiry@soulfuli.com"
+                href="mailto:inquiry@Soulfuli.com"
                 className="font-sans text-sm font-semibold text-tertiary hover:underline block pt-1"
               >
-                inquiry@soulfuli.com
+                inquiry@Soulfuli.com
               </a>
             </div>
 
@@ -92,7 +92,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1">
                 <a
-                  href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"
@@ -102,7 +102,7 @@ export default function ContactPage() {
                   <span>Instagram</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/soulfuli/"
+                  href="https://www.linkedin.com/company/Soulfuli/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"

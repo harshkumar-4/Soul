@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Badge from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — SoulfulI',
-  description: 'Terms of Service governing the use of the SoulfulI platform, programs, and retreats.',
+  title: 'Terms of Service — Soulfuli',
+  description: 'Terms of Service governing the use of the Soulfuli platform, programs, and retreats.',
 };
 
 export default function TermsPage() {
@@ -27,7 +27,7 @@ export default function TermsPage() {
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing SoulfulI websites, participating in the EQ Audit, or enrolling in programs and retreats, you agree to these Terms of Service.
+              By accessing Soulfuli websites, participating in the EQ Audit, or enrolling in programs and retreats, you agree to these Terms of Service.
             </p>
           </section>
 
@@ -36,7 +36,7 @@ export default function TermsPage() {
               2. Intellectual Property & Reflection Materials
             </h2>
             <p>
-              All curriculum frameworks, reflection texts, Inner Map models, and design assets are the intellectual property of SoulfulI. They are provided for your personal reflection and may not be reproduced commercially without express written consent.
+              All curriculum frameworks, reflection texts, Inner Map models, and design assets are the intellectual property of Soulfuli. They are provided for your personal reflection and may not be reproduced commercially without express written consent.
             </p>
           </section>
 
@@ -54,7 +54,7 @@ export default function TermsPage() {
               4. Mutual Respect in Communal Spaces
             </h2>
             <p>
-              Participants in SoulfulI virtual salons and retreat circles agree to uphold confidentiality, unhurried listening, and mutual human dignity.
+              Participants in Soulfuli virtual salons and retreat circles agree to uphold confidentiality, unhurried listening, and mutual human dignity.
             </p>
           </section>
         </div>

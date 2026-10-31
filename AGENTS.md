@@ -1,10 +1,10 @@
-# SoulfulI — AGENTS.md
+# Soulfuli — AGENTS.md
 
 ## 1. PURPOSE
 
-You are the development agent responsible for building and maintaining the SoulfulI website and product.
+You are the development agent responsible for building and maintaining the Soulfuli website and product.
 
-SoulfulI is a modern human-development platform focused on:
+Soulfuli is a modern human-development platform focused on:
 
 > Understanding yourself deeply enough to live differently.
 
@@ -80,7 +80,7 @@ Before adding a feature, answer:
 1. What user problem does this solve?
 2. Which PRD requirement does it satisfy?
 3. Is it required for the current product phase?
-4. Does it support SoulfulI's philosophy?
+4. Does it support Soulfuli's philosophy?
 5. Is there a simpler implementation?
 
 If the answer is unclear:
@@ -91,7 +91,7 @@ If the answer is unclear:
 
 # 4. DO NOT CHANGE THE PRODUCT
 
-Do not transform SoulfulI into:
+Do not transform Soulfuli into:
 
 - A SaaS dashboard
 - A meditation app
@@ -105,7 +105,7 @@ Do not transform SoulfulI into:
 - A generic self-help platform
 - A corporate HR portal
 
-SoulfulI must remain:
+Soulfuli must remain:
 
 - Human
 - Calm
@@ -139,7 +139,7 @@ Use the following stack unless the project owner explicitly approves a change.
 
 shadcn/ui is only a technical component foundation.
 
-Do not make SoulfulI visually resemble the default shadcn design.
+Do not make Soulfuli visually resemble the default shadcn design.
 
 ## CMS
 
@@ -296,7 +296,7 @@ Before creating a component:
 
 # 10. DESIGN SYSTEM
 
-SoulfulI's visual system must remain consistent.
+Soulfuli's visual system must remain consistent.
 
 Core palette:
 
@@ -398,7 +398,7 @@ Never present placeholder information as real information.
 
 # 13. COPYWRITING RULES
 
-SoulfulI copy must feel:
+Soulfuli copy must feel:
 
 - Human
 - Warm
@@ -431,7 +431,7 @@ Prefer:
 
 # 14. SPIRITUALITY RULE
 
-SoulfulI may discuss spirituality.
+Soulfuli may discuss spirituality.
 
 However, spirituality must never become:
 
@@ -974,7 +974,7 @@ Use CMS content where available.
 Organisation and school pages should prioritize:
 
 1. Understanding the problem
-2. Explaining SoulfulI's approach
+2. Explaining Soulfuli's approach
 3. Showing relevant programs
 4. Communicating outcomes
 5. Enquiry
@@ -1344,7 +1344,7 @@ template.
 
 # 56. BRAND EXPERIENCE RULE
 
-The website itself should demonstrate SoulfulI's philosophy.
+The website itself should demonstrate Soulfuli's philosophy.
 
 The interface should encourage:
 
@@ -1436,7 +1436,7 @@ If a visual effect:
 
 then simplify it.
 
-SoulfulI should feel premium because of:
+Soulfuli should feel premium because of:
 
 - Typography
 - Composition
@@ -1596,7 +1596,7 @@ Does this solve a real user problem?
 
 ### Brand
 
-Does this feel like SoulfulI?
+Does this feel like Soulfuli?
 
 ### UX
 
@@ -1666,4 +1666,4 @@ The final product should feel like:
 
 > A quiet, intelligent place where someone can begin understanding themselves.
 
-Build SoulfulI with intention.
+Build Soulfuli with intention.

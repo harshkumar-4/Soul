@@ -44,7 +44,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
               onClick={onClose}
               className="font-serif text-2xl text-primary tracking-tight"
             >
-              SoulfulI
+              Soulfuli
             </Link>
             <button
               onClick={onClose}

@@ -4,6 +4,7 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { Compass, Feather } from 'lucide-react';
 import OfferingsSection from '@/components/home/OfferingsSection';
+import HeroVideo from '@/components/shared/HeroVideo';
 import {
   ImageSection,
   ImageEyebrow,
@@ -12,9 +13,9 @@ import {
 } from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
-  title: 'SoulfulI — Understand yourself deeply enough to live differently',
+  title: 'Soulfuli — Understand yourself deeply enough to live differently',
   description:
-    'SoulfulI connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
+    'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
 };
 
 export default function HomePage() {
@@ -37,7 +38,7 @@ export default function HomePage() {
               </h1>
 
               <p className="font-sans text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-                The space between knowing and becoming. SoulfulI integrates emotional intelligence, mindfulness, and intentional spirituality into one grounded, unhurried journey.
+                The space between knowing and becoming. Soulfuli integrates emotional intelligence, mindfulness, and intentional spirituality into one grounded, unhurried journey.
               </p>
 
               <div className="pt-4 flex flex-wrap items-center gap-4">
@@ -64,15 +65,12 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.22)] border border-border-alt/80 bg-surface-alt group">
                 <div className="relative h-full min-h-[520px] w-full overflow-hidden">
-                  <video
-                    src="/video/tree.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    poster="/images/t1.png"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                  <HeroVideo
+                    videoSrc="/video/tree.mp4"
+                    posterSrc="/images/t1.webp"
+                    alt="Quiet Contemplation beside ancient tree"
+                    imageClassName="transition-transform duration-1000 ease-out group-hover:scale-105"
+                    priority
                   />
                   <div className="absolute inset-0 bg-black/15 pointer-events-none" />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/25 to-transparent pointer-events-none" />
@@ -100,7 +98,7 @@ export default function HomePage() {
       {/* SECTION 2: AN OLD IDEA, MADE PRACTICAL AGAIN        */}
       {/* =================================================== */}
       <ImageSection
-        src="/image/phili.jpg"
+        src="/image/phili.webp"
         alt="Serene person meditating beside calm water at dusk"
         objectPosition="center 62%"
         overlayVariant="warm-sunset"
@@ -138,7 +136,7 @@ export default function HomePage() {
               </ImageParagraph>
 
               <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
-                This is what we mean when we say SoulfulI sits at the intersection of
+                This is what we mean when we say Soulfuli sits at the intersection of
                 Emotional Intelligence, spirituality, and mindfulness. Not three
                 separate offerings stacked side by side, but one continuous practice
                 of paying attention, first to yourself, then to the people around you,
@@ -196,7 +194,7 @@ export default function HomePage() {
       {/* SECTION 5: COMMUNITY / CLOSING INVITATION            */}
       {/* =================================================== */}
       <ImageSection
-        src="/images/buddha-forest.png"
+        src="/images/buddha-forest.webp"
         alt="Buddha statue nestled peacefully within lush forest canopy with sunbeams and misty waterfall"
         objectPosition="center 30%"
         overlayVariant="forest-sanctuary"
@@ -234,7 +232,7 @@ export default function HomePage() {
             <div className="lg:col-span-7 space-y-8 pt-1 lg:pt-3">
               <div className="space-y-6">
                 <ImageParagraph className="text-base sm:text-lg text-[#F6F0E5]/95 leading-[1.8] max-w-[56ch]">
-                  SoulfulI is growing into a community, not just a company. As our tools,
+                  Soulfuli is growing into a community, not just a company. As our tools,
                   courses, workshops, and retreats go live, we want the people who
                   believe in this work to be the first to know, the first to join, and
                   eventually, the first to help shape it.
@@ -272,7 +270,7 @@ export default function HomePage() {
               <p className="font-sans text-xs sm:text-sm text-[#F6F0E5]/75 max-w-[54ch] pt-1">
                 Follow along on{' '}
                 <a
-                  href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"
@@ -282,7 +280,7 @@ export default function HomePage() {
                 </a>{' '}
                 and{' '}
                 <a
-                  href="https://www.linkedin.com/company/soulfuli/"
+                  href="https://www.linkedin.com/company/Soulfuli/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"

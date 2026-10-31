@@ -22,9 +22,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Join Our Community — SoulfulI',
+  title: 'Join Our Community — Soulfuli',
   description:
-    'Be part of the SoulfulI community through emotional intelligence, mindfulness, workshops, retreats, and meaningful conversations.',
+    'Be part of the Soulfuli community through emotional intelligence, mindfulness, workshops, retreats, and meaningful conversations.',
 };
 
 const communityWays = [
@@ -42,7 +42,7 @@ const communityWays = [
     number: '02',
     title: 'Follow Our Journey',
     description:
-      'Follow SoulfulI on Instagram and LinkedIn for daily reflections, emotional intelligence insights, and behind-the-scenes moments from what we are building.',
+      'Follow Soulfuli on Instagram and LinkedIn for daily reflections, emotional intelligence insights, and behind-the-scenes moments from what we are building.',
     image:
       'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=75',
     cta: 'Connect With Us',
@@ -60,7 +60,7 @@ const communityWays = [
   },
   {
     number: '04',
-    title: 'Bring SoulfulI to Your Community',
+    title: 'Bring Soulfuli to Your Community',
     description:
       'If you are part of a school, college, or organisation, reach out to explore our Emotional Intelligence Course or a wellness programme for your community.',
     image:
@@ -96,7 +96,7 @@ export default function CommunityPage() {
           <div className="w-16 h-0.5 bg-white/80 rounded-full" aria-hidden="true" />
 
           <ImageParagraph className="max-w-2xl text-body-lg text-white/95 leading-[1.8]">
-            SoulfulI is growing into a community, not just a company.
+            Soulfuli is growing into a community, not just a company.
             We are building this space one honest conversation, one
             workshop, and one retreat at a time.
           </ImageParagraph>
@@ -238,13 +238,13 @@ export default function CommunityPage() {
             align="center"
             eyebrow="Stay Connected"
             title="Follow Along With What We Are Building"
-            subtitle="Discover reflections, insights, and updates from the SoulfulI journey."
+            subtitle="Discover reflections, insights, and updates from the Soulfuli journey."
           />
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
 
             <Button
-              href="https://www.instagram.com/soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+              href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
               isExternal
               variant="secondary"
               size="lg"
@@ -255,7 +255,7 @@ export default function CommunityPage() {
             </Button>
 
             <Button
-              href="https://www.linkedin.com/company/soulfuli/"
+              href="https://www.linkedin.com/company/Soulfuli/"
               isExternal
               variant="secondary"
               size="lg"

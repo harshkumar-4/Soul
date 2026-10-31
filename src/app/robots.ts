@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://soulfuli.com/sitemap.xml',
+    sitemap: 'https://Soulfuli.com/sitemap.xml',
   };
 }

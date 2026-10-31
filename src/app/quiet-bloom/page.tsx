@@ -15,7 +15,7 @@ import {
 } from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
-  title: 'Quiet Bloom Retreat — Dharamshala, Himachal Pradesh | SoulfulI',
+  title: 'Quiet Bloom Retreat — Dharamshala, Himachal Pradesh | Soulfuli',
   description:
     'Slow down without falling behind. An intimate, premium contemplative retreat in the Himalayan valley of Dharamshala, Himachal Pradesh.',
 };

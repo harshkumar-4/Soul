@@ -37,7 +37,7 @@ export default function OfferingsSection() {
 
             <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
               Explore the practices, workshops, courses, and retreats that make
-              up the SoulfulI ecosystem.
+              up the Soulfuli ecosystem.
             </p>
           </div>
 

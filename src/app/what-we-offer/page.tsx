@@ -16,9 +16,9 @@ import {
 } from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
-  title: 'What We Offer — SoulfulI Ecosystem',
+  title: 'What We Offer — Soulfuli Ecosystem',
   description:
-    'Explore the SoulfulI ecosystem: EQ Audit self-discovery mirror, Quiet Bloom Himalayan retreat, Schools & Colleges curriculum, and organisational culture transformation.',
+    'Explore the Soulfuli ecosystem: EQ Audit self-discovery mirror, Quiet Bloom Himalayan retreat, Schools & Colleges curriculum, and organisational culture transformation.',
 };
 
 export default function WhatWeOfferPage() {
@@ -50,13 +50,13 @@ export default function WhatWeOfferPage() {
           <ImageParagraph className="text-body-lg max-w-2xl text-white/95 leading-[1.8]">
             Whether you are beginning with personal self-discovery,
             stepping into a mountain retreat, or transforming how your
-            organisation communicates, SoulfulI offers grounded human
+            organisation communicates, Soulfuli offers grounded human
             pathways.
           </ImageParagraph>
         </div>
       </ImageSection>
 
-      {/* SECTION 2: THE SOULFULI ECOSYSTEM */}
+      {/* SECTION 2: THE Soulfuli ECOSYSTEM */}
       <section className="relative w-full py-20 lg:py-28 overflow-hidden border-b border-border-alt">
 
         {/* Background Atmosphere */}
@@ -76,7 +76,7 @@ export default function WhatWeOfferPage() {
           <div className="max-w-[1240px] mx-auto px-6 lg:px-16">
             <SectionHeading
               align="center"
-              eyebrow="The SoulfulI Ecosystem"
+              eyebrow="The Soulfuli Ecosystem"
               title="Ways to begin your journey"
               subtitle="One ecosystem. Different pathways. A more intentional way of living."
             />

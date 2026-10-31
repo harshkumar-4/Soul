@@ -11,7 +11,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error('SoulfulI Runtime Catch:', error);
+    console.error('Soulfuli Runtime Catch:', error);
   }, [error]);
 
   return (

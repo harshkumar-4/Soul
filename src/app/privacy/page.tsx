@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import Badge from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — SoulfulI',
-  description: 'How SoulfulI collects, protects, and respects your personal and reflective information.',
+  title: 'Privacy Policy — Soulfuli',
+  description: 'How Soulfuli collects, protects, and respects your personal and reflective information.',
 };
 
 export default function PrivacyPage() {
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
               1. Our Stance on Privacy & Self-Discovery Data
             </h2>
             <p>
-              SoulfulI operates as a contemplative sanctuary. Because our tools (such as the EQ Audit) involve introspective and personal self-reflection, we hold your responses with absolute respect. We collect only the minimum information necessary to calculate your results and facilitate direct correspondence.
+              Soulfuli operates as a contemplative sanctuary. Because our tools (such as the EQ Audit) involve introspective and personal self-reflection, we hold your responses with absolute respect. We collect only the minimum information necessary to calculate your results and facilitate direct correspondence.
             </p>
           </section>
 
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
               4. Non-Clinical Disclaimer
             </h2>
             <p>
-              SoulfulI assessments and programs are educational tools for personal growth and self-awareness. They do not constitute medical, psychiatric, or clinical psychological diagnoses.
+              Soulfuli assessments and programs are educational tools for personal growth and self-awareness. They do not constitute medical, psychiatric, or clinical psychological diagnoses.
             </p>
           </section>
 
@@ -72,8 +72,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               For data access, deletion, or inquiries, please contact our team at{' '}
-              <a href="mailto:privacy@soulfuli.com" className="text-tertiary underline">
-                privacy@soulfuli.com
+              <a href="mailto:privacy@Soulfuli.com" className="text-tertiary underline">
+                privacy@Soulfuli.com
               </a>
               .
             </p>

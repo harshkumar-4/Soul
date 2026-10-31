@@ -84,7 +84,7 @@ export function OrganisationEnquiryForm() {
           Program Inquiry Received
         </h3>
         <p className="font-sans text-body-md text-on-surface-variant max-w-md mx-auto leading-relaxed">
-          Thank you for connecting with SoulfulI. Our team will review your objectives and reach out to discuss workshops, leadership programs, or team development engagements.
+          Thank you for connecting with Soulfuli. Our team will review your objectives and reach out to discuss workshops, leadership programs, or team development engagements.
         </p>
       </div>
     );

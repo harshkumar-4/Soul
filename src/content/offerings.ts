@@ -41,7 +41,7 @@ export const offeringsData: OfferingItem[] = [
     shortDescription:
       'Human-development curriculum and contemplative workshops designed for students and educators navigating modern pressure and emotional overwhelm.',
     fullDescription:
-      'Modern education trains analytical aptitude while leaving emotional resilience and self-awareness untended. SoulfulI partners with academic institutions to offer foundational emotional intelligence and dialogue practices.',
+      'Modern education trains analytical aptitude while leaving emotional resilience and self-awareness untended. Soulfuli partners with academic institutions to offer foundational emotional intelligence and dialogue practices.',
     href: '/schools-colleges',
     badgeText: 'Institutional Offering',
     badgeVariant: 'sand',
@@ -60,9 +60,9 @@ export const offeringsData: OfferingItem[] = [
     title: 'Organisations',
     tagline: 'Leading with the heart, not just the numbers.',
     shortDescription:
-      'SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+      'Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
     fullDescription:
-      'Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+      'Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
     href: '/organisations',
     badgeText: 'Corporate Offering',
     badgeVariant: 'forest',

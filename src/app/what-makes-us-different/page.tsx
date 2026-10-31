@@ -13,9 +13,9 @@ import {
 } from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
-  title: 'What Makes Us Different — SoulfulI',
+  title: 'What Makes Us Different — Soulfuli',
   description:
-    'Discover how SoulfulI brings emotional intelligence, mindfulness, spirituality, lived experience, and Indian wisdom together.',
+    'Discover how Soulfuli brings emotional intelligence, mindfulness, spirituality, lived experience, and Indian wisdom together.',
 };
 
 const differentiators = [
@@ -23,7 +23,7 @@ const differentiators = [
     number: '01',
     title: 'We Refuse to Separate the Mind, the Heart, and the Spirit',
     description:
-      'Most Emotional Intelligence programmes stop at the workplace. Most spiritual offerings stop at the self. Most mindfulness content stops at an app notification. SoulfulI was built in the space between all three, because we do not believe those boundaries reflect how people actually experience their lives.',
+      'Most Emotional Intelligence programmes stop at the workplace. Most spiritual offerings stop at the self. Most mindfulness content stops at an app notification. Soulfuli was built in the space between all three, because we do not believe those boundaries reflect how people actually experience their lives.',
     image:
       'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=75',
   },
@@ -144,7 +144,7 @@ export default function WhatMakesUsDifferentPage() {
 
           <SectionHeading
             align="center"
-            eyebrow="The SoulfulI Difference"
+            eyebrow="The Soulfuli Difference"
             title="Seven principles that shape our approach."
             subtitle="A different way of understanding emotional intelligence, mindfulness, spirituality, and human growth."
           />

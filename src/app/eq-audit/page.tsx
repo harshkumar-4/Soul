@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: 'The EQ Audit — SoulfulI Self-Discovery Mirror',
+  title: 'The EQ Audit — Soulfuli Self-Discovery Mirror',
   description:
     'A quiet 48-question reflective self-discovery experience mapping six core dimensions of emotional awareness, regulation, and intentional communication.',
 };

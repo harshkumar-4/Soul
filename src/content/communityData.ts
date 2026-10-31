@@ -13,7 +13,7 @@ export const communityContent = {
     badge: 'Sanctuary & Community',
     title: 'Where we meet and practice.',
     subtitle:
-      'SoulfulI is not a noisy social feed. It is a quiet collective sanctuary for individuals who value contemplative depth, honest dialogue, and intentional living.',
+      'Soulfuli is not a noisy social feed. It is a quiet collective sanctuary for individuals who value contemplative depth, honest dialogue, and intentional living.',
   },
   values: [
     {

@@ -2,11 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { usePathname } from 'next/navigation';
 import { Menu, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
-import MobileNav from '@/components/layout/MobileNav';
+
+const MobileNav = dynamic(() => import('@/components/layout/MobileNav'), {
+  ssr: false,
+});
 
 const navLinks = [
   { href: '/our-story', label: 'Our Story' },
@@ -46,7 +50,7 @@ export function Header() {
               className="group inline-flex items-baseline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
             >
               <span className="font-serif text-[28px] tracking-tight text-primary font-normal group-hover:text-secondary transition-colors">
-                SoulfulI
+                Soulfuli
               </span>
             </Link>
 
@@ -101,10 +105,12 @@ export function Header() {
         </div>
       </header>
 
-      <MobileNav
-        isOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-      />
+      {isMobileMenuOpen && (
+        <MobileNav
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </>
   );
 }

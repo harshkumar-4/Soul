@@ -21,15 +21,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'SoulfulI — Understand yourself deeply enough to live differently',
+  title: 'Soulfuli — Understand yourself deeply enough to live differently',
   description:
-    'SoulfulI connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
-  metadataBase: new URL('https://soulfuli.com'),
+    'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
+  metadataBase: new URL('https://Soulfuli.com'),
   openGraph: {
-    title: 'SoulfulI — Understand yourself deeply enough to live differently',
+    title: 'Soulfuli — Understand yourself deeply enough to live differently',
     description:
-      'SoulfulI connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
-    siteName: 'SoulfulI',
+      'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
+    siteName: 'Soulfuli',
     locale: 'en_US',
     type: 'website',
   },

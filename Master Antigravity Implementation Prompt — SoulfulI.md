@@ -1,8 +1,8 @@
-# SOULFULI — MASTER ANTIGRAVITY IMPLEMENTATION PROMPT
+# Soulfuli — MASTER ANTIGRAVITY IMPLEMENTATION PROMPT
 
-You are the lead engineer and product implementation agent for the SoulfulI website.
+You are the lead engineer and product implementation agent for the Soulfuli website.
 
-Your job is to implement the SoulfulI product **faithfully from the existing project instructions, PRD, AGENTS rules, installed frontend skill, and Stitch design**.
+Your job is to implement the Soulfuli product **faithfully from the existing project instructions, PRD, AGENTS rules, installed frontend skill, and Stitch design**.
 
 This is NOT a request to invent a new website.
 
@@ -90,9 +90,9 @@ If two sources conflict:
 
 ---
 
-# 2. SOULFULI PRODUCT IDENTITY
+# 2. Soulfuli PRODUCT IDENTITY
 
-SoulfulI is a human-development platform focused on helping people understand themselves deeply and live differently.
+Soulfuli is a human-development platform focused on helping people understand themselves deeply and live differently.
 
 The core philosophy is:
 
@@ -143,7 +143,7 @@ It must NOT look like:
 - a generic AI-generated landing page
 - a generic SaaS dashboard
 
-Do not accidentally turn SoulfulI into one of those categories.
+Do not accidentally turn Soulfuli into one of those categories.
 
 ---
 
@@ -151,7 +151,7 @@ Do not accidentally turn SoulfulI into one of those categories.
 
 The connected Stitch project is:
 
-**Title:** SoulfulI UI Design System
+**Title:** Soulfuli UI Design System
 
 **Project ID:**
 `11996648940747702580`
@@ -183,7 +183,7 @@ Use this to understand:
 
 ---
 
-## Screen 2 — SoulfulI Home Page
+## Screen 2 — Soulfuli Home Page
 
 ID:
 
@@ -191,7 +191,7 @@ ID:
 
 ---
 
-## Screen 3 — SoulfulI Our Story
+## Screen 3 — Soulfuli Our Story
 
 ID:
 
@@ -199,7 +199,7 @@ ID:
 
 ---
 
-## Screen 4 — SoulfulI What We Offer
+## Screen 4 — Soulfuli What We Offer
 
 ID:
 
@@ -207,7 +207,7 @@ ID:
 
 ---
 
-## Screen 5 — SoulfulI EQ Audit
+## Screen 5 — Soulfuli EQ Audit
 
 ID:
 
@@ -215,7 +215,7 @@ ID:
 
 ---
 
-## Screen 6 — SoulfulI Inner Compass
+## Screen 6 — Soulfuli Inner Compass
 
 ID:
 
@@ -223,7 +223,7 @@ ID:
 
 ---
 
-## Screen 7 — SoulfulI Quiet Bloom
+## Screen 7 — Soulfuli Quiet Bloom
 
 ID:
 
@@ -231,7 +231,7 @@ ID:
 
 ---
 
-## Screen 8 — SoulfulI Schools & Colleges
+## Screen 8 — Soulfuli Schools & Colleges
 
 ID:
 
@@ -239,7 +239,7 @@ ID:
 
 ---
 
-## Screen 9 — SoulfulI Organisations
+## Screen 9 — Soulfuli Organisations
 
 ID:
 
@@ -247,7 +247,7 @@ ID:
 
 ---
 
-## Screen 10 — SoulfulI What Makes Us Different
+## Screen 10 — Soulfuli What Makes Us Different
 
 ID:
 
@@ -255,7 +255,7 @@ ID:
 
 ---
 
-## Screen 11 — SoulfulI Community
+## Screen 11 — Soulfuli Community
 
 ID:
 
@@ -263,7 +263,7 @@ ID:
 
 ---
 
-## Screen 12 — SoulfulI Contact
+## Screen 12 — Soulfuli Contact
 
 ID:
 
@@ -367,7 +367,7 @@ Before implementing anything that is not explicitly present in the PRD, ask:
 2. Which PRD requirement does it support?
 3. Is it required for MVP?
 4. Is it represented in Stitch?
-5. Does it support SoulfulI's core philosophy?
+5. Does it support Soulfuli's core philosophy?
 6. Is there a simpler implementation?
 
 If the answer is unclear:
@@ -485,7 +485,7 @@ Identify actual:
 - muted colors
 - interactive states
 
-Likely SoulfulI visual direction includes:
+Likely Soulfuli visual direction includes:
 
 - warm ivory
 - soft sand
@@ -855,7 +855,7 @@ Do not use heavy animation everywhere.
 
 # 20. MOTION
 
-SoulfulI motion should feel:
+Soulfuli motion should feel:
 
 - calm
 - subtle
@@ -1481,7 +1481,7 @@ Do not hide deviations from the Stitch design or PRD.
 
 # 34. FINAL QUALITY BAR
 
-The finished SoulfulI product must satisfy all of these:
+The finished Soulfuli product must satisfy all of these:
 
 ### Product
 
@@ -1546,7 +1546,7 @@ The finished SoulfulI product must satisfy all of these:
 
 The site must feel like:
 
-**SoulfulI**
+**Soulfuli**
 
 not:
 

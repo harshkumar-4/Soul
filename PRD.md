@@ -1,17 +1,17 @@
-# SoulfulI — Product Requirements Document
+# Soulfuli — Product Requirements Document
 
 Version: 1.0
 Status: MVP / Production Foundation
-Product: SoulfulI
+Product: Soulfuli
 Document: PRD.md
 
 ---
 
 # 1. PROJECT OVERVIEW
 
-SoulfulI is a modern human-development platform designed to help people understand themselves more deeply and live with greater emotional awareness, intention, meaning, and connection.
+Soulfuli is a modern human-development platform designed to help people understand themselves more deeply and live with greater emotional awareness, intention, meaning, and connection.
 
-SoulfulI is NOT:
+Soulfuli is NOT:
 
 - A generic wellness website
 - A meditation app
@@ -22,7 +22,7 @@ SoulfulI is NOT:
 - A generic AI-generated self-help platform
 - A social-media-style community platform
 
-SoulfulI sits at the intersection of:
+Soulfuli sits at the intersection of:
 
 Mind + Heart + Spirit
 
@@ -40,7 +40,7 @@ The user should feel:
 
 # 2. PRODUCT VISION
 
-SoulfulI helps people move from external noise to internal clarity.
+Soulfuli helps people move from external noise to internal clarity.
 
 The website experience should follow this emotional journey:
 
@@ -60,7 +60,7 @@ BLOOM
 
 The website itself should demonstrate this philosophy.
 
-It should not simply explain SoulfulI.
+It should not simply explain Soulfuli.
 
 The interaction, typography, imagery, pacing, transitions, content hierarchy, and user journey should make the user experience the philosophy.
 
@@ -70,7 +70,7 @@ The interaction, typography, imagery, pacing, transitions, content hierarchy, an
 
 Primary positioning:
 
-> SoulfulI helps you understand yourself deeply enough to live differently.
+> Soulfuli helps you understand yourself deeply enough to live differently.
 
 Supporting positioning:
 
@@ -162,7 +162,7 @@ People interested in:
 
 # 5. BUSINESS MODEL
 
-SoulfulI should eventually have four major revenue/ecosystem layers.
+Soulfuli should eventually have four major revenue/ecosystem layers.
 
 ## B2C
 
@@ -313,11 +313,11 @@ Use:
 
 shadcn/ui
 
-But do NOT make SoulfulI look like a default shadcn application.
+But do NOT make Soulfuli look like a default shadcn application.
 
 shadcn is only the functional component foundation.
 
-The visual language must be custom SoulfulI.
+The visual language must be custom Soulfuli.
 
 Required reusable components include:
 
@@ -843,7 +843,7 @@ Use a consistent spacing scale.
 
 Prefer generous whitespace.
 
-SoulfulI should not feel crowded.
+Soulfuli should not feel crowded.
 
 Use whitespace as part of the experience.
 
@@ -855,7 +855,7 @@ Do not fill empty space simply because it exists.
 
 Purpose:
 
-Introduce the SoulfulI philosophy and move the user toward self-discovery.
+Introduce the Soulfuli philosophy and move the user toward self-discovery.
 
 The homepage should NOT feel like a normal SaaS landing page.
 
@@ -899,7 +899,7 @@ But completing activities does not necessarily create transformation.
 
 ---
 
-## Section: SoulfulI Philosophy
+## Section: Soulfuli Philosophy
 
 Show:
 
@@ -942,7 +942,7 @@ Quiet Bloom
 
 ## Section: Difference
 
-Explain that SoulfulI does not separate mind, heart and spirit.
+Explain that Soulfuli does not separate mind, heart and spirit.
 
 ---
 
@@ -962,7 +962,7 @@ Begin Your Journey
 
 Purpose:
 
-Explain why SoulfulI exists.
+Explain why Soulfuli exists.
 
 Tone:
 
@@ -977,11 +977,11 @@ Tell a human story.
 
 Include:
 
-- Why SoulfulI exists
+- Why Soulfuli exists
 - What problem inspired it
 - Philosophy
 - Mind + Heart + Spirit
-- What SoulfulI believes
+- What Soulfuli believes
 - What transformation means
 
 ---
@@ -1246,7 +1246,7 @@ Corporate and leadership human-development programs. Reuses the Schools & Colleg
 ### 1. Hero
 - Eyebrow: "Corporate Offering"
 - Heading: "Leading with the heart, not just the numbers."
-- Body: "Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead."
+- Body: "Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead."
 - Primary CTA: "Discuss a Corporate Program" → `/organisations#consultation`
 - Secondary CTA: "Explore Our Approach" → `/organisations#threads`
 
@@ -1309,7 +1309,7 @@ Community MVP should remain simple.
 
 Purpose:
 
-Create an ongoing relationship with SoulfulI.
+Create an ongoing relationship with Soulfuli.
 
 Possible features:
 
@@ -1446,7 +1446,7 @@ Do not log sensitive user responses.
 
 # 48. PRIVACY
 
-SoulfulI may collect personal and reflective information.
+Soulfuli may collect personal and reflective information.
 
 Therefore:
 
@@ -1731,7 +1731,7 @@ Avoid:
 
 # 59. IMPORTANT COPY PRINCIPLE
 
-SoulfulI should never sound like it is telling the user:
+Soulfuli should never sound like it is telling the user:
 
 "You are broken and we will fix you."
 
@@ -1871,7 +1871,7 @@ Before implementing ANY new feature, ask:
 1. Which user problem does this solve?
 2. Which existing PRD requirement does it support?
 3. Is it required for MVP?
-4. Does it support SoulfulI's core philosophy?
+4. Does it support Soulfuli's core philosophy?
 5. Does it improve conversion, understanding, experience, or operations?
 6. Is there a simpler solution?
 
@@ -2090,7 +2090,7 @@ A feature is complete when:
 
 # 69. QUALITY BAR
 
-SoulfulI must feel:
+Soulfuli must feel:
 
 "Premium but not expensive."
 
@@ -2200,7 +2200,7 @@ Primary B2C journey:
 
 Home
 ↓
-Understand SoulfulI
+Understand Soulfuli
 ↓
 EQ Audit
 ↓
@@ -2256,7 +2256,7 @@ Do not introduce AI recommendations.
 
 # 76. AI POLICY
 
-AI is not a core feature of SoulfulI MVP.
+AI is not a core feature of Soulfuli MVP.
 
 Do not add an AI chatbot just because AI is popular.
 
@@ -2393,7 +2393,7 @@ When uncertain, prefer the smallest implementation consistent with this PRD.
 
 # 80. FINAL INSTRUCTION TO ANTIGRAVITY
 
-You are building SoulfulI, not a generic website.
+You are building Soulfuli, not a generic website.
 
 Before writing code, understand:
 

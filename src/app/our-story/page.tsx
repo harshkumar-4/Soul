@@ -3,6 +3,7 @@ import { ourStoryContent } from '@/content/ourStory';
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
 import Badge from '@/components/ui/Badge';
+import HeroVideo from '@/components/shared/HeroVideo';
 import {
   ImageSection,
   ImageEyebrow,
@@ -11,9 +12,9 @@ import {
 } from '@/components/shared/ImageSection';
 
 export const metadata: Metadata = {
-  title: 'Our Story — SoulfulI',
+  title: 'Our Story — Soulfuli',
   description:
-    'Becoming more yourself. SoulfulI began with a simple question: what happens when we stop treating personal growth as something to complete, and start experiencing it as something to live?',
+    'Becoming more yourself. Soulfuli began with a simple question: what happens when we stop treating personal growth as something to complete, and start experiencing it as something to live?',
 };
 
 export default function OurStoryPage() {
@@ -43,16 +44,12 @@ export default function OurStoryPage() {
 
           {/* Hero Video */}
           <div className="w-full relative overflow-hidden rounded-2xl bg-surface-alt shadow-[0_24px_64px_-16px_rgba(31,42,36,0.22)] aspect-[16/9] max-h-[580px] border border-border-alt/80 group">
-            <video
-              src="/video/mount.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              poster="/images/m1.png"
-              className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-              aria-label="Calm editorial video representing reflection and personal growth"
+            <HeroVideo
+              videoSrc="/video/mount.mp4"
+              posterSrc="/images/m1.webp"
+              alt="Calm editorial video representing reflection and personal growth"
+              imageClassName="transition-transform duration-1000 ease-out group-hover:scale-105"
+              priority
             />
 
             <div className="absolute inset-0 bg-black/15 pointer-events-none" />
@@ -83,7 +80,7 @@ export default function OurStoryPage() {
             </blockquote>
 
             <p className="font-sans text-body-md text-on-surface-variant leading-relaxed">
-              SoulfulI exists to build quiet spaces, diagnostics, and guided
+              Soulfuli exists to build quiet spaces, diagnostics, and guided
               frameworks where understanding becomes lived reality.
             </p>
 
@@ -93,7 +90,7 @@ export default function OurStoryPage() {
 
       {/* SECTION 3: A DEEPER STORY */}
       <ImageSection
-        src="/image/33.jpg"
+        src="/image/33.webp"
         alt="Person meditating peacefully on wooden dock at sunset"
         objectPosition="center 48%"
         overlayVariant="warm-sunset"
@@ -119,7 +116,7 @@ export default function OurStoryPage() {
 
             <div className="lg:col-span-7 space-y-7 pt-2 lg:pt-3 text-white">
               <p className="font-serif text-lg sm:text-xl lg:text-[21px] leading-[1.65] text-white font-normal italic editorial-shadow max-w-[58ch]">
-                SoulfulI began with a simple question: what happens when we
+                Soulfuli began with a simple question: what happens when we
                 stop treating personal growth as something to complete and
                 start experiencing it as something to live?
               </p>
@@ -133,7 +130,7 @@ export default function OurStoryPage() {
               </ImageParagraph>
 
               <ImageParagraph className="text-base sm:text-lg text-white/95 leading-[1.8] max-w-[58ch]">
-                This understanding became the foundation for SoulfulI and the
+                This understanding became the foundation for Soulfuli and the
                 work we are developing through emotional intelligence,
                 mindfulness, and practical spirituality.
               </ImageParagraph>

@@ -104,7 +104,7 @@ export function calculateAuditResult(submission: AuditSubmission): AuditResult {
           badgeText: 'Contemplative Retreat',
         }
       : {
-          title: 'SoulfulI Community',
+          title: 'Soulfuli Community',
           description:
             'An intentional community for reflective practitioners. Connect with fellow seekers, attend thoughtful gatherings, and receive contemplative insights.',
           href: '/community',

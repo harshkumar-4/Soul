@@ -7,18 +7,18 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Organisations — SoulfulI Human-Centred Leadership',
+  title: 'Organisations — Soulfuli Human-Centred Leadership',
   description:
-    'Leading with the heart, not just the numbers. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+    'Leading with the heart, not just the numbers. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
   alternates: {
-    canonical: 'https://soulfuli.com/organisations',
+    canonical: 'https://Soulfuli.com/organisations',
   },
   openGraph: {
-    title: 'Organisations — SoulfulI Human-Centred Leadership',
+    title: 'Organisations — Soulfuli Human-Centred Leadership',
     description:
-      'Leading with the heart, not just the numbers. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
-    url: 'https://soulfuli.com/organisations',
-    siteName: 'SoulfulI',
+      'Leading with the heart, not just the numbers. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
+    url: 'https://Soulfuli.com/organisations',
+    siteName: 'Soulfuli',
     type: 'website',
   },
 };
@@ -68,7 +68,7 @@ export default function OrganisationsPage() {
               Leading with the heart, not just the numbers.
             </h1>
             <p className="font-sans text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. SoulfulI brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.
+              Organisations invest heavily in skills and strategy, yet leaders and teams often carry pressure, friction, and disconnection quietly. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.
             </p>
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Button href="#consultation" variant="primary" size="lg" className="rounded-full">
