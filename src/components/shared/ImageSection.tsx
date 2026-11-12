@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 
 export type OverlayVariant =
   | 'directional'
@@ -15,6 +16,8 @@ export interface ImageSectionProps extends React.HTMLAttributes<HTMLElement> {
   src: string;
   alt?: string;
   priority?: boolean;
+  quality?: number;
+  sizes?: string;
   objectPosition?: string;
   overlayVariant?: OverlayVariant;
   enableSubtleZoom?: boolean;
@@ -33,6 +36,8 @@ export function ImageSection({
   src,
   alt = '',
   priority = false,
+  quality,
+  sizes = '100vw',
   objectPosition = 'center',
   overlayVariant = 'directional',
   enableSubtleZoom = false,
@@ -49,13 +54,16 @@ export function ImageSection({
       {...props}
     >
       {/* Background Image Container */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden bg-primary/15">
         <Image
           src={src}
           alt={alt}
           fill
           priority={priority}
-          sizes="100vw"
+          loading={priority ? undefined : 'lazy'}
+          quality={quality ?? (priority ? 82 : 75)}
+          sizes={sizes}
+          {...getBlurProps(src)}
           className={cn(
             'object-cover transition-transform duration-1000 ease-out will-change-transform',
             enableSubtleZoom && 'animate-subtle-zoom',

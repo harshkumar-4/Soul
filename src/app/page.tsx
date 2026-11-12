@@ -71,6 +71,7 @@ export default function HomePage() {
                     videoSrc="/video/tree.mp4"
                     posterSrc="/images/t1.webp"
                     alt="Quiet Contemplation beside ancient tree"
+                    sizes="(max-width: 1024px) 92vw, 480px"
                     imageClassName="transition-transform duration-1000 ease-out group-hover:scale-105"
                     priority
                   />

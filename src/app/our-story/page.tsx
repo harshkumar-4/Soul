@@ -50,6 +50,7 @@ export default function OurStoryPage() {
               videoSrc="/video/mount.mp4"
               posterSrc="/images/m1.webp"
               alt="Calm editorial video representing reflection and personal growth"
+              sizes="(max-width: 1280px) 94vw, 1200px"
               imageClassName="transition-transform duration-1000 ease-out group-hover:scale-105"
               priority
             />

@@ -12,6 +12,7 @@ import {
   ImageParagraph,
 } from '@/components/shared/ImageSection';
 import { createPageMetadata, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/seo/metadata';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 
 import {
   ArrowUpRight,
@@ -34,7 +35,7 @@ const communityWays = [
     title: 'Take the EQ Audit',
     description:
       'Get a clearer mirror into your own emotional patterns. The EQ Audit is an invitation to look inward, understand yourself, and discover where growth may begin.',
-    image: '/image/aaron.jpg',
+    image: '/image/aaron.webp',
     imageAlt: 'Person standing in calm shallow water reflecting the soft twilight sky',
     cta: 'Take the EQ Audit',
     href: '/eq-audit',
@@ -135,6 +136,7 @@ export default function CommunityPage() {
           alt=""
           fill
           loading="lazy"
+          quality={55}
           sizes="100vw"
           className="object-cover object-center opacity-[0.06] pointer-events-none"
           aria-hidden="true"
@@ -158,14 +160,16 @@ export default function CommunityPage() {
               >
 
                 {/* IMAGE */}
-                <div className="relative h-[280px] overflow-hidden">
+                <div className="relative h-[280px] overflow-hidden bg-surface-alt">
 
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={75}
+                    sizes="(max-width: 768px) 92vw, 560px"
+                    {...getBlurProps(item.image)}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 

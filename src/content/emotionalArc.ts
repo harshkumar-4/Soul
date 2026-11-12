@@ -25,7 +25,7 @@ export const emotionalArcStages: EmotionalArcStage[] = [
     description:
       'The courageous act of stopping without guilt. Creating deliberate room between stimulus and reaction, allowing the dust of daily agitation to settle.',
     reflectionQuote: 'Stillness is not lost time; it is the space where clarity is born.',
-    imageSrc: '/image/3.jpg',
+    imageSrc: '/image/3.webp',
   },
   {
     stageNumber: '03',
@@ -43,7 +43,7 @@ export const emotionalArcStages: EmotionalArcStage[] = [
     description:
       'Tracing emotional reactions back to their underlying roots. Recognizing protective scripts and historical habits with honest compassion.',
     reflectionQuote: 'Compassion turns self-examination from a courtroom into a mirror.',
-    imageSrc: '/image/aaron.jpg',
+    imageSrc: '/image/aaron.webp',
   },
   {
     stageNumber: '05',
@@ -70,6 +70,6 @@ export const emotionalArcStages: EmotionalArcStage[] = [
     description:
       'The retreat ends. The workshop concludes. But the integrated blossoming of mind, heart, and spirit continues in every ordinary moment.',
     reflectionQuote: 'Wholeness is not a destination. It is the quality of your presence right now.',
-    imageSrc: '/image/1.jpg',
+    imageSrc: '/image/1.webp',
   },
 ];

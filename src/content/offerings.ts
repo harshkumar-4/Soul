@@ -25,7 +25,7 @@ export const offeringsData: OfferingItem[] = [
     href: '/eq-audit',
     badgeText: 'Self-Discovery Mirror',
     badgeVariant: 'sage',
-    imageSrc: '/image/aaron.jpg',
+    imageSrc: '/image/aaron.webp',
     imageAlt: 'Person standing in calm shallow reflective water beneath a soft twilight sky',
     audience: 'Individuals & Emerging Leaders',
     outcomes: [

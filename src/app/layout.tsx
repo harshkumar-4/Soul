@@ -51,7 +51,8 @@ export const metadata: Metadata = {
       'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
   },
   icons: {
-    icon: '/icon.svg',
+    icon: '/logo.ico',
+    shortcut: '/logo.ico',
   },
 };
 

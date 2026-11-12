@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 
 export default function OfferingsSection() {
   const homepageOfferingIds = [
@@ -69,7 +70,9 @@ export default function OfferingsSection() {
                 alt={item.imageAlt}
                 fill
                 loading="lazy"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                quality={75}
+                sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 285px"
+                {...getBlurProps(item.imageSrc)}
                 className="
           absolute inset-0 w-full h-full object-cover
           transition-transform duration-700

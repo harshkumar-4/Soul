@@ -11,6 +11,7 @@ import {
   ImageParagraph,
 } from '@/components/shared/ImageSection';
 import { createPageMetadata } from '@/lib/seo/metadata';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'What Makes Us Different — Soulfuli',
@@ -25,7 +26,7 @@ const differentiators = [
     title: 'We Refuse to Separate the Mind, the Heart, and the Spirit',
     description:
       'Most Emotional Intelligence programmes stop at the workplace. Most spiritual offerings stop at the self. Most mindfulness content stops at an app notification. Soulfuli was built in the space between all three, because we do not believe those boundaries reflect how people actually experience their lives.',
-    image: '/image/1.jpg',
+    image: '/image/1.webp',
     imageAlt: 'Silhouette standing on a calm beach at sunset with arms open toward the horizon',
   },
   {
@@ -41,7 +42,7 @@ const differentiators = [
     title: 'Mindfulness as Practice, Not Product',
     description:
       'We do not treat mindfulness as a feature to bolt onto a workshop. It is the discipline of noticing—breath, body, emotion, moment—that runs underneath everything else we teach. Every session, retreat, and course we design carries mindfulness as its foundation, not its garnish.',
-    image: '/image/2.jpg',
+    image: '/image/2.webp',
     imageAlt: 'Person seated cross-legged on dark coastal rocks overlooking the evening ocean',
   },
   {
@@ -138,6 +139,7 @@ export default function WhatMakesUsDifferentPage() {
           alt=""
           fill
           loading="lazy"
+          quality={55}
           sizes="100vw"
           className="object-cover object-center opacity-[0.06] pointer-events-none"
           aria-hidden="true"
@@ -161,14 +163,16 @@ export default function WhatMakesUsDifferentPage() {
               >
 
                 {/* IMAGE */}
-                <div className="relative h-[280px] overflow-hidden">
+                <div className="relative h-[280px] overflow-hidden bg-surface-alt">
 
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
                     fill
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={75}
+                    sizes="(max-width: 768px) 92vw, 380px"
+                    {...getBlurProps(item.image)}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
 

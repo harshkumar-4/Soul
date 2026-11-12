@@ -6,6 +6,7 @@ import SchoolEnquiryForm from '@/components/forms/SchoolEnquiryForm';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import { createPageMetadata } from '@/lib/seo/metadata';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Schools & Colleges — Soulfuli Human Development Curriculum',
@@ -78,7 +79,9 @@ export default function SchoolsCollegesPage() {
                 alt="Young Indian peers engaged in calm, thoughtful dialogue outdoors in golden sunlight"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 42vw"
+                quality={82}
+                sizes="(max-width: 1024px) 92vw, 480px"
+                {...getBlurProps('/image/grp.jpeg')}
                 className="object-cover object-[54%_center] transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent pointer-events-none" />

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { getBlurProps } from '@/lib/media/imagePlaceholders';
 import Badge from '@/components/ui/Badge';
 
 export interface OfferingCardProps {
@@ -47,7 +48,9 @@ export function OfferingCard({
               alt={imageAlt || title}
               fill
               loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              quality={75}
+              sizes="(max-width: 768px) 92vw, (max-width: 1280px) 46vw, 560px"
+              {...getBlurProps(imageSrc)}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
