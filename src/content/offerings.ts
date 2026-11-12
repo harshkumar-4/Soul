@@ -8,6 +8,7 @@ export interface OfferingItem {
   badgeText: string;
   badgeVariant: 'sage' | 'sand' | 'terracotta' | 'forest';
   imageSrc: string;
+  imageAlt: string;
   audience: string;
   outcomes: string[];
 }
@@ -24,8 +25,8 @@ export const offeringsData: OfferingItem[] = [
     href: '/eq-audit',
     badgeText: 'Self-Discovery Mirror',
     badgeVariant: 'sage',
-    imageSrc:
-      'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=75',
+    imageSrc: '/image/aaron.jpg',
+    imageAlt: 'Person standing in calm shallow reflective water beneath a soft twilight sky',
     audience: 'Individuals & Emerging Leaders',
     outcomes: [
       'Visual 6-dimension Inner Map profile',
@@ -45,8 +46,8 @@ export const offeringsData: OfferingItem[] = [
     href: '/schools-colleges',
     badgeText: 'Institutional Offering',
     badgeVariant: 'sand',
-    imageSrc:
-      'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=75',
+    imageSrc: '/image/grp.jpeg',
+    imageAlt: 'Young Indian peers engaged in warm, thoughtful conversation outdoors in a meadow',
     audience: 'Students, Faculty & Educational Leaders',
     outcomes: [
       'Emotional literacy and regulation tools',
@@ -66,8 +67,8 @@ export const offeringsData: OfferingItem[] = [
     href: '/organisations',
     badgeText: 'Corporate Offering',
     badgeVariant: 'forest',
-    imageSrc:
-      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=75',
+    imageSrc: '/image/boat.jpeg',
+    imageAlt: 'People travelling together across a tranquil sunlit river on a ferry boat at dusk',
     audience: 'Executive Teams & Organisations',
     outcomes: [
       'Emotional intelligence to recognize reactive states',
@@ -87,8 +88,8 @@ export const offeringsData: OfferingItem[] = [
     href: '/quiet-bloom',
     badgeText: 'Himalayan Retreat',
     badgeVariant: 'terracotta',
-    imageSrc:
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=75',
+    imageSrc: '/image/mount.jpeg',
+    imageAlt: 'Misty green Himalayan hillside village overlooking terraced mountain slopes',
     audience: 'Leaders & Seekers of Deep Rest',
     outcomes: [
       'Deep nervous system restoration in nature',

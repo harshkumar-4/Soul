@@ -10,8 +10,7 @@ export const ourStoryContent = {
     title: 'Becoming more yourself.',
     subtitle:
       'Soulfuli began with a simple question: what happens when we stop treating personal growth as something to complete, and start experiencing it as something to live?',
-    imageSrc:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCZMCyhgfxFext6Tyjy2JFAeatP6zbPFfHC3drPjYrcbU9SzOrBQQ8Eyk59qsLoLBicWB3N75y9ReNgFCBFrOl5RTBqVhvCoMs5MY7aju5eTbd1iqz2uXBUrUl7u4xbnVnCNY4XJuSiuyEZV699UKHOMJGrqT9Psv4Y_k9VE5evh9iP36UQiqAU5-NnYI-J4fcC3JmXdm9zVqzW6-VjNmIRiqh1EBJzhbPJEr06ZtPM',
+    imageSrc: '/images/m1.webp',
     imageCaption: 'Path of Unhurried Attention — Chapter I',
   },
   manifesto: {

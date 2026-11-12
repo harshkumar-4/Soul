@@ -8,39 +8,42 @@ export interface InnerMapRadarProps {
   size?: number;
 }
 
-export function InnerMapRadar({ scores, size = 380 }: InnerMapRadarProps) {
-  const center = size / 2;
-  const radius = (size - 80) / 2;
+export function InnerMapRadar({ scores }: InnerMapRadarProps) {
+  const width = 520;
+  const height = 400;
+  const centerX = width / 2;
+  const centerY = height / 2;
+  const radius = 122;
   const total = scores.length || 6;
   const angleStep = (Math.PI * 2) / total;
 
-  // Compute background polygon rings (25%, 50%, 75%, 100%)
+  // Background concentric rings (25%, 50%, 75%, 100%)
   const levels = [0.25, 0.5, 0.75, 1.0];
 
   const getCoordinates = (index: number, levelRadius: number) => {
-    // Start from top (- PI / 2)
     const angle = index * angleStep - Math.PI / 2;
-    const x = center + levelRadius * Math.cos(angle);
-    const y = center + levelRadius * Math.sin(angle);
-    return { x, y };
+    const x = centerX + levelRadius * Math.cos(angle);
+    const y = centerY + levelRadius * Math.sin(angle);
+    return { x, y, angle };
   };
 
-  // Compute data polygon points
   const points = scores.map((item, i) => {
-    // Value between 0.15 and 1.0 (min visual radius 15% for clarity)
     const normalizedValue = Math.max(0.15, item.percentage / 100);
     return getCoordinates(i, radius * normalizedValue);
   });
 
   const polygonPath = points.map((p) => `${p.x},${p.y}`).join(' ');
+  const accessibleSummary = scores
+    .map((s) => `${s.info.name}: ${s.percentage}%`)
+    .join(', ');
 
   return (
-    <div className="flex flex-col items-center justify-center relative select-none">
+    <div className="w-full flex flex-col items-center justify-center relative select-none">
       <svg
-        width={size}
-        height={size}
-        className="overflow-visible"
-        viewBox={`0 0 ${size} ${size}`}
+        role="img"
+        aria-label={`Inner Map six-dimension profile: ${accessibleSummary}`}
+        viewBox={`0 0 ${width} ${height}`}
+        className="w-full max-w-[480px] h-auto"
       >
         {/* Background Concentric Webs */}
         {levels.map((lvl, lIdx) => {
@@ -66,8 +69,8 @@ export function InnerMapRadar({ scores, size = 380 }: InnerMapRadarProps) {
           return (
             <line
               key={i}
-              x1={center}
-              y1={center}
+              x1={centerX}
+              y1={centerY}
               x2={outer.x}
               y2={outer.y}
               stroke="#DDD6C8"
@@ -85,29 +88,32 @@ export function InnerMapRadar({ scores, size = 380 }: InnerMapRadarProps) {
           className="transition-all duration-700 ease-out"
         />
 
-        {/* Data Point Dots & Score Labels */}
+        {/* Data Point Dots */}
         {points.map((p, i) => (
-          <g key={i}>
-            <circle
-              cx={p.x}
-              cy={p.y}
-              r="4.5"
-              fill="#C86D51"
-              stroke="#FAF6EE"
-              strokeWidth="2"
-            />
-          </g>
+          <circle
+            key={i}
+            cx={p.x}
+            cy={p.y}
+            r="4.5"
+            fill="#C86D51"
+            stroke="#FAF6EE"
+            strokeWidth="2"
+          />
         ))}
 
-        {/* Outer Dimension Label Texts */}
+        {/* Outer Dimension Label Texts positioned cleanly inside the SVG viewBox */}
         {scores.map((score, i) => {
-          const labelCoord = getCoordinates(i, radius + 28);
+          const { x, y, angle } = getCoordinates(i, radius + 24);
+          const cos = Math.cos(angle);
+          const textAnchor =
+            cos > 0.2 ? 'start' : cos < -0.2 ? 'end' : 'middle';
+
           return (
             <text
               key={i}
-              x={labelCoord.x}
-              y={labelCoord.y}
-              textAnchor="middle"
+              x={x}
+              y={y}
+              textAnchor={textAnchor}
               dominantBaseline="middle"
               className="text-[11px] font-sans font-semibold uppercase tracking-wider fill-primary"
             >

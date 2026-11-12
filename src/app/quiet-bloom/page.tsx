@@ -1,33 +1,32 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import SectionHeading from '@/components/shared/SectionHeading';
-import EditorialQuote from '@/components/shared/EditorialQuote';
 import RetreatEnquiryForm from '@/components/forms/RetreatEnquiryForm';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
-import { Mountain, Sunrise, Sparkles, Feather, Clock, MapPin, Users } from 'lucide-react';
+import { Feather, Clock, MapPin, Users } from 'lucide-react';
 import {
   ImageSection,
   ImageEyebrow,
   ImageHeading,
-  ImageParagraph,
 } from '@/components/shared/ImageSection';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Quiet Bloom Retreat — Dharamshala, Himachal Pradesh | Soulfuli',
   description:
     'Slow down without falling behind. An intimate, premium contemplative retreat in the Himalayan valley of Dharamshala, Himachal Pradesh.',
-};
+  path: '/quiet-bloom',
+});
 
 export default function QuietBloomPage() {
   return (
     <div className="w-full flex flex-col items-center">
       {/* SECTION 1: CINEMATIC PANORAMIC HERO */}
       <ImageSection
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Sj-NNbIVIJMVkyAV3D5Jl-8MPSHwDFCUrq2AqhwkLZnDQIhPhdEuYpkCYtugEOhHKDsSwEZ8XHVVc5wYnCqBIZIZSmalcwvdMGymAPZB6aCXEqZy2rjfpYPiNZ96QPaSZlWIm5P1ZpQgWPQPu6nnhnIu7-y0HH86GeD-3upM21TgsHpBaOCk-w5QJJqgT0eU8u-Qh50JrNUc7yd4lLGwzUFb1oq0P8z2fVMyjCaJ1cMyBlmxlU-cAA"
-        alt="Panoramic dawn vista of the Himalayan valley in Dharamshala with mist rolling across pine forests"
-        objectPosition="center 35%"
+        src="/image/mount.jpeg"
+        alt="Lush misty green Himalayan hillside village overlooking terraced mountain slopes"
+        objectPosition="center 45%"
         overlayVariant="mountain-dawn"
         enableSubtleZoom={true}
         blendEdges={true}
@@ -79,7 +78,7 @@ export default function QuietBloomPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <MapPin className="w-5 h-5 text-secondary" />
-                  <h4 className="font-serif text-lg text-primary">Dharamshala, HP</h4>
+                  <h3 className="font-serif text-lg text-primary">Dharamshala, HP</h3>
                   <p className="font-sans text-xs text-on-surface-variant">
                     Nestled in peaceful Himalayan pine and deodar forests overlooking the Kangra Valley.
                   </p>
@@ -87,7 +86,7 @@ export default function QuietBloomPage() {
 
                 <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Users className="w-5 h-5 text-secondary" />
-                  <h4 className="font-serif text-lg text-primary">25 Participants Max</h4>
+                  <h3 className="font-serif text-lg text-primary">25 Participants Max</h3>
                   <p className="font-sans text-xs text-on-surface-variant">
                     Intentionally small cohort to ensure privacy, spaciousness, and intimate conversation.
                   </p>
@@ -95,7 +94,7 @@ export default function QuietBloomPage() {
 
                 <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Clock className="w-5 h-5 text-secondary" />
-                  <h4 className="font-serif text-lg text-primary">5 Days & 4 Nights</h4>
+                  <h3 className="font-serif text-lg text-primary">5 Days &amp; 4 Nights</h3>
                   <p className="font-sans text-xs text-on-surface-variant">
                     Unhurried schedule designed to allow deep nervous system down-regulation.
                   </p>
@@ -103,7 +102,7 @@ export default function QuietBloomPage() {
 
                 <div className="p-6 rounded-xl bg-surface-alt border border-border-alt space-y-2">
                   <Feather className="w-5 h-5 text-secondary" />
-                  <h4 className="font-serif text-lg text-primary">Contemplative Immersion</h4>
+                  <h3 className="font-serif text-lg text-primary">Contemplative Immersion</h3>
                   <p className="font-sans text-xs text-on-surface-variant">
                     Guided morning stillness, village walking meditation, and tea pavilion inquiry circles.
                   </p>
@@ -129,7 +128,7 @@ export default function QuietBloomPage() {
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 06:30 — Morning
               </span>
-              <h4 className="font-serif text-lg text-primary font-normal">Dawn Meditation & Tea</h4>
+              <h3 className="font-serif text-lg text-primary font-normal">Dawn Meditation &amp; Tea</h3>
               <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
                 Quiet sitting overlooking the valley mist followed by warm herbal infusions.
               </p>
@@ -139,7 +138,7 @@ export default function QuietBloomPage() {
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 10:00 — Mid-Morning
               </span>
-              <h4 className="font-serif text-lg text-primary font-normal">Forest Contemplation</h4>
+              <h3 className="font-serif text-lg text-primary font-normal">Forest Contemplation</h3>
               <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
                 Guided walking practice through ancient deodar trails and stream crossings.
               </p>
@@ -149,7 +148,7 @@ export default function QuietBloomPage() {
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 15:00 — Afternoon
               </span>
-              <h4 className="font-serif text-lg text-primary font-normal">Spacious Solitude</h4>
+              <h3 className="font-serif text-lg text-primary font-normal">Spacious Solitude</h3>
               <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
                 Dedicated unstructured time for journaling, reading, resting, or quiet dialogue.
               </p>
@@ -159,7 +158,7 @@ export default function QuietBloomPage() {
               <span className="font-sans text-xs font-semibold uppercase tracking-wider text-secondary">
                 18:30 — Evening
               </span>
-              <h4 className="font-serif text-lg text-primary font-normal">Fireside Inquiry Circle</h4>
+              <h3 className="font-serif text-lg text-primary font-normal">Fireside Inquiry Circle</h3>
               <p className="font-sans text-xs text-on-surface-variant leading-relaxed">
                 Intimate shared evening reflections and nourishing locally sourced mountain dinner.
               </p>

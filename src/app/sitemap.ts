@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://Soulfuli.com';
+  const baseUrl = 'https://www.soulfuli.org';
   const routes = [
     '',
     '/our-story',

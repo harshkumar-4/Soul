@@ -1,12 +1,14 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'The EQ Audit — Soulfuli Self-Discovery Mirror',
   description:
     'A quiet 48-question reflective self-discovery experience mapping six core dimensions of emotional awareness, regulation, and intentional communication.',
-};
+  path: '/eq-audit',
+});
 
 // Dynamically import the heavy interactive audit component.
 // ssr:false keeps all client-side state off the server bundle,

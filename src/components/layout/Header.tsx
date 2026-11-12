@@ -95,9 +95,12 @@ export function Header() {
             </Link>
 
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(true)}
               className="lg:hidden p-2 text-on-surface-variant hover:text-primary rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label="Open navigation menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation-drawer"
             >
               <Menu className="w-6 h-6" />
             </button>

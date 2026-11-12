@@ -420,7 +420,7 @@ export const auditQuestions: AuditQuestion[] = [
     dimensionId: 'intentional_communication',
     dimensionName: 'Intentional Communication',
     dimensionDescription: 'Speaking truth with clarity, care, and respectful precision.',
-    text: 'I am comfortable saying &ldquo;I don’t know&rdquo; or &ldquo;I made an error&rdquo; openly without defensive posturing.',
+    text: 'I am comfortable saying “I don’t know” or “I made an error” openly without defensive posturing.',
     reflectionPrompt: 'Intellectual humility builds immense credibility.',
   },
   {
@@ -444,7 +444,7 @@ export const auditQuestions: AuditQuestion[] = [
     dimensionId: 'intentional_communication',
     dimensionName: 'Intentional Communication',
     dimensionDescription: 'Speaking truth with clarity, care, and respectful precision.',
-    text: 'When apologizing, I take full ownership of my impact without adding justifying &ldquo;buts&rdquo; or excuses.',
+    text: 'When apologizing, I take full ownership of my impact without adding justifying “buts” or excuses.',
     reflectionPrompt: 'A clean apology repairs what defensiveness further breaks.',
   },
   {

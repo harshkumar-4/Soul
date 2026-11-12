@@ -5,13 +5,14 @@ import SectionHeading from '@/components/shared/SectionHeading';
 import SchoolEnquiryForm from '@/components/forms/SchoolEnquiryForm';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
-import { BookOpen, HeartHandshake, Eye, Sparkles, GraduationCap } from 'lucide-react';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Schools & Colleges — Soulfuli Human Development Curriculum',
   description:
     'Educating the heart alongside the intellect. Foundational emotional intelligence, self-awareness, and mindful communication programs for students and educators.',
-};
+  path: '/schools-colleges',
+});
 
 const curricularThreads = [
   {
@@ -73,11 +74,12 @@ export default function SchoolsCollegesPage() {
           <div className="lg:col-span-5 relative">
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.20)] border border-border-alt/80 bg-surface-alt group">
               <Image
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
-                alt="Students in collaborative, thoughtful dialogue in educational library"
+                src="/image/grp.jpeg"
+                alt="Young Indian peers engaged in calm, thoughtful dialogue outdoors in golden sunlight"
                 fill
                 priority
-                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-[54%_center] transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent pointer-events-none" />
 

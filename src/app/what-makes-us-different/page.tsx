@@ -4,19 +4,20 @@ import Image from 'next/image';
 
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
-import Badge from '@/components/ui/Badge';
 import {
   ImageSection,
   ImageEyebrow,
   ImageHeading,
   ImageParagraph,
 } from '@/components/shared/ImageSection';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'What Makes Us Different — Soulfuli',
   description:
     'Discover how Soulfuli brings emotional intelligence, mindfulness, spirituality, lived experience, and Indian wisdom together.',
-};
+  path: '/what-makes-us-different',
+});
 
 const differentiators = [
   {
@@ -24,68 +25,68 @@ const differentiators = [
     title: 'We Refuse to Separate the Mind, the Heart, and the Spirit',
     description:
       'Most Emotional Intelligence programmes stop at the workplace. Most spiritual offerings stop at the self. Most mindfulness content stops at an app notification. Soulfuli was built in the space between all three, because we do not believe those boundaries reflect how people actually experience their lives.',
-    image:
-      'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=75',
+    image: '/image/1.jpg',
+    imageAlt: 'Silhouette standing on a calm beach at sunset with arms open toward the horizon',
   },
   {
     number: '02',
     title: 'Practical Spirituality, Not Performance Spirituality',
     description:
       'We approach spirituality as a journey of self-discovery, meaning, and connection, not a set of rules to follow or a brand aesthetic to adopt. Our spaces for reflection, meditation, and conscious living are intentionally non-dogmatic, so that people from every belief system can engage with purpose and interconnectedness on their own terms.',
-    image:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=75',
+    image: '/image/phili.webp',
+    imageAlt: 'Silent figure meditating over tranquil blue dusk water',
   },
   {
     number: '03',
     title: 'Mindfulness as Practice, Not Product',
     description:
       'We do not treat mindfulness as a feature to bolt onto a workshop. It is the discipline of noticing—breath, body, emotion, moment—that runs underneath everything else we teach. Every session, retreat, and course we design carries mindfulness as its foundation, not its garnish.',
-    image:
-      'https://images.unsplash.com/photo-1474418397713-7ede21d49118?auto=format&fit=crop&w=800&q=75',
+    image: '/image/2.jpg',
+    imageAlt: 'Person seated cross-legged on dark coastal rocks overlooking the evening ocean',
   },
   {
     number: '04',
     title: 'Lived Experience Over Borrowed Theory',
     description:
       'Our facilitators do not teach emotional intelligence from a place of having mastered it. They teach it as people still practising it, using real chapters of real lives to illustrate each competency, so participants encounter self-awareness, empathy, and emotional agility as lived realities rather than definitions on a slide.',
-    image:
-      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=75',
+    image: '/image/grp.jpeg',
+    imageAlt: 'Three young adults seated outdoors in authentic, unhurried dialogue',
   },
   {
     number: '05',
     title: 'Indian Wisdom, Modern Application',
     description:
       "Through our collaboration with Window to Bharat, we bring India's long-standing traditions of inner balance, holistic healing, and mindful living into contemporary settings, corporate teams, college classrooms, and personal growth journeys, without diluting either the tradition or the science.",
-    image:
-      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=75',
+    image: '/image/farm.jpeg',
+    imageAlt: 'People working harmoniously in golden fields beneath forested Indian foothills',
   },
   {
     number: '06',
     title: 'Holistic by Design, Not by Add-On',
     description:
       'Yoga, meditation, emotional intelligence training, village immersion, nature connection, and reflective community—these are not separate modules bolted together. They are treated as one integrated way of being, because emotional health, spiritual grounding, and everyday living were never meant to be managed in separate compartments.',
-    image:
-      'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=75',
+    image: '/image/33.webp',
+    imageAlt: 'Figure meditating on a wooden dock over a still lake at golden dawn',
   },
   {
     number: '07',
     title: 'Community Over Content',
     description:
       "We are not building a library of content to be consumed and forgotten. We are building a community that shows up for each other's growth, through the EQ Audit, through courses, through workshops, through retreats, and through the conversations that continue long after each of those ends.",
-    image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=75',
+    image: '/image/group.jpeg',
+    imageAlt: 'Friends gathered peacefully together on a mountain ridge at sunset',
   },
 ];
 
 export default function WhatMakesUsDifferentPage() {
   return (
-    <main className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
 
       {/* HERO SECTION */}
       <ImageSection
-        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2400&q=85"
-        alt="Lush green pine misty canopy"
-        objectPosition="center 40%"
+        src="/images/buddha-forest.webp"
+        alt="Moss-covered meditating stone statue in a tranquil sunlit green forest sanctuary"
+        objectPosition="center 45%"
         overlayVariant="directional"
         enableSubtleZoom={true}
         priority
@@ -132,12 +133,14 @@ export default function WhatMakesUsDifferentPage() {
       {/* DIFFERENTIATORS */}
       <section className="relative w-full overflow-hidden bg-surface-alt-gradient py-20 lg:py-32 border-b border-border-alt">
 
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=2200&q=80')",
-          }}
+        <Image
+          src="/images/m1.webp"
+          alt=""
+          fill
+          loading="lazy"
+          sizes="100vw"
+          className="object-cover object-center opacity-[0.06] pointer-events-none"
+          aria-hidden="true"
         />
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
@@ -162,8 +165,9 @@ export default function WhatMakesUsDifferentPage() {
 
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt}
                     fill
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -179,9 +183,9 @@ export default function WhatMakesUsDifferentPage() {
                 {/* CONTENT */}
                 <div className="p-7 lg:p-8 space-y-5">
 
-                  <h2 className="font-serif text-2xl lg:text-3xl text-primary font-normal leading-tight">
+                  <h3 className="font-serif text-2xl lg:text-3xl text-primary font-normal leading-tight">
                     {item.title}
-                  </h2>
+                  </h3>
 
                   <div className="h-px w-12 bg-terracotta transition-all duration-500 group-hover:w-24" />
 
@@ -229,6 +233,6 @@ export default function WhatMakesUsDifferentPage() {
         secondaryCtaHref="/our-story"
       />
 
-    </main>
+    </div>
   );
 }

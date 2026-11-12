@@ -1,11 +1,13 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Badge from '@/components/ui/Badge';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Terms of Service — Soulfuli',
   description: 'Terms of Service governing the use of the Soulfuli platform, programs, and retreats.',
-};
+  path: '/terms',
+});
 
 export default function TermsPage() {
   return (

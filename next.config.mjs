@@ -1,21 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: process.env.NEXT_DIST_DIR || '.next',
   // Compress responses with gzip/brotli
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
 
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
     // Serve modern image formats — avif first, then webp fallback
     formats: ['image/avif', 'image/webp'],
     // Cache optimised images for at least 60 seconds at the CDN level

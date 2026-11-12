@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 import SectionHeading from '@/components/shared/SectionHeading';
 import ClosingCTA from '@/components/shared/ClosingCTA';
-import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import {
   ImageSection,
@@ -12,6 +11,7 @@ import {
   ImageHeading,
   ImageParagraph,
 } from '@/components/shared/ImageSection';
+import { createPageMetadata, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/seo/metadata';
 
 import {
   ArrowUpRight,
@@ -21,11 +21,12 @@ import {
   Users,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Join Our Community — Soulfuli',
   description:
     'Be part of the Soulfuli community through emotional intelligence, mindfulness, workshops, retreats, and meaningful conversations.',
-};
+  path: '/community',
+});
 
 const communityWays = [
   {
@@ -33,8 +34,8 @@ const communityWays = [
     title: 'Take the EQ Audit',
     description:
       'Get a clearer mirror into your own emotional patterns. The EQ Audit is an invitation to look inward, understand yourself, and discover where growth may begin.',
-    image:
-      'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=800&q=75',
+    image: '/image/aaron.jpg',
+    imageAlt: 'Person standing in calm shallow water reflecting the soft twilight sky',
     cta: 'Take the EQ Audit',
     href: '/eq-audit',
   },
@@ -43,8 +44,8 @@ const communityWays = [
     title: 'Follow Our Journey',
     description:
       'Follow Soulfuli on Instagram and LinkedIn for daily reflections, emotional intelligence insights, and behind-the-scenes moments from what we are building.',
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=75',
+    image: '/image/grp.jpeg',
+    imageAlt: 'Three young adults seated outdoors in warm candid conversation',
     cta: 'Connect With Us',
     href: '/contact',
   },
@@ -53,8 +54,8 @@ const communityWays = [
     title: 'Join Upcoming Experiences',
     description:
       'Join the waitlist for Quiet Bloom Retreat and upcoming community gatherings. Be among the first to know when registrations open.',
-    image:
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=75',
+    image: '/image/mount.jpeg',
+    imageAlt: 'Misty green Himalayan hillside village overlooking terraced mountain slopes',
     cta: 'Join the Waitlist',
     href: '/contact?program=community',
   },
@@ -63,21 +64,21 @@ const communityWays = [
     title: 'Bring Soulfuli to Your Community',
     description:
       'If you are part of a school, college, or organisation, reach out to explore our Emotional Intelligence Course or a wellness programme for your community.',
-    image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=75',
+    image: '/image/farm.jpeg',
+    imageAlt: 'People working together in golden fields beneath forested hills',
     cta: 'Start a Conversation',
     href: '/contact',
   },
 ];
 export default function CommunityPage() {
   return (
-    <main className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
 
       {/* HERO SECTION */}
       <ImageSection
-        src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80"
-        alt="Friends laughing and connecting warmly outdoors"
-        objectPosition="center 35%"
+        src="/image/group.jpeg"
+        alt="Group of friends sitting together on a grassy mountain ridge overlooking sunset peaks"
+        objectPosition="center 58%"
         overlayVariant="intimate-human"
         enableSubtleZoom={true}
         priority
@@ -129,12 +130,14 @@ export default function CommunityPage() {
       {/* COMMUNITY WAYS */}
       <section className="relative w-full overflow-hidden bg-surface-alt-gradient py-20 lg:py-32 border-b border-border-alt">
 
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=2200&q=80')",
-          }}
+        <Image
+          src="/images/m1.webp"
+          alt=""
+          fill
+          loading="lazy"
+          sizes="100vw"
+          className="object-cover object-center opacity-[0.06] pointer-events-none"
+          aria-hidden="true"
         />
 
         <div className="relative z-10 max-w-[1240px] mx-auto px-6 lg:px-16 space-y-16">
@@ -159,8 +162,9 @@ export default function CommunityPage() {
 
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.imageAlt}
                     fill
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -244,22 +248,22 @@ export default function CommunityPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
 
             <Button
-              href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+              href={INSTAGRAM_URL}
               isExternal
               variant="secondary"
               size="lg"
-              aria-label="Follow SoulfullI on Instagram"
+              aria-label="Follow Soulfuli on Instagram"
             >
               <Instagram className="mr-2 h-4 w-4" />
               Instagram
             </Button>
 
             <Button
-              href="https://www.linkedin.com/company/Soulfuli/"
+              href={LINKEDIN_URL}
               isExternal
               variant="secondary"
               size="lg"
-              aria-label="Connect with SoulfullI on LinkedIn"
+              aria-label="Connect with Soulfuli on LinkedIn"
             >
               <Linkedin className="mr-2 h-4 w-4" />
               LinkedIn
@@ -290,6 +294,6 @@ export default function CommunityPage() {
         secondaryCtaHref="/what-we-offer"
       />
 
-    </main>
+    </div>
   );
 }

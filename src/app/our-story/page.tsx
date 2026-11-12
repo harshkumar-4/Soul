@@ -10,19 +10,21 @@ import {
   ImageHeading,
   ImageParagraph,
 } from '@/components/shared/ImageSection';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Our Story — Soulfuli',
   description:
     'Becoming more yourself. Soulfuli began with a simple question: what happens when we stop treating personal growth as something to complete, and start experiencing it as something to live?',
-};
+  path: '/our-story',
+});
 
 export default function OurStoryPage() {
   const { hero, manifesto, theThreeInquiries, coreTenets } =
     ourStoryContent;
 
   return (
-    <main className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
 
       {/* SECTION 1: HERO — ORIGIN */}
       <section className="w-full px-6 lg:px-16 pt-12 lg:pt-20 pb-16 lg:pb-24 bg-surface border-b border-outline-variant/60">
@@ -226,6 +228,6 @@ export default function OurStoryPage() {
         secondaryCtaHref="/what-we-offer"
       />
 
-    </main>
+    </div>
   );
 }

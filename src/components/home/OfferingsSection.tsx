@@ -66,7 +66,7 @@ export default function OfferingsSection() {
               {/* Card Image */}
               <Image
                 src={item.imageSrc}
-                alt={item.title}
+                alt={item.imageAlt}
                 fill
                 loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

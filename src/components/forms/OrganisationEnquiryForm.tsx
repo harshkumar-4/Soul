@@ -1,12 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import { organisationEnquirySchema, OrganisationEnquiryData } from '@/lib/validation/schemas';
+import {
+  organisationEnquirySchema,
+  OrganisationEnquiryData,
+} from '@/lib/validation/schemas';
+import { OFFICIAL_EMAIL } from '@/lib/seo/metadata';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 
 export function OrganisationEnquiryForm() {
   const [formData, setFormData] = useState<OrganisationEnquiryData>({
@@ -15,21 +19,28 @@ export function OrganisationEnquiryForm() {
     phone: '',
     organisation: '',
     designation: '',
-    programInterest: 'Emotional Intelligence',
-    targetAudience: 'Emerging Leaders',
-    groupSize: '10 - 30 People',
+    programInterest: '',
+    targetAudience: '',
+    groupSize: '',
     goals: '',
   });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof OrganisationEnquiryData, string>>>({});
+  const [honeypot, setHoneypot] = useState('');
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof OrganisationEnquiryData, string>>
+  >({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setSubmitError(null);
     if (errors[name as keyof OrganisationEnquiryData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -37,13 +48,21 @@ export function OrganisationEnquiryForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setSubmitError(null);
     const result = organisationEnquirySchema.safeParse(formData);
 
     if (!result.success) {
-      const fieldErrors: Partial<Record<keyof OrganisationEnquiryData, string>> = {};
+      const fieldErrors: Partial<Record<keyof OrganisationEnquiryData, string>> =
+        {};
       result.error.issues.forEach((issue) => {
-        if (issue.path[0]) {
-          fieldErrors[issue.path[0] as keyof OrganisationEnquiryData] = issue.message;
+        if (
+          issue.path[0] &&
+          !fieldErrors[issue.path[0] as keyof OrganisationEnquiryData]
+        ) {
+          fieldErrors[issue.path[0] as keyof OrganisationEnquiryData] =
+            issue.message;
         }
       });
       setErrors(fieldErrors);
@@ -51,32 +70,73 @@ export function OrganisationEnquiryForm() {
     }
 
     setIsSubmitting(true);
-    // Simulates database save to organization_enquiries and Resend notification
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    try {
+      const response = await fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'organisation',
+          data: result.data,
+          honeypot,
+        }),
+      });
 
-    // PostHog event tracking
-    if (
-      typeof window !== 'undefined' &&
-      (window as unknown as { posthog?: { capture: (event: string, properties?: Record<string, unknown>) => void } }).posthog
-    ) {
-      (window as unknown as { posthog: { capture: (event: string, properties?: Record<string, unknown>) => void } }).posthog.capture(
-        'organization_enquiry_submitted',
-        {
-          organisation: formData.organisation,
-          programInterest: formData.programInterest,
-          targetAudience: formData.targetAudience,
-          groupSize: formData.groupSize,
+      const payload = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+        fieldErrors?: Partial<Record<keyof OrganisationEnquiryData, string>>;
+      } | null;
+
+      if (!response.ok || !payload?.ok) {
+        if (payload?.fieldErrors) {
+          setErrors(payload.fieldErrors);
         }
-      );
-    }
+        setSubmitError(
+          payload?.error ||
+            `We could not submit your enquiry right now. Please email ${OFFICIAL_EMAIL} directly.`
+        );
+        return;
+      }
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      if (
+        typeof window !== 'undefined' &&
+        (
+          window as unknown as {
+            posthog?: {
+              capture: (event: string, properties?: Record<string, unknown>) => void;
+            };
+          }
+        ).posthog
+      ) {
+        (
+          window as unknown as {
+            posthog: {
+              capture: (event: string, properties?: Record<string, unknown>) => void;
+            };
+          }
+        ).posthog.capture('organization_enquiry_submitted', {
+          programInterest: result.data.programInterest,
+          targetAudience: result.data.targetAudience,
+          groupSize: result.data.groupSize,
+        });
+      }
+
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError(
+        `A network error prevented submission. Please try again or email ${OFFICIAL_EMAIL} directly.`
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
     return (
-      <div className="bg-surface-alt border border-border-alt rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300">
+      <div
+        role="status"
+        className="bg-surface-alt border border-border-alt rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300"
+      >
         <div className="w-12 h-12 rounded-full bg-sage/20 text-forest mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-6 h-6 text-forest" />
         </div>
@@ -91,7 +151,36 @@ export function OrganisationEnquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
+      {submitError && (
+        <div
+          role="alert"
+          className="flex items-start gap-3 p-4 rounded-lg bg-error-container/50 border border-error/40 text-on-error-container text-sm font-sans"
+        >
+          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-error" />
+          <div className="space-y-1">
+            <p>{submitError}</p>
+            <a
+              href={`mailto:${OFFICIAL_EMAIL}`}
+              className="inline-block font-semibold underline underline-offset-2 hover:opacity-80"
+            >
+              Email {OFFICIAL_EMAIL}
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Name & Work Email */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Input
@@ -99,7 +188,8 @@ export function OrganisationEnquiryForm() {
           name="name"
           label="Your Full Name"
           required
-          placeholder="Maya Sharma"
+          autoComplete="name"
+          placeholder="Your full name"
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
@@ -110,7 +200,8 @@ export function OrganisationEnquiryForm() {
           type="email"
           label="Work Email"
           required
-          placeholder="maya@company.com"
+          autoComplete="email"
+          placeholder="you@organisation.org"
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
@@ -124,7 +215,8 @@ export function OrganisationEnquiryForm() {
           name="phone"
           type="tel"
           label="Phone (optional)"
-          placeholder="+91 98765 43210"
+          autoComplete="tel"
+          placeholder="Include country code"
           value={formData.phone || ''}
           onChange={handleChange}
           error={errors.phone}
@@ -134,7 +226,8 @@ export function OrganisationEnquiryForm() {
           name="organisation"
           label="Organisation Name"
           required
-          placeholder="Acme Studio"
+          autoComplete="organization"
+          placeholder="Your organisation name"
           value={formData.organisation}
           onChange={handleChange}
           error={errors.organisation}
@@ -148,7 +241,8 @@ export function OrganisationEnquiryForm() {
           name="designation"
           label="Designation / Department"
           required
-          placeholder="Head of People & Culture"
+          autoComplete="organization-title"
+          placeholder="Your role or department"
           value={formData.designation}
           onChange={handleChange}
           error={errors.designation}
@@ -158,6 +252,7 @@ export function OrganisationEnquiryForm() {
           name="programInterest"
           label="Program Interest"
           required
+          placeholder="Select program focus"
           value={formData.programInterest}
           onChange={handleChange}
           error={errors.programInterest}
@@ -177,6 +272,7 @@ export function OrganisationEnquiryForm() {
           name="targetAudience"
           label="Target Audience"
           required
+          placeholder="Select target audience"
           value={formData.targetAudience}
           onChange={handleChange}
           error={errors.targetAudience}
@@ -192,6 +288,7 @@ export function OrganisationEnquiryForm() {
           name="groupSize"
           label="Estimated Group Size"
           required
+          placeholder="Select group size"
           value={formData.groupSize}
           onChange={handleChange}
           error={errors.groupSize}

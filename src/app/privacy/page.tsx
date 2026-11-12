@@ -1,11 +1,13 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Badge from '@/components/ui/Badge';
+import { createPageMetadata, OFFICIAL_EMAIL } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Privacy Policy — Soulfuli',
   description: 'How Soulfuli collects, protects, and respects your personal and reflective information.',
-};
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (
@@ -72,8 +74,8 @@ export default function PrivacyPage() {
             </h2>
             <p>
               For data access, deletion, or inquiries, please contact our team at{' '}
-              <a href="mailto:privacy@Soulfuli.com" className="text-tertiary underline">
-                privacy@Soulfuli.com
+              <a href={`mailto:${OFFICIAL_EMAIL}`} className="text-tertiary underline break-all">
+                {OFFICIAL_EMAIL}
               </a>
               .
             </p>

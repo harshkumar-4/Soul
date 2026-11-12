@@ -3,6 +3,16 @@ import { calculateAuditResult } from '@/lib/audit/scoring';
 import { auditQuestions } from '@/content/auditQuestions';
 
 describe('EQ Audit Scoring Engine', () => {
+  it('should expose 48 questions across 6 dimensions without raw HTML entities', () => {
+    expect(auditQuestions.length).toBe(48);
+    const dims = new Set(auditQuestions.map((q) => q.dimensionId));
+    expect(dims.size).toBe(6);
+    auditQuestions.forEach((q) => {
+      expect(q.text).not.toMatch(/&(ldquo|rdquo|rsquo|amp|quot);/);
+      expect(q.reflectionPrompt).not.toMatch(/&(ldquo|rdquo|rsquo|amp|quot);/);
+    });
+  });
+
   it('should compute neutral 50% score when all answers are 3', () => {
     const answers: Record<number, number> = {};
     auditQuestions.forEach((q) => {

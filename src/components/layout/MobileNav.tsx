@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { X } from 'lucide-react';
@@ -16,17 +16,44 @@ const navLinks = [
   { href: '/our-story', label: 'Our Story' },
   { href: '/what-we-offer', label: 'What We Offer' },
   { href: '/what-makes-us-different', label: 'What Makes Us Different' },
-  { href: '/community', label: 'Community' },
+  { href: '/community', label: 'Join Our Community' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const pathname = usePathname();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+    closeButtonRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div
+      id="mobile-navigation-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation"
+      className="fixed inset-0 z-50 lg:hidden"
+    >
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-primary/40 backdrop-blur-sm transition-opacity"
@@ -35,18 +62,20 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       />
 
       {/* Drawer Panel */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-surface p-6 shadow-2xl border-l border-outline-variant flex flex-col justify-between animate-in slide-in-from-right duration-300">
+      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-surface p-6 shadow-2xl border-l border-outline-variant flex flex-col justify-between overflow-y-auto">
         <div>
           <div className="flex items-center justify-between pb-6 border-b border-outline-variant/60">
             <Link
               href="/"
               prefetch={true}
               onClick={onClose}
-              className="font-serif text-2xl text-primary tracking-tight"
+              className="font-serif text-2xl text-primary tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
             >
               Soulfuli
             </Link>
             <button
+              ref={closeButtonRef}
+              type="button"
               onClick={onClose}
               className="p-2 text-on-surface-variant hover:text-primary rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               aria-label="Close navigation menu"
@@ -55,7 +84,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             </button>
           </div>
 
-          <nav className="mt-8 flex flex-col space-y-5">
+          <nav className="mt-8 flex flex-col space-y-5" aria-label="Mobile menu">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -65,7 +94,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                   prefetch={true}
                   onClick={onClose}
                   className={cn(
-                    'text-lg font-sans transition-colors py-1',
+                    'text-lg font-sans transition-colors py-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded',
                     isActive
                       ? 'text-primary font-semibold'
                       : 'text-on-surface-variant hover:text-primary'

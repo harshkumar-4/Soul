@@ -12,7 +12,7 @@ export function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <Link href="/" prefetch={true} className="inline-block">
               <span className="font-serif text-3xl tracking-tight text-surface-bright">
-                SoulfulI
+                Soulfuli
               </span>
             </Link>
             <p className="font-serif text-xl text-surface-container-high leading-relaxed italic max-w-md">
@@ -36,7 +36,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-bright/10 hover:bg-surface-bright/20 border border-surface-bright/20 text-surface-bright text-xs font-sans transition-all duration-200 hover:text-white hover:border-surface-bright/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                  aria-label="Follow SoulfullI on Instagram"
+                  aria-label="Follow Soulfuli on Instagram"
                 >
                   <Instagram className="w-4 h-4 text-secondary-fixed transition-transform duration-200 group-hover:scale-110" />
                   <span>Instagram</span>
@@ -46,7 +46,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-bright/10 hover:bg-surface-bright/20 border border-surface-bright/20 text-surface-bright text-xs font-sans transition-all duration-200 hover:text-white hover:border-surface-bright/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-fixed focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-                  aria-label="Connect with SoulfullI on LinkedIn"
+                  aria-label="Connect with Soulfuli on LinkedIn"
                 >
                   <Linkedin className="w-4 h-4 text-secondary-fixed transition-transform duration-200 group-hover:scale-110" />
                   <span>LinkedIn</span>
@@ -122,6 +122,14 @@ export function Footer() {
                   <Link href="/contact" prefetch={true} className="hover:text-surface-bright transition-colors">
                     Direct Dispatch
                   </Link>
+                </li>
+                <li>
+                  <a
+                    href="mailto:soulfuli.global@gmail.com"
+                    className="hover:text-surface-bright transition-colors break-all"
+                  >
+                    soulfuli.global@gmail.com
+                  </a>
                 </li>
                 <li>
                   <Link href="/privacy" prefetch={true} className="hover:text-surface-bright transition-colors">

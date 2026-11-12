@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
-import SectionHeading from '@/components/shared/SectionHeading';
 import ContactForm from '@/components/forms/ContactForm';
 import Badge from '@/components/ui/Badge';
-import { Mail, MapPin, Clock, ShieldCheck, Instagram, Linkedin } from 'lucide-react';
+import { MapPin, Clock, ShieldCheck, Instagram, Linkedin } from 'lucide-react';
+import {
+  createPageMetadata,
+  OFFICIAL_EMAIL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+} from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Contact & Direct Dispatch — Soulfuli',
   description:
     'Start a thoughtful conversation with Soulfuli. We treat every message with deliberate human attention.',
-};
+  path: '/contact',
+});
 
 export default function ContactPage() {
   return (
@@ -31,7 +37,15 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left: Contact Form */}
           <div className="lg:col-span-7 bg-surface-alt p-6 lg:p-10 rounded-2xl border border-border-alt shadow-sm">
-            <ContactForm />
+            <Suspense
+              fallback={
+                <div className="py-12 text-center font-sans text-sm text-on-surface-variant">
+                  Loading contact form&hellip;
+                </div>
+              }
+            >
+              <ContactForm />
+            </Suspense>
           </div>
 
           {/* Right: Context & Physical Presence */}
@@ -61,7 +75,7 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-secondary shrink-0 pt-0.5" />
                   <div>
-                    <strong className="text-primary block font-medium">Sanctuaries & Studios</strong>
+                    <strong className="text-primary block font-medium">Sanctuaries &amp; Studios</strong>
                     <span>Dharamshala, Himachal Pradesh &amp; New Delhi, India</span>
                   </div>
                 </div>
@@ -69,44 +83,44 @@ export default function ContactPage() {
             </div>
 
             <div className="p-6 bg-surface-alt rounded-xl border border-border-alt space-y-2">
-              <h4 className="font-serif text-lg text-primary font-normal">
+              <h2 className="font-serif text-lg text-primary font-normal">
                 Direct Electronic Mail
-              </h4>
+              </h2>
               <p className="font-sans text-xs text-on-surface-variant">
                 For direct press, publishing, or institutional correspondence:
               </p>
               <a
-                href="mailto:inquiry@Soulfuli.com"
-                className="font-sans text-sm font-semibold text-tertiary hover:underline block pt-1"
+                href={`mailto:${OFFICIAL_EMAIL}`}
+                className="font-sans text-sm font-semibold text-tertiary hover:underline block pt-1 break-all"
               >
-                inquiry@Soulfuli.com
+                {OFFICIAL_EMAIL}
               </a>
             </div>
 
             <div className="p-6 bg-surface-alt rounded-xl border border-border-alt space-y-3">
-              <h4 className="font-serif text-lg text-primary font-normal">
+              <h2 className="font-serif text-lg text-primary font-normal">
                 Digital Presence &amp; Social
-              </h4>
+              </h2>
               <p className="font-sans text-xs text-on-surface-variant">
                 Follow our ongoing reflections, contemplative dispatches, and community updates:
               </p>
               <div className="flex flex-wrap items-center gap-3 pt-1">
                 <a
-                  href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"
-                  aria-label="Follow SoulfullI on Instagram"
+                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-sm"
+                  aria-label="Follow Soulfuli on Instagram"
                 >
                   <Instagram className="w-4 h-4 text-secondary transition-transform duration-200 group-hover:scale-110" />
                   <span>Instagram</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/Soulfuli/"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-xs"
-                  aria-label="Connect with SoulfullI on LinkedIn"
+                  className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface border border-border-alt text-xs font-sans text-on-surface hover:text-primary hover:border-primary/60 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shadow-sm"
+                  aria-label="Connect with Soulfuli on LinkedIn"
                 >
                   <Linkedin className="w-4 h-4 text-secondary transition-transform duration-200 group-hover:scale-110" />
                   <span>LinkedIn</span>

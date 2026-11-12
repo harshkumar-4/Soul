@@ -5,11 +5,17 @@ import { ChevronDown } from 'lucide-react';
 export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   error?: string;
+  placeholder?: string;
   options?: { value: string; label: string }[];
 }
 
 export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ className, label, error, id, required, children, options, ...props }, ref) => {
+  (
+    { className, label, error, id, required, children, options, placeholder, ...props },
+    ref
+  ) => {
+    const errorId = id && error ? `${id}-error` : undefined;
+
     return (
       <div className="w-full space-y-1.5">
         {label && (
@@ -17,7 +23,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             htmlFor={id}
             className="block font-sans text-label-md uppercase tracking-wider text-on-surface-variant"
           >
-            {label} {required && <span className="text-tertiary">*</span>}
+            {label} {required && <span className="text-tertiary" aria-hidden="true">*</span>}
           </label>
         )}
         <div className="relative">
@@ -25,6 +31,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={id}
             ref={ref}
             required={required}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={errorId}
             className={cn(
               'w-full bg-surface-alt px-4 py-3 rounded border border-border-alt text-on-surface font-sans text-body-md focus:outline-none focus:border-primary focus:bg-surface transition-colors appearance-none pr-10 cursor-pointer',
               error && 'border-error focus:border-error',
@@ -32,6 +40,11 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             )}
             {...props}
           >
+            {placeholder && (
+              <option value="" disabled>
+                {placeholder}
+              </option>
+            )}
             {options
               ? options.map((opt) => (
                   <option key={opt.value} value={opt.value}>
@@ -42,7 +55,11 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           </select>
           <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-on-surface-variant pointer-events-none" />
         </div>
-        {error && <p className="text-xs text-error mt-1">{error}</p>}
+        {error && (
+          <p id={errorId} role="alert" className="text-xs text-error mt-1">
+            {error}
+          </p>
+        )}
       </div>
     );
   }

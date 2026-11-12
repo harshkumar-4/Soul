@@ -13,14 +13,18 @@ export interface HeroVideoProps {
   priority?: boolean;
 }
 
+interface NetworkInformationLike {
+  saveData?: boolean;
+  effectiveType?: string;
+}
+
 /**
- * HeroVideo: Ultra-optimized cinematic media component.
- * 
- * 1. Prioritizes the lightweight LCP poster image via next/image (preloaded in <head>).
- * 2. Defers the heavy multi-megabyte video stream until after FCP/LCP paint and hydration,
- *    preventing network saturation during critical render path.
- * 3. Gracefully respects prefers-reduced-motion by keeping the still poster.
- * 4. Seamlessly cross-fades video when buffered.
+ * HeroVideo: Progressive media component.
+ *
+ * 1. Prioritizes the lightweight LCP poster image via next/image.
+ * 2. Defers the background video stream until after initial paint and hydration.
+ * 3. Respects prefers-reduced-motion and Save-Data preferences by keeping the still poster.
+ * 4. Cross-fades video smoothly when buffered and falls back silently on error.
  */
 export function HeroVideo({
   videoSrc,
@@ -32,41 +36,52 @@ export function HeroVideo({
 }: HeroVideoProps) {
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const [hasVideoError, setHasVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Respect reduced-motion preferences
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       return;
     }
 
-    // Delay video stream attachment until after FCP and LCP have painted
+    const navConnection = (
+      navigator as Navigator & { connection?: NetworkInformationLike }
+    ).connection;
+    if (navConnection?.saveData || navConnection?.effectiveType === '2g') {
+      return;
+    }
+
     const initVideo = () => {
       setShouldLoadVideo(true);
     };
 
     if ('requestIdleCallback' in window) {
-      const handle = (window as unknown as { requestIdleCallback: (cb: () => void, opts: { timeout: number }) => number }).requestIdleCallback(initVideo, { timeout: 1500 });
+      const handle = (
+        window as unknown as {
+          requestIdleCallback: (cb: () => void, opts: { timeout: number }) => number;
+        }
+      ).requestIdleCallback(initVideo, { timeout: 1500 });
       return () => {
-        (window as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(handle);
+        (
+          window as unknown as { cancelIdleCallback: (id: number) => void }
+        ).cancelIdleCallback(handle);
       };
-    } else {
-      const timer = setTimeout(initVideo, 800);
-      return () => clearTimeout(timer);
     }
+
+    const timer = setTimeout(initVideo, 800);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    if (shouldLoadVideo && videoRef.current) {
+    if (shouldLoadVideo && !hasVideoError && videoRef.current) {
       videoRef.current.play().catch(() => {
-        // Browser autoplay policy catch
+        // Browser autoplay policy blocked playback; poster remains visible.
       });
     }
-  }, [shouldLoadVideo]);
+  }, [shouldLoadVideo, hasVideoError]);
 
   return (
     <div className={cn('relative w-full h-full overflow-hidden', className)}>
-      {/* 1. Critical LCP Poster Image (instant, zero delay, optimized webp) */}
       <Image
         src={posterSrc}
         alt={alt}
@@ -75,22 +90,26 @@ export function HeroVideo({
         sizes="(max-width: 1024px) 100vw, 45vw"
         className={cn(
           'object-cover transition-opacity duration-1000 ease-out',
-          isVideoPlaying ? 'opacity-0' : 'opacity-100',
+          isVideoPlaying && !hasVideoError ? 'opacity-0' : 'opacity-100',
           imageClassName
         )}
       />
 
-      {/* 2. Deferred Video Stream (only begins after page interactive) */}
-      {shouldLoadVideo && (
+      {shouldLoadVideo && !hasVideoError && (
         <video
           ref={videoRef}
           src={videoSrc}
+          poster={posterSrc}
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           onPlaying={() => setIsVideoPlaying(true)}
+          onError={() => {
+            setHasVideoError(true);
+            setIsVideoPlaying(false);
+          }}
           className={cn(
             'absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-out',
             isVideoPlaying ? 'opacity-100' : 'opacity-0',
@@ -104,4 +123,3 @@ export function HeroVideo({
 }
 
 export default HeroVideo;
-

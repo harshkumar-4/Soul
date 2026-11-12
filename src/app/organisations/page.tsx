@@ -5,23 +5,14 @@ import SectionHeading from '@/components/shared/SectionHeading';
 import OrganisationEnquiryForm from '@/components/forms/OrganisationEnquiryForm';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
+import { createPageMetadata } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Organisations — Soulfuli Human-Centred Leadership',
   description:
     'Leading with the heart, not just the numbers. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
-  alternates: {
-    canonical: 'https://Soulfuli.com/organisations',
-  },
-  openGraph: {
-    title: 'Organisations — Soulfuli Human-Centred Leadership',
-    description:
-      'Leading with the heart, not just the numbers. Soulfuli brings emotional intelligence, self-awareness, and human-centred communication into the way people work and lead.',
-    url: 'https://Soulfuli.com/organisations',
-    siteName: 'Soulfuli',
-    type: 'website',
-  },
-};
+  path: '/organisations',
+});
 
 const corporatePillars = [
   {
@@ -83,11 +74,12 @@ export default function OrganisationsPage() {
           <div className="lg:col-span-5 relative">
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.20)] border border-border-alt/80 bg-surface-alt group">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
-                alt="Leaders and team members engaged in calm, thoughtful dialogue"
+                src="/image/boat.jpeg"
+                alt="Group of people crossing a serene golden river together on a wooden ferry boat at dusk"
                 fill
                 priority
-                className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-[36%_center] transition-transform duration-1000 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent pointer-events-none" />
 

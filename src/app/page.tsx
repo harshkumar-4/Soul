@@ -11,16 +11,18 @@ import {
   ImageHeading,
   ImageParagraph,
 } from '@/components/shared/ImageSection';
+import { createPageMetadata, INSTAGRAM_URL, LINKEDIN_URL } from '@/lib/seo/metadata';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: 'Soulfuli — Understand yourself deeply enough to live differently',
   description:
     'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
-};
+  path: '/',
+});
 
 export default function HomePage() {
   return (
-    <main className="w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
 
       {/* =================================================== */}
       {/* SECTION 1: HERO (THE INVITATION)                     */}
@@ -64,7 +66,7 @@ export default function HomePage() {
 
             <div className="lg:col-span-5 relative">
               <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_24px_64px_-16px_rgba(31,42,36,0.22)] border border-border-alt/80 bg-surface-alt group">
-                <div className="relative h-full min-h-[520px] w-full overflow-hidden">
+                <div className="relative h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden">
                   <HeroVideo
                     videoSrc="/video/tree.mp4"
                     posterSrc="/images/t1.webp"
@@ -270,21 +272,21 @@ export default function HomePage() {
               <p className="font-sans text-xs sm:text-sm text-[#F6F0E5]/75 max-w-[54ch] pt-1">
                 Follow along on{' '}
                 <a
-                  href="https://www.instagram.com/Soulfuli_official?obrf=NzlubWljcXcwbW9o&utm_source=qr"
+                  href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"
-                  aria-label="Follow SoulfullI on Instagram"
+                  aria-label="Follow Soulfuli on Instagram"
                 >
                   Instagram
                 </a>{' '}
                 and{' '}
                 <a
-                  href="https://www.linkedin.com/company/Soulfuli/"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline underline-offset-2 hover:text-[#F6F0E5] text-[#F6F0E5]/90 transition-colors"
-                  aria-label="Connect with SoulfullI on LinkedIn"
+                  aria-label="Connect with Soulfuli on LinkedIn"
                 >
                   LinkedIn
                 </a>
@@ -295,6 +297,6 @@ export default function HomePage() {
         </div>
       </ImageSection>
 
-    </main>
+    </div>
   );
 }

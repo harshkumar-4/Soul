@@ -4,58 +4,90 @@ import {
   organisationEnquirySchema,
   schoolEnquirySchema,
   retreatEnquirySchema,
+  newsletterSchema,
 } from '@/lib/validation/schemas';
 
 describe('Form Validation Schemas', () => {
-  it('should validate valid contact form input', () => {
+  it('should validate valid contact form input including community pathway', () => {
     const valid = {
       name: 'Maya Patel',
       email: 'maya@example.com',
       phone: '+91 98765 43210',
-      pathway: 'eq-audit',
-      message: 'I would like to explore personal reflection pathways.',
+      pathway: 'community',
+      message: 'I would like to join the waitlist for upcoming community gatherings.',
     };
     const result = contactFormSchema.safeParse(valid);
     expect(result.success).toBe(true);
   });
 
-  it('should reject invalid email format in contact form', () => {
-    const invalid = {
+  it('should reject invalid email format and whitespace-only strings in contact form', () => {
+    const invalidEmail = {
       name: 'Maya Patel',
       email: 'not-an-email',
       pathway: 'general',
       message: 'Short note here that is long enough.',
     };
-    const result = contactFormSchema.safeParse(invalid);
-    expect(result.success).toBe(false);
+    expect(contactFormSchema.safeParse(invalidEmail).success).toBe(false);
+
+    const whitespaceName = {
+      name: '   ',
+      email: 'maya@example.com',
+      pathway: 'general',
+      message: 'Short note here that is long enough.',
+    };
+    expect(contactFormSchema.safeParse(whitespaceName).success).toBe(false);
   });
 
-  it('should validate valid retreat enquiry input', () => {
+  it('should reject unselected empty dropdown values in retreat, org, and school schemas', () => {
+    expect(
+      retreatEnquirySchema.safeParse({
+        name: 'Aarav Mehta',
+        email: 'aarav@example.com',
+        phone: '+91 98765 12345',
+        preferredSeason: '',
+        roomPreference: '',
+        intention: 'Seeking deep mountain stillness to reset my nervous system.',
+      }).success
+    ).toBe(false);
+
+    expect(
+      schoolEnquirySchema.safeParse({
+        name: 'Dr. Kavita Rao',
+        institution: 'Delhi Arts Institute',
+        role: 'Dean',
+        email: 'k.rao@college.edu',
+        targetCohort: '',
+        cohortSize: '',
+        message: 'Exploring semester emotional intelligence workshops.',
+      }).success
+    ).toBe(false);
+  });
+
+  it('should validate valid retreat, organisation, and newsletter inputs', () => {
     const validRetreat = {
-      name: 'Ananya Sharma',
-      email: 'ananya@example.com',
+      name: 'Aarav Mehta',
+      email: 'aarav@example.com',
       phone: '+91 98765 12345',
       preferredSeason: 'autumn-gathering',
       roomPreference: 'single-cottage',
       intention: 'Seeking deep mountain stillness to reset my nervous system.',
     };
-    const result = retreatEnquirySchema.safeParse(validRetreat);
-    expect(result.success).toBe(true);
-  });
+    expect(retreatEnquirySchema.safeParse(validRetreat).success).toBe(true);
 
-  it('should validate valid organisation enquiry input', () => {
     const validOrg = {
       name: 'Rohit Verma',
       email: 'rohit@company.com',
       phone: '+91 98765 67890',
-      organisation: 'TechCorp India',
+      organisation: 'Northstar Labs',
       designation: 'VP People',
       programInterest: 'Emotional Intelligence',
       targetAudience: 'Emerging Leaders',
       groupSize: '10 - 30 People',
       goals: 'Building emotional intelligence and collaborative presence across cross-functional teams.',
     };
-    const result = organisationEnquirySchema.safeParse(validOrg);
-    expect(result.success).toBe(true);
+    expect(organisationEnquirySchema.safeParse(validOrg).success).toBe(true);
+
+    expect(newsletterSchema.safeParse({ email: 'reader@example.com' }).success).toBe(true);
+    expect(newsletterSchema.safeParse({ email: 'not-valid' }).success).toBe(false);
   });
 });

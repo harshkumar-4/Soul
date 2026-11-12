@@ -2,31 +2,48 @@
 
 import React, { useState } from 'react';
 import { retreatEnquirySchema, RetreatEnquiryData } from '@/lib/validation/schemas';
+import { OFFICIAL_EMAIL } from '@/lib/seo/metadata';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
+
+interface RetreatFormState {
+  name: string;
+  email: string;
+  phone: string;
+  preferredSeason: string;
+  roomPreference: string;
+  intention: string;
+}
 
 export function RetreatEnquiryForm() {
-  const [formData, setFormData] = useState<RetreatEnquiryData>({
+  const [formData, setFormData] = useState<RetreatFormState>({
     name: '',
     email: '',
     phone: '',
-    preferredSeason: 'autumn-gathering',
-    roomPreference: 'single-cottage',
+    preferredSeason: '',
+    roomPreference: '',
     intention: '',
   });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof RetreatEnquiryData, string>>>({});
+  const [honeypot, setHoneypot] = useState('');
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof RetreatEnquiryData, string>>
+  >({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setSubmitError(null);
     if (errors[name as keyof RetreatEnquiryData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -34,13 +51,20 @@ export function RetreatEnquiryForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setSubmitError(null);
     const result = retreatEnquirySchema.safeParse(formData);
 
     if (!result.success) {
       const fieldErrors: Partial<Record<keyof RetreatEnquiryData, string>> = {};
       result.error.issues.forEach((issue) => {
-        if (issue.path[0]) {
-          fieldErrors[issue.path[0] as keyof RetreatEnquiryData] = issue.message;
+        if (
+          issue.path[0] &&
+          !fieldErrors[issue.path[0] as keyof RetreatEnquiryData]
+        ) {
+          fieldErrors[issue.path[0] as keyof RetreatEnquiryData] =
+            issue.message;
         }
       });
       setErrors(fieldErrors);
@@ -48,14 +72,50 @@ export function RetreatEnquiryForm() {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    try {
+      const response = await fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'retreat',
+          data: result.data,
+          honeypot,
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        error?: string;
+        fieldErrors?: Partial<Record<keyof RetreatEnquiryData, string>>;
+      } | null;
+
+      if (!response.ok || !payload?.ok) {
+        if (payload?.fieldErrors) {
+          setErrors(payload.fieldErrors);
+        }
+        setSubmitError(
+          payload?.error ||
+            `We could not submit your retreat application right now. Please email ${OFFICIAL_EMAIL} directly.`
+        );
+        return;
+      }
+
+      setIsSubmitted(true);
+    } catch {
+      setSubmitError(
+        `A network error prevented submission. Please try again or email ${OFFICIAL_EMAIL} directly.`
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
     return (
-      <div className="bg-surface-alt border border-border-alt rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300">
+      <div
+        role="status"
+        className="bg-surface-alt border border-border-alt rounded-xl p-8 lg:p-12 text-center space-y-4 animate-in fade-in-50 duration-300"
+      >
         <div className="w-12 h-12 rounded-full bg-sage/20 text-forest mx-auto flex items-center justify-center">
           <CheckCircle2 className="w-6 h-6 text-forest" />
         </div>
@@ -70,14 +130,44 @@ export function RetreatEnquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} noValidate className="space-y-6">
+      <input
+        type="text"
+        name="website"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
+      {submitError && (
+        <div
+          role="alert"
+          className="flex items-start gap-3 p-4 rounded-lg bg-error-container/50 border border-error/40 text-on-error-container text-sm font-sans"
+        >
+          <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-error" />
+          <div className="space-y-1">
+            <p>{submitError}</p>
+            <a
+              href={`mailto:${OFFICIAL_EMAIL}`}
+              className="inline-block font-semibold underline underline-offset-2 hover:opacity-80"
+            >
+              Email {OFFICIAL_EMAIL}
+            </a>
+          </div>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Input
           id="retreat-name"
           name="name"
           label="Full Name"
           required
-          placeholder="Ananya Sharma"
+          autoComplete="name"
+          placeholder="Your full name"
           value={formData.name}
           onChange={handleChange}
           error={errors.name}
@@ -88,7 +178,8 @@ export function RetreatEnquiryForm() {
           type="email"
           label="Email Address"
           required
-          placeholder="ananya@domain.com"
+          autoComplete="email"
+          placeholder="you@example.com"
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
@@ -102,7 +193,8 @@ export function RetreatEnquiryForm() {
           type="tel"
           label="WhatsApp / Phone Number"
           required
-          placeholder="+91 98765 43210"
+          autoComplete="tel"
+          placeholder="Include country code"
           value={formData.phone}
           onChange={handleChange}
           error={errors.phone}
@@ -112,6 +204,7 @@ export function RetreatEnquiryForm() {
           name="preferredSeason"
           label="Target Gathering / Season"
           required
+          placeholder="Select preferred gathering"
           value={formData.preferredSeason}
           onChange={handleChange}
           error={errors.preferredSeason}
@@ -129,6 +222,7 @@ export function RetreatEnquiryForm() {
         name="roomPreference"
         label="Accommodation Preference"
         required
+        placeholder="Select accommodation preference"
         value={formData.roomPreference}
         onChange={handleChange}
         error={errors.roomPreference}

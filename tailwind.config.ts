@@ -88,6 +88,7 @@ const config: Config = {
       },
       fontSize: {
         'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.02em' }],
+        'display-md': ['48px', { lineHeight: '56px', letterSpacing: '-0.015em' }],
         'display-lg-mobile': ['38px', { lineHeight: '44px', letterSpacing: '-0.01em' }],
         'headline-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.015em' }],
         'headline-lg-mobile': ['28px', { lineHeight: '36px' }],
