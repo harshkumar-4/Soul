@@ -17,7 +17,7 @@ export default function GlobalError({
   return (
     <div className="w-full min-h-[70vh] flex items-center justify-center bg-surface px-6 py-24 text-center">
       <div className="max-w-md mx-auto space-y-6">
-        <span className="font-sans text-xs uppercase tracking-[0.2em] text-tertiary font-semibold">
+        <span className="font-sans text-xs uppercase tracking-[0.2em] text-on-tertiary-fixed-variant font-semibold">
           A Momentary Disruption
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl text-primary font-normal leading-tight">

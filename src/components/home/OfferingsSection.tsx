@@ -120,7 +120,7 @@ export default function OfferingsSection() {
 
                   {/* Direct Page Navigation */}
                   <div className="
-            mt-6 text-xs tracking-wide font-medium text-tertiary
+            mt-6 text-xs tracking-wide font-medium text-tertiary-fixed
             transition-transform duration-300
             group-hover:translate-x-1 flex items-center gap-1
           ">

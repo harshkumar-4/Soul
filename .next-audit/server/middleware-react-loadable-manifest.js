@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"components\\\\layout\\\\Header.tsx -> @/components/layout/MobileNav":{"id":8592,"files":["static/chunks/592.39e6e10f41320847.js"]}}';
+self.__REACT_LOADABLE_MANIFEST='{"components\\\\layout\\\\Header.tsx -> @/components/layout/MobileNav":{"id":8592,"files":["static/chunks/592.8c16afe5f1dcfa26.js"]}}';

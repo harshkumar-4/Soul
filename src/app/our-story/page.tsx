@@ -199,7 +199,7 @@ export default function OurStoryPage() {
                 className="bg-surface-alt p-8 rounded-xl border border-border-alt space-y-3 shadow-sm"
               >
                 <div className="flex items-center gap-3">
-                  <span className="font-serif text-lg text-tertiary font-normal">
+                  <span className="font-serif text-lg text-on-tertiary-fixed-variant font-normal">
                     {tenet.number}
                   </span>
 

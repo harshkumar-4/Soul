@@ -116,7 +116,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
           >
             Take the EQ Audit
           </Button>
-          <p className="text-center text-xs text-on-surface-variant/70 pt-2">
+          <p className="text-center text-xs text-outline pt-2">
             Mind · Heart · Spirit
           </p>
         </div>

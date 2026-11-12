@@ -74,7 +74,7 @@ export default function PrivacyPage() {
             </h2>
             <p>
               For data access, deletion, or inquiries, please contact our team at{' '}
-              <a href={`mailto:${OFFICIAL_EMAIL}`} className="text-tertiary underline break-all">
+              <a href={`mailto:${OFFICIAL_EMAIL}`} className="text-on-tertiary-fixed-variant underline break-all">
                 {OFFICIAL_EMAIL}
               </a>
               .

@@ -365,7 +365,7 @@ export function AuditContainer() {
               </Button>
             )}
           </div>
-          <p className="text-xs text-on-surface-variant/70 text-center">
+          <p className="text-xs text-outline text-center">
             Your progress is saved locally in your browser and scored confidentially on our server.
           </p>
         </div>
@@ -417,7 +417,7 @@ export function AuditContainer() {
 
           {/* 5-Choice Scale Buttons */}
           <div className="space-y-3" role="radiogroup" aria-label={currentQuestion.text}>
-            <span className="text-xs font-sans text-on-surface-variant/70 block mb-1">
+            <span className="text-xs font-sans text-outline block mb-1">
               Select how accurately this reflects your lived habit:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5">
@@ -485,7 +485,7 @@ export function AuditContainer() {
               <ArrowRight className="w-4 h-4" />
             </button>
           ) : (
-            <span className="text-xs text-on-surface-variant/60 italic">
+            <span className="text-xs text-outline italic">
               Select an option above
             </span>
           )}
@@ -593,7 +593,7 @@ export function AuditContainer() {
             type="button"
             disabled={isSubmitting}
             onClick={() => setStep('questions')}
-            className="text-xs font-sans text-on-surface-variant/80 hover:text-primary inline-flex items-center justify-center gap-1.5 w-full pt-1"
+            className="text-xs font-sans text-on-surface-variant hover:text-primary inline-flex items-center justify-center gap-1.5 w-full pt-1"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Review Questions</span>
@@ -651,14 +651,14 @@ export function AuditContainer() {
             </div>
 
             <div className="p-5 bg-surface rounded-xl space-y-2 border border-border-alt">
-              <span className="font-sans text-xs uppercase tracking-wider text-tertiary font-semibold block">
+              <span className="font-sans text-xs uppercase tracking-wider text-on-tertiary-fixed-variant font-semibold block">
                 Primary Growth Pathway
               </span>
               <div className="flex items-center justify-between gap-2">
                 <h2 className="font-serif text-xl text-primary font-normal">
                   {result.growthDimension.info.name}
                 </h2>
-                <span className="font-sans text-sm font-bold text-tertiary shrink-0">
+                <span className="font-sans text-sm font-bold text-on-tertiary-fixed-variant shrink-0">
                   {result.growthDimension.percentage}%
                 </span>
               </div>

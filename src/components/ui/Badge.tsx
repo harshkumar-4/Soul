@@ -16,7 +16,7 @@ export function Badge({
   const variants = {
     sage: 'bg-sage/15 text-forest border border-sage/30',
     sand: 'bg-surface-alt text-on-surface-variant border border-border-alt',
-    terracotta: 'bg-tertiary/15 text-tertiary border border-tertiary/30',
+    terracotta: 'bg-[#f6e4de] text-on-tertiary-fixed-variant border border-tertiary/35',
     forest: 'bg-primary text-surface-bright',
     outline: 'bg-transparent text-on-surface-variant border border-outline-variant',
     translucentWhite: 'bg-white/[0.14] text-white border border-white/35 backdrop-blur-[8px]',

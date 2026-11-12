@@ -91,7 +91,7 @@ export default function ContactPage() {
               </p>
               <a
                 href={`mailto:${OFFICIAL_EMAIL}`}
-                className="font-sans text-sm font-semibold text-tertiary hover:underline block pt-1 break-all"
+                className="font-sans text-sm font-semibold text-on-tertiary-fixed-variant hover:underline block pt-1 break-all"
               >
                 {OFFICIAL_EMAIL}
               </a>

@@ -123,7 +123,7 @@ export function HeroVideo({
         if (!cancelled) setIsEligible(true);
       };
 
-      const delayMs = role === 'hero' ? 1200 : 200;
+      const delayMs = role === 'hero' ? 2200 : 250;
       timerHandle = setTimeout(() => {
         if (cancelled) return;
         if ('requestIdleCallback' in window) {
@@ -131,7 +131,7 @@ export function HeroVideo({
             window as unknown as {
               requestIdleCallback: (cb: () => void, opts: { timeout: number }) => number;
             }
-          ).requestIdleCallback(activate, { timeout: 1500 });
+          ).requestIdleCallback(activate, { timeout: 2000 });
         } else {
           activate();
         }
