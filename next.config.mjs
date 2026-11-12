@@ -21,6 +21,22 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'soulfuli.org',
+          },
+        ],
+        destination: 'https://www.soulfuli.org/:path*',
+        permanent: true,
+      },
+    ];
+  },
+
   async headers() {
     return [
       {

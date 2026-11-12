@@ -32,14 +32,10 @@ export const metadata: Metadata = {
   description:
     'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: `${SITE_URL}/`,
-  },
   openGraph: {
     title: 'Soulfuli — Understand yourself deeply enough to live differently',
     description:
       'Soulfuli connects emotional intelligence, mindfulness, and spirituality into one grounded journey toward self-awareness and intentional living.',
-    url: `${SITE_URL}/`,
     siteName: SITE_NAME,
     locale: 'en_US',
     type: 'website',

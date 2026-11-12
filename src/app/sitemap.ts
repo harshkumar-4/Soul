@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo/metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.soulfuli.org';
   const routes = [
-    '',
+    '/',
     '/our-story',
     '/what-we-offer',
     '/eq-audit',
@@ -18,9 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: route === '/' ? `${SITE_URL}/` : `${SITE_URL}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' || route === '/eq-audit' ? 'weekly' : 'monthly',
-    priority: route === '' ? 1.0 : route === '/eq-audit' ? 0.9 : 0.8,
+    changeFrequency: route === '/' || route === '/eq-audit' ? 'weekly' : 'monthly',
+    priority: route === '/' ? 1.0 : route === '/eq-audit' ? 0.9 : 0.8,
   }));
 }
