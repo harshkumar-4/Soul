@@ -20,6 +20,7 @@ export interface HeroVideoProps {
 interface NetworkInformationLike {
   saveData?: boolean;
   effectiveType?: string;
+  downlink?: number;
 }
 
 // Coordinate playback so multiple videos never decode/play concurrently.
@@ -39,6 +40,14 @@ function shouldAllowVideoStream(): boolean {
     return false;
   }
 
+  // Keep lightweight poster on narrow/touch mobile viewports to avoid 10–18 MB downloads on mobile load.
+  if (
+    window.innerWidth < 768 ||
+    window.matchMedia('(hover: none) and (pointer: coarse)').matches
+  ) {
+    return false;
+  }
+
   const navConnection = (
     navigator as Navigator & { connection?: NetworkInformationLike }
   ).connection;
@@ -47,7 +56,7 @@ function shouldAllowVideoStream(): boolean {
     return false;
   }
 
-  // Keep static optimized poster on slow cellular networks to protect mobile UX.
+  // Keep static optimized poster on slow cellular networks.
   if (
     navConnection?.effectiveType === 'slow-2g' ||
     navConnection?.effectiveType === '2g' ||
@@ -156,7 +165,7 @@ export function HeroVideo({
     };
   }, [role]);
 
-  const shouldMountVideo = isEligible && !hasVideoError && (role === 'hero' || isInView);
+  const shouldMountVideo = isEligible && !hasVideoError && isInView;
 
   // Step 3: Pause when scrolled out of viewport; resume cleanly when returning to view.
   useEffect(() => {

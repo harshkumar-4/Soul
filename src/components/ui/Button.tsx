@@ -25,7 +25,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ghost:
         'bg-transparent text-on-surface hover:text-tertiary underline underline-offset-4 decoration-outline-variant hover:decoration-tertiary p-0',
       terracotta:
-        'bg-tertiary text-white hover:bg-tertiary/90 shadow-sm rounded-lg active:scale-[0.99]',
+        'bg-[#9e4226] text-white hover:bg-[#8a381f] shadow-sm rounded-lg active:scale-[0.99]',
       ivory:
         'bg-[#F7F3EA] text-[#24382D] hover:bg-white hover:text-[#17231d] shadow-sm rounded-lg active:scale-[0.99]',
       whiteOutline:

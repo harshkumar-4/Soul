@@ -136,8 +136,8 @@ export default function CommunityPage() {
           alt=""
           fill
           loading="lazy"
-          quality={55}
-          sizes="100vw"
+          quality={45}
+          sizes="(max-width: 768px) 100vw, 1080px"
           className="object-cover object-center opacity-[0.06] pointer-events-none"
           aria-hidden="true"
         />
